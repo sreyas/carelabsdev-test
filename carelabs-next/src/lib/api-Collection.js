@@ -8,3 +8,11 @@ export const GET_NAVBAR = gql`
     }
   }
 `;
+
+export const GET_BLOG = gql`
+  query {
+    blogs {
+      title
+    }
+  }
+`;

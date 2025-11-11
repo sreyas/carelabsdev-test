@@ -1,5 +1,5 @@
 "use client";
-import { GET_NAVBAR } from '@/lib/api-Collection';
+import { GET_BLOG, GET_NAVBAR } from '@/lib/api-Collection';
 import client from '@/lib/appollo-client';
 import React, { useEffect, useState } from 'react'
 
@@ -16,6 +16,12 @@ const Header = () => {
       const res= await client.query({
                   query: GET_NAVBAR,
                  });
+
+      const res1= await client.query({
+         query: GET_BLOG,
+      })          
+      
+       console.log("Blog data:", res1.data.blogs);
 
       console.log("Navbar data:", res.data.navbar);
       setNavbarData(res.data.navbar.Logo);
