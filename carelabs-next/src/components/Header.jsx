@@ -31,7 +31,7 @@ const Header = () => {
 
   return (
     <>
-      <div className='header-cvr   w-full h-[80px] flex items-center justify-between  relative'>
+      <div className='header-cvr  bg-amber-400  w-full h-[80px] flex items-center justify-between  relative'>
         <div className="logo w-[45%]   h-full flex items-center justify-center sm:w-[35%] 2xl:w-[25%]">
           <img className='h-[60%] lg:h-[80%] ' src={navbarData.url} alt="" />
         </div>
