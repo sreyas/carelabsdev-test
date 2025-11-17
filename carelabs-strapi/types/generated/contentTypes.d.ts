@@ -575,12 +575,15 @@ export interface ApiHomeHome extends Struct.CollectionTypeSchema {
     background_video: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
     >;
-    btn_link: Schema.Attribute.String;
-    btn_text: Schema.Attribute.String;
+    btn1_link: Schema.Attribute.String;
+    btn1_text: Schema.Attribute.String;
+    btn2_link: Schema.Attribute.String;
+    btn2_text: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     description: Schema.Attribute.Text;
+    heading: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::home.home'> &
       Schema.Attribute.Private;

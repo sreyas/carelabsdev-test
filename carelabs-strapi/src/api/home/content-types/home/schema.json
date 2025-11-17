@@ -17,10 +17,10 @@
     "description": {
       "type": "text"
     },
-    "btn_text": {
+    "btn1_text": {
       "type": "string"
     },
-    "btn_link": {
+    "btn1_link": {
       "type": "string"
     },
     "background_video": {
@@ -37,6 +37,15 @@
       "type": "component",
       "component": "stats.stat-box",
       "repeatable": true
+    },
+    "btn2_text": {
+      "type": "string"
+    },
+    "btn2_link": {
+      "type": "string"
+    },
+    "heading": {
+      "type": "string"
     }
   }
 }

@@ -65,11 +65,7 @@ export interface SharedSeo extends Struct.ComponentSchema {
       }>;
     metaImage: Schema.Attribute.Media<'images'>;
     metaRobots: Schema.Attribute.String;
-    metaTitle: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 160;
-      }>;
+    metaTitle: Schema.Attribute.String & Schema.Attribute.Required;
     metaViewport: Schema.Attribute.String;
     openGraph: Schema.Attribute.Component<'shared.open-graph', false>;
     structuredData: Schema.Attribute.JSON;

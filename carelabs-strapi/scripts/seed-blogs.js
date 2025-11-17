@@ -31,6 +31,8 @@ async function seedBlogs() {
             url: blog.seo?.metaImage?.url || null
           },
 
+          structuredData: blog.seo?.structuredData || null,
+
           openGraph: {
             ogUrl: blog.seo?.openGraph?.ogUrl,
             ogType: blog.seo?.openGraph?.ogType,
@@ -40,7 +42,7 @@ async function seedBlogs() {
               url: blog.seo?.openGraph?.ogImage?.url || null
             }
           }
-        }
+        },
       }
     };
 
