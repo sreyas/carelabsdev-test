@@ -21,6 +21,12 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::article.article"
+    },
+    "button": {
+      "type": "string"
+    },
+    "buttonLink": {
+      "type": "string"
     }
   }
 }

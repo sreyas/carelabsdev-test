@@ -488,6 +488,7 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
     date: Schema.Attribute.Date;
     description: Schema.Attribute.Text;
     featured: Schema.Attribute.Boolean;
+    featuredText: Schema.Attribute.String;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -532,6 +533,39 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
     seo: Schema.Attribute.Component<'shared.seo', false>;
     slug: Schema.Attribute.String;
     title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiFloatingCtaFloatingCta extends Struct.SingleTypeSchema {
+  collectionName: 'floating_ctas';
+  info: {
+    displayName: 'FloatingCTA';
+    pluralName: 'floating-ctas';
+    singularName: 'floating-cta';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    button1link: Schema.Attribute.String;
+    button1text: Schema.Attribute.String;
+    button2link: Schema.Attribute.String;
+    button2text: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::floating-cta.floating-cta'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    subtitle: Schema.Attribute.String;
+    title: Schema.Attribute.Text;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -761,6 +795,8 @@ export interface ApiInsightInsight extends Struct.SingleTypeSchema {
   };
   attributes: {
     articles: Schema.Attribute.Relation<'oneToMany', 'api::article.article'>;
+    button: Schema.Attribute.String;
+    buttonLink: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1458,6 +1494,7 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::article.article': ApiArticleArticle;
       'api::blog.blog': ApiBlogBlog;
+      'api::floating-cta.floating-cta': ApiFloatingCtaFloatingCta;
       'api::footer.footer': ApiFooterFooter;
       'api::home-new.home-new': ApiHomeNewHomeNew;
       'api::home-page.home-page': ApiHomePageHomePage;
