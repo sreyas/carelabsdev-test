@@ -132,12 +132,16 @@ const page = () => {
                         {/* Operating across continents with local expertise and global standards. */}
                        Comprehensive electrical engineering studies covering all critical aspects of power system design, operation, and safety.
                     </p>
+                    <p className=" w-[80%] px-4 sm:px-8 text-lg  md:text-xl text-[#65758B]">
+                        {/* Operating across continents with local expertise and global standards. */}
+                       Comprehensive electrical engineering studies covering all critical aspects of power system design, operation, and safety.
+                    </p>
 
                     </div>
                 </div>
 
 
-                <div className='w-[65%] navbar-shadow bg-black '>
+                <div className='w-[65%] navbar-shadow bg-red-500 '>
                      <div className=' '>
                          
                      </div>
