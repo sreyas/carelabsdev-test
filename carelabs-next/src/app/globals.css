@@ -50,3 +50,23 @@
 }
 
 
+/* Media query */
+
+@media (max-width: 400px) {
+  /* Styles for mobile screens only */
+    .cards-blog{
+      margin-top: 100px;
+    }
+   
+}
+
+@media (max-width: 350px) {
+  /* Styles for mobile screens only */
+    .cards-blog{
+      margin-top: 150px;
+    }
+   
+}
+
+
+

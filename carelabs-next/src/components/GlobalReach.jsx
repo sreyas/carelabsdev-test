@@ -66,7 +66,7 @@ const GlobalReach = () => {
 
         <div className="cover w-full flex  item-center justify-center p-5 2xl:mb-10">
             <div className="w-[90%] flex flex-col items-center justify-center rounded-2xl  2xl:w-[75%] p-4 navbar-shadow ">
-     <div className="card-block grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4  w-[95%] gap-5 sm:gap-4 justify-items-center p-5">
+     <div className="card-block grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4  w-[95%] gap-5 sm:gap-4 justify-items-center sm:p-5">
 
                 {/* <div className="cards w-[90%] sm:w-[95%] flex flex-col items-center justify-center  gap-2 p-3 rounded-2xl card-shadow">
                     <p className='text-4xl font-bold'>280</p>
