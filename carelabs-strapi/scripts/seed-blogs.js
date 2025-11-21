@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-const API_URL = "https://proper-hug-7f40206151.strapiapp.com/api/blogs";
+const API_URL = "https://competent-belief-4c86b8d649.strapiapp.com/api/blogs";
 
 const TOKEN = "f4e933bdf4345428244af68bf548df195620bb34c2f398f1f82e9c5c8a64a2b4835ed8212a8e9c3b0210cebded529a1836b051a881f7684ad495defd88fc72070edaaa9945b5d237b1e3b6aa326e9a967a1941bded7d8cb30f845fc20b661ecaf501ab48fa14ccfcc4b0f1d3f7ecf962706a802094ab29728bf69c9afcb16f74";
 
