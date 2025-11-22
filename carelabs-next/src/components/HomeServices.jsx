@@ -72,7 +72,7 @@ const fetchGlobalReach = async () => {
                   key={index}
                   onClick={() => setActiveServiceIndex(index)}
                   className={`w-full sm:w-[85%] lg:w-full min-h-[70px] lg:h-[80px] rounded-2xl bg-white p-4 lg:p-5 flex justify-center flex-col shadow-md hover:shadow-lg transition-shadow cursor-pointer ${
-                    activeServiceIndex === index ? "border border-blue-500" : ""
+                    activeServiceIndex === index ? "border border-blue-500 bg-blue-500/50" : ""
                   }`}
                 >
                   <p className="text-lg sm:text-xl  font-bold">

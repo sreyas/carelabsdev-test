@@ -1,7 +1,28 @@
+import EngineeringServices from '@/components/EngineeringServices';
+import FaqResourcesSection from '@/components/FaqResourcesSection';
+import PowerSystemAnalysisCTA from '@/components/PowerSystemAnalysisCTA';
 import ServicesLanding from '@/components/ServicesLanding'
 import React from 'react'
 
 const page = () => {
+    const data = [
+            {
+                image: "https://preview--global-grid-glimpse.lovable.app/assets/hero-power-grid-BRAXB8uH.jpg",
+                title: "Data Collection & Model Building",
+                description: "Gather system single-line diagrams, equipment ratings, and operational data to build an accurate digital model."
+            },
+            {
+                image: "https://preview--global-grid-glimpse.lovable.app/assets/hero-power-grid-BRAXB8uH.jpg",
+                title: "Load Flow Analysis",
+                description: "Analyze real power, reactive power, and voltage profiles under different conditions."
+            },
+            {
+                image: "https://preview--global-grid-glimpse.lovable.app/assets/hero-power-grid-BRAXB8uH.jpg",
+                title: "Short Circuit Analysis",
+                description: "Determine fault currents and verify equipment protection ratings."
+            }
+        ];
+
   return (
     <div>
         <section>
@@ -172,6 +193,82 @@ const page = () => {
             </section>
 
 
+           <section>
+                <div className="w-full min-h-screen flex items-center justify-center flex-col">
+
+                    {/* TEXT SECTION */}
+                    <div className="w-full flex flex-col items-center justify-center py-10">
+                    <div className="w-11/12 sm:w-4/5 md:w-3/5 lg:w-1/2 2xl:w-[65%] flex flex-col items-center text-center gap-5 p-4">
+
+                        <p className="gradient-text font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
+                        How a Power System Study Runs with Carelabs
+                        </p>
+
+                        <p className="w-[90%] sm:w-[80%] text-lg md:text-xl text-[#656668]">
+                       Our proven 5-step methodology ensures accurate, comprehensive analysis from
+                        data collection through implementation support.
+                        </p>
+
+                    </div>
+                    </div>
+
+                    {/* CARDS */}
+                <div className="w-[90%] sm:w-[80%] md:w-[70%] flex flex-col gap-10 py-6">
+                        {data.map((item, index) => (
+                            <div key={index} className="w-full flex flex-col items-center gap-4">
+
+                            {/* ALIGN LEFT / RIGHT on desktop only */}
+                            <div
+                                className={`flex w-full ${
+                                index % 2 === 0 ? "md:justify-start" : "md:justify-end"
+                                }`}
+                            >
+                                <div className="w-full   lg:w-[60%] md:h-[200px] 2xl:h-[210px] navbar-shadow  bg-white flex flex-col md:flex-row rounded-2xl overflow-hidden">
+
+                                {/* IMAGE — top on mobile, left on desktop */}
+                                <div
+                                    className="timeline-cards w-full h-56 md:h-full md:w-[40%]"
+                                    style={{
+                                    backgroundImage: `url(${item.image})`,
+                                    backgroundSize: "cover",
+                                    backgroundPosition: "center",
+                                    }}
+                                ></div>
+
+                                {/* CONTENT — below image on mobile, right on desktop */}
+                                <div className="w-full md:w-[60%] p-4 sm:p-6 flex gap-4">
+                                    <div className="min-w-[50px] max-h-[50px] rounded-xl bg-amber-200 flex items-center justify-center text-xl font-bold">
+                                    {index + 1}
+                                    </div>
+
+                                    <div className="flex flex-col gap-3">
+                                    <p className="flex items-center gap-2 text-lg sm:text-xl font-bold">
+                                        <i className="fa-solid fa-circle-exclamation"></i>
+                                        {item.title}
+                                    </p>
+
+                                    <p className="text-[14px] leading-6">{item.description}</p>
+                                    </div>
+                                </div>
+
+                                </div>
+                            </div>
+
+                            {/* ANGLE DOWN ICON */}
+                            {index !== data.length - 1 && (
+                                <div className="text-blue-500 text-3xl p-3">
+                                <i className="fa-solid fa-angles-down"></i>
+                                </div>
+                            )}
+
+                            </div>
+                        ))}
+                    </div>
+
+                </div>
+            </section>
+
+
             <section>
                 <div className="w-full min-h-screen flex flex-col items-center justify-center py-10">
 
@@ -230,6 +327,92 @@ const page = () => {
 
                 </div>
             </section>
+
+             <section>
+                <div className="min-h-[80vh] w-full flex items-center justify-center">
+                    <div className="w-[95%] md:w-[85%] lg:w-[70%]  py-10 rounded-4xl navbar-shadow flex flex-col items-center">
+
+                    {/* TOP TITLE */}
+                    <div className="w-full flex items-center justify-center text-center mb-10 px-4">
+                        <div className="flex flex-col items-center gap-3">
+                        <p className="text-3xl sm:text-4xl md:text-5xl font-bold gradient-text">
+                            Proven Results Across 50+ Countries
+                        </p>
+                        <p className="text-sm sm:text-md md:text-lg w-[95%] sm:w-[80%] text-center">
+                            Quantifiable improvements in safety, reliability, and operational
+                            efficiency from our power system analysis projects.
+                        </p>
+                        </div>
+                    </div>
+
+                    {/* STATS GRID */}
+                    <div className="w-full grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 px-3 mb-10">
+
+                        {[30, 55, 40, 90].map((value, idx) => (
+                        <div
+                            key={idx}
+                            className="bg-white p-6 rounded-xl flex flex-col items-center text-center justify-evenly gap-3 min-h-[180px]"
+                        >
+                            <div className="w-[50px] h-[50px] rounded-lg flex items-center justify-center bg-yellow-300">
+                            <i className="fa-solid fa-circle-exclamation fa-xl"></i>
+                            </div>
+
+                            <div className="text-4xl font-bold">{value}%</div>
+
+                            <p className="text-sm px-2">
+                            Average reduction in nuisance tripping incidents
+                            </p>
+                        </div>
+                        ))}
+
+                    </div>
+
+                    {/* BOTTOM GRID */}
+                    <div className="w-full 2xl:w-[95%] grid grid-cols-1 justify-items-center  xl:grid-cols-3 gap-6 px-5">
+
+                        {[1, 2, 3].map((item, idx) => (
+                        <div
+                            key={idx}
+                            className="services-column bg-white p-6 rounded-xl flex flex-col gap-4 w-[80%] xl:w-full"
+                        >
+                            <div className="flex items-center gap-4">
+                            <i className="fa-solid fa-circle-exclamation fa-xl"></i>
+                            <p className="text-xl md:text-2xl font-bold">
+                                Faster Project Delivery
+                            </p>
+                            </div>
+
+                            <p className="text-sm leading-6 pl-10">
+                            Streamlined workflows reduce study completion time by 30% vs
+                            industry average.
+                            </p>
+                        </div>
+                        ))}
+
+                    </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <PowerSystemAnalysisCTA/>
+            </section>
+
+            <section>
+                <EngineeringServices />
+            </section>
+
+
+           <section>
+             <FaqResourcesSection />
+           </section>
+           
+            
+
+
+
+       
 
 
       
