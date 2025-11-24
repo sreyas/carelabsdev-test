@@ -318,6 +318,7 @@ export interface SubmenusServiceItem extends Struct.ComponentSchema {
     Button: Schema.Attribute.String;
     featureheading: Schema.Attribute.String;
     features: Schema.Attribute.Component<'features.feature-item', true>;
+    slug: Schema.Attribute.String;
     subtitle: Schema.Attribute.String;
     title: Schema.Attribute.String;
   };
