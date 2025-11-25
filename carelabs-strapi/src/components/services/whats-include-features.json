@@ -13,6 +13,9 @@
     },
     "stat": {
       "type": "string"
+    },
+    "icon": {
+      "type": "string"
     }
   },
   "config": {}

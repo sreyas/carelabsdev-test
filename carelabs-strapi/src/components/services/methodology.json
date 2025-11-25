@@ -13,6 +13,19 @@
     },
     "OrderSubtitleText": {
       "type": "text"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "icon": {
+      "type": "string"
     }
   },
   "config": {}

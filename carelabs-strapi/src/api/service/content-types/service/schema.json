@@ -14,6 +14,9 @@
     "badge": {
       "type": "string"
     },
+    "badgeicon": {
+      "type": "string"
+    },
     "mainheading1": {
       "type": "string"
     },

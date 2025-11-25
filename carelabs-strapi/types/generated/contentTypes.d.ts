@@ -1031,6 +1031,7 @@ export interface ApiServiceService extends Struct.CollectionTypeSchema {
   };
   attributes: {
     badge: Schema.Attribute.String;
+    badgeicon: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

@@ -294,6 +294,8 @@ export interface ServicesMethodology extends Struct.ComponentSchema {
     displayName: 'methodology';
   };
   attributes: {
+    icon: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     Order: Schema.Attribute.Integer;
     OrderSubtitleText: Schema.Attribute.Text;
     OrderTitleText: Schema.Attribute.String;
@@ -342,6 +344,7 @@ export interface ServicesResultsStat extends Struct.ComponentSchema {
   };
   attributes: {
     description: Schema.Attribute.Text;
+    icon: Schema.Attribute.String;
     percentage: Schema.Attribute.String;
   };
 }
@@ -353,6 +356,7 @@ export interface ServicesServiceFeatures extends Struct.ComponentSchema {
   };
   attributes: {
     description: Schema.Attribute.Text;
+    icon: Schema.Attribute.String;
     title: Schema.Attribute.String;
   };
 }
@@ -387,6 +391,7 @@ export interface ServicesWhatsIncludeFeatures extends Struct.ComponentSchema {
   };
   attributes: {
     description: Schema.Attribute.Text;
+    icon: Schema.Attribute.String;
     label: Schema.Attribute.String;
     stat: Schema.Attribute.String;
   };
@@ -402,6 +407,7 @@ export interface ServicesWhyMatters extends Struct.ComponentSchema {
     ans2: Schema.Attribute.String;
     ans3: Schema.Attribute.String;
     ans4: Schema.Attribute.String;
+    icon: Schema.Attribute.String;
     subtitle: Schema.Attribute.Text;
     title: Schema.Attribute.String;
   };
