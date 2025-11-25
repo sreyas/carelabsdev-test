@@ -56,7 +56,17 @@ const Header = () => {
       useEffect(() => {
         fetchNavbarData();
       }, []);
-if (!navbarData) return null;
+if (!navbarData) {
+  return (
+    <div className="w-full bg-gray-100 flex items-center justify-center h-[80px] gap-3 p-2">
+      <div className="w-[10%] h-full rounded-md bg-gray-300 animate-pulse"></div>
+      <div className="w-[60%] h-full rounded-md bg-gray-300 animate-pulse"></div>
+      <div className="w-[20%] h-full rounded-md bg-gray-300 animate-pulse"></div>
+    </div>
+  );
+}
+
+
   return (
       <>
         <div className="headCvr w-full h-[80px] flex items-center justify-center navbar-shadow fixed z-50 header-background">
@@ -85,6 +95,7 @@ if (!navbarData) return null;
               </ul>
 
             </div>
+            
 
             <div className="nav-Container h-full flex items-center gap-5 sm:gap-5 lg:justify-center lg:w-[40%] 2xl:justify-end 2xl:pe-[5%]">
                     <button

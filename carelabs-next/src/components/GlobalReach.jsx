@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import client from '@/lib/appollo-client';
 import { GET_WORLD_IMPACT } from '@/lib/api-Collection';
-import { Zap } from 'lucide-react';
+import { Globe, Zap } from 'lucide-react';
 
 
 const GlobalReach = () => {
@@ -37,12 +37,15 @@ const GlobalReach = () => {
          
     <div className="text w-full h-auto flex flex-col items-center justify-center py-10">
     
-    <div className="w-11/12 sm:w-4/5 md:w-3/5 lg:w-[80%] 2xl:w-[65%] bg-white flex items-center justify-center text-center flex-col gap-5 p-4">
+    <div 
+     data-aos="fade-up"
+     data-aos-anchor-placement="top-center"
+    className="w-11/12 sm:w-4/5 md:w-3/5 lg:w-[80%]  2xl:w-[65%] bg-white flex items-center justify-center text-center flex-col gap-5 p-4">
       
       {/* Heading */}
       <h1 className="text-xs flex items-center justify-center gap-2 sm:text-sm md:text-base px-3 py-1 rounded-full border border-[#157de5] poppins-font">
         <div className="text-[#157de5]">
-              <Zap size={18} />
+              <Globe size={18} />
           </div>
 
         {/* Global Reach */}
@@ -51,7 +54,7 @@ const GlobalReach = () => {
       
       
       {/* Title */}
-      <p className="gradient-text font-bold text-3xl sm:text-4xl md:text-5xl lg:text-[60px] montserrat-font "
+      <p className="gradient-text font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-[60px] montserrat-font "
       dangerouslySetInnerHTML={{ __html: impactData.title }}
       >
         {/* Worldwide Impact */}
@@ -71,13 +74,19 @@ const GlobalReach = () => {
 
 
         <div className="cover w-full flex  item-center justify-center p-5 2xl:mb-10">
-            <div className="w-[90%] flex flex-col items-center justify-center rounded-2xl  2xl:w-[65%] p-4 navbar-shadow ">
+            <div 
+            data-aos="fade-up"
+     data-aos-anchor-placement="top-center"
+            className="w-[90%] flex flex-col items-center justify-center rounded-2xl md:w-[80%] lg:w-[85%] 2xl:w-[65%] p-4 navbar-shadow ">
      <div className="card-block grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4  w-[95%] gap-5 sm:gap-4 justify-items-center sm:p-5">
 
               
 
                 {impactData.projectsStat?.map((item, index) => (
-              <div key={index} className="cards w-[90%] sm:w-[95%] flex flex-col items-center justify-center gap-2 p-3 rounded-2xl card-shadow">
+              <div
+              data-aos="fade-up"
+     data-aos-anchor-placement="top-center"
+              key={index} className="cards w-[90%] sm:w-[95%] flex flex-col items-center justify-center gap-2 p-3 rounded-2xl card-shadow">
                 <p className='text-[36px] montserrat-font  font-bold'>{item.count}</p>
                 <p className='poppins-font text-[14px]'>{item.title}</p>
                 <hr className='w-[90%]' />

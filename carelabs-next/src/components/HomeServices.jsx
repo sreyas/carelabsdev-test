@@ -24,7 +24,8 @@ const fetchGlobalReach = async () => {
 
  useEffect(()=> {
   fetchGlobalReach()
- },[])
+ },[]);
+ 
 
  if (!globalReachData) return null;
 
@@ -34,9 +35,12 @@ const fetchGlobalReach = async () => {
 
   return (
 <div className="">
-         <div className="text w-full h-auto flex flex-col items-center justify-center py-10">
+         <div className="text w-full h-auto flex flex-col items-center justify-center py-8">
     
-    <div className="w-11/12 sm:w-4/5 md:w-3/5 lg:w-[80%] 2xl:w-[65%] bg-white flex items-center justify-center text-center flex-col gap-5 p-4 not-odd:">
+    <div
+    data-aos="fade-up"
+     data-aos-anchor-placement="top-center"
+    className="w-11/12 sm:w-4/5 md:w-3/5 lg:w-[80%] 2xl:w-[65%] bg-white flex items-center justify-center text-center flex-col gap-5 p-4 not-odd:">
       
       {/* Heading */}
       <h1 className="text-xs flex items-center justify-center gap-2 sm:text-sm md:text-base px-3 py-1 rounded-full border border-[#157de5] poppins-font">
@@ -49,7 +53,7 @@ const fetchGlobalReach = async () => {
       </h1>
       
       {/* Title */}
-      <p className="gradient-text  text-3xl sm:text-4xl md:text-5xl lg:text-[60px] title-Text">
+      <p className="gradient-text  text-3xl sm:text-4xl md:text-5xl lg:text-[60px] font-semibold">
        {/* Comprehensive Power Solutions */}
        {globalReachData.title}
       </p>
@@ -65,15 +69,22 @@ const fetchGlobalReach = async () => {
   </div>
 
       <div className="w-full min-h-screen  py-8 lg:py-0 ">
-      <div className="w-full h-full lg:h-screen flex items-center justify-center px-4">
-        <div className="flex flex-col lg:flex-row xl:w-full 2xl:w-[65%] lg:h-[80%] gap-4 lg:gap-0">
+      <div className="w-full h-full xl:h-screen flex items-center justify-center px-4">
+        <div
+         
+        className="flex flex-col justify-center items-center xl:flex-row xl:w-[85%] 2xl:w-[65%] xl:h-[80%] gap-4 lg:gap-0">
 
             {/* Service Cards Column */}
-            <div className="w-full lg:w-[35%] h-full flex flex-col justify-start items-center p-3 gap-3 lg:gap-5 overflow-y-auto">
+            <div 
+            data-aos="fade-up"
+     data-aos-anchor-placement="top-center"
+            className="w-full lg:w-[85%] xl:w-[40%] h-full flex flex-col justify-start items-center p-3 gap-3 lg:gap-5 overflow-y-auto">
 
 
                 {items.map((item, index) => (
                 <div
+
+
                   key={index}
                   onClick={() => setActiveServiceIndex(index)}
                   className={`w-full sm:w-[85%] lg:w-full min-h-[70px] lg:h-[80px] rounded-2xl  p-4 lg:p-5 flex justify-start gap-3 shadow-md hover:shadow-lg transition-shadow cursor-pointer ${
@@ -101,11 +112,17 @@ const fetchGlobalReach = async () => {
             </div>
 
             {/* Detail Panel */}
-            <div className="w-full lg:w-[65%] h-auto lg:h-full flex p-3 justify-center">
-                <div className="w-full h-full rounded-3xl bg-white shadow-lg overflow-hidden flex flex-col">
+            <div 
+             
+            className="w-full md:w-[85%] lg:w-[85%] xl:w-[60%] h-auto lg:h-full flex p-3 justify-center">
+                <div 
+                 data-aos="fade-up"
+     data-aos-anchor-placement="top-center"
+                className="w-full h-full rounded-3xl bg-white shadow-lg overflow-hidden flex flex-col">
                     
                     {/* Hero Section */}
                     <div
+
                         className="relative w-full h-[250px] sm:h-[300px] lg:h-[40%] bg-cover bg-center flex flex-col justify-end p-5 sm:p-6 lg:p-8 gap-3"
                         // style={{ backgroundImage: `url('https://proper-hug-7f40206151.media.strapiapp.com/service2_9d7db5d882.jpg')` }}
                         style={{ backgroundImage: `url('${activeItem?.Image?.url}')` }}
@@ -136,10 +153,6 @@ const fetchGlobalReach = async () => {
                         <div>
                             <h4 className="mb-3 font-semibold text-[14px] primary-color">KEY FEATURES</h4>
                             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2  text-sm sm:text-base">
-                                {/* <li>Demand Response</li>
-                                <li>Load Shifting</li>
-                                <li>Energy Storage</li>
-                                <li>Peak Management</li> */}
                                 {activeItem?.serviceFeatures?.map((feat, idx) => (
                                   <div className="flex items-center  gap-2 ">
                                     <CircleCheckBig size={20} className='text-green-300' />
@@ -154,18 +167,7 @@ const fetchGlobalReach = async () => {
                         <div>
                             <p className="mb-3 font-semibold text-[14px] primary-color">PERFORMANCE METRICS</p>
                             <div className="flex flex-col sm:flex-row items-center justify-between sm:justify-evenly gap-4 sm:gap-2">
-                                {/* <div className="flex items-center justify-center flex-col text-center">
-                                    <p className="text-xl sm:text-2xl font-bold">35% Savings</p>
-                                    <p className="text-xs sm:text-sm text-gray-600">Energy Costs Reduced</p>
-                                </div>
-                                <div className="flex items-center justify-center flex-col text-center">
-                                    <p className="text-xl sm:text-2xl font-bold">99% Uptime</p>
-                                    <p className="text-xs sm:text-sm text-gray-600">System Reliability</p>
-                                </div>
-                                <div className="flex items-center justify-center flex-col text-center">
-                                    <p className="text-xl sm:text-2xl font-bold">50% Faster</p>
-                                    <p className="text-xs sm:text-sm text-gray-600">Response Time</p>
-                                </div> */}
+
                                 {activeItem?.performance?.map((p, idx) => (
                                  <div key={idx} className="flex items-center justify-center flex-col text-center">
                                  <p className="text-xl sm:text-2xl font-bold">{p.stats}</p>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { GET_TESTIMONIALS } from '@/lib/api-Collection';
 import client from '@/lib/appollo-client';
+import { Quote } from 'lucide-react';
 
 
 const HomeTestimonials = () => {
@@ -66,23 +67,30 @@ const HomeTestimonials = () => {
     <div>
         <div className="text w-full h-auto flex flex-col items-center justify-center py-10">
 
-    <div className="w-11/12 sm:w-4/5 md:w-3/5 lg:w-1/2 bg-white flex items-center justify-center text-center flex-col gap-5 p-4">
+    <div  
+    data-aos="fade-up"
+     data-aos-anchor-placement="top-center"
+    className="w-11/12 sm:w-4/5 xl:w-[80%] flex items-center justify-center text-center flex-col gap-5 p-4">
     
     {/* Heading */}
-    <h1 className="text-xs sm:text-sm md:text-base px-6 py-2 rounded-full border border-blue-500">
-        {/* Client Testimonials */}
-         {testimonialData.badge}
-    </h1>
+    <h1 className="text-xs flex items-center justify-center gap-2 sm:text-sm md:text-base px-3 py-1 rounded-full border border-[#157de5] poppins-font">
+        <div className="text-[#157de5]">
+              < Quote size={18} />
+          </div>
+
+        {/* Global Reach */}
+        {testimonialData.badge}
+      </h1>
     
     {/* Title */}
-    <p className="gradient-text font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl"
+    <p className="gradient-text w-full py-4  font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-[60px] montserrat-font"
        dangerouslySetInnerHTML={{ __html: testimonialData.title }}
     >
         {/* {testimonialData.title} */}
     </p>
     
     {/* Description */}
-    <p className="px-4 sm:px-8 text-base sm:text-lg md:text-xl text-[#65758B]">
+    <p className="px-4 sm:px-8 text-base sm:text-lg md:text-xl text-[#65758B] poppins-font">
         {/* See what our clients say about working with Carelabs for their electrical safety and compliance needs. */}
         {testimonialData.description}
     </p>
@@ -92,7 +100,10 @@ const HomeTestimonials = () => {
         </div>
 
      <div className="w-full flex justify-center py-16">
-      <div className="bg-white rounded-3xl card-shadow  w-[90%] md:w-[55%] p-20 text-center relative">
+      <div 
+       data-aos="fade-up"
+     data-aos-anchor-placement="top-center"
+      className="bg-white rounded-3xl card-shadow  w-[90%] md:w-[80%] 2xl:w-[65%] p-20 lg:p-10 2xl:p-20 text-center relative">
         
         {/* Quote Icon */}
         <div className="flex justify-center mb-6">
@@ -102,7 +113,7 @@ const HomeTestimonials = () => {
         </div>
 
         {/* Testimonial Text */}
-        <p className="text-xl   md:text-2xl 2xl:px-0 text-gray-700 leading-relaxed ">
+        <p className="text-xl   md:text-2xl 2xl:px-0 text-gray-700 leading-relaxed poppins-font ">
           {/* "{testimonials[current].quote}" */}
           "{testimonials[current]?.feedback}"
         </p>
@@ -116,11 +127,11 @@ const HomeTestimonials = () => {
         </div> */}
         
         <div className="mt-6">
-            <p className="font-bold text-lg">{testimonials[current]?.name}</p>
-            <p className="text-sm text-gray-500">
+            <p className="font-bold text-lg montserrat-font">{testimonials[current]?.name}</p>
+            <p className="text-[14px] text-gray-500 poppins-font">
               {testimonials[current]?.position}
             </p>
-            <p className="text-sm text-blue-600">
+            <p className="text-[12px] text-blue-600 poppins-font">
               {testimonials[current]?.company}
             </p>
           </div>

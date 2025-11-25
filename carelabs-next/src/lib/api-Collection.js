@@ -264,6 +264,7 @@ query {
     WhatsIncludedtitle
     WhatsIncludedsubtitle
     whats_include_features {
+      icon
       label
       description
       stat
@@ -328,7 +329,6 @@ query {
 export const GET_SINGLE_SERVICE_BY_SLUG = gql`
   query ($slug: String!) {
     services(filters: { slug: { eq: $slug } }) {
-      id
       slug
       badge
       mainheading1
@@ -340,87 +340,92 @@ export const GET_SINGLE_SERVICE_BY_SLUG = gql`
       mainbuttonlink2
       mainbutton3
       mainbuttonlink3
-      mainimage {
-        url
-      }
+      mainimage { url }
       service_stats {
         label
         number
       }
-      service_features {
-        title
-        description
+        service_features {
+      title
+      description
+    }
+    Why_Matters {
+      title
+      subtitle
+      ans1
+      ans2
+      ans3
+      ans4
+    }
+    WhatsIncludedtitle
+    WhatsIncludedsubtitle
+    whats_include_features {
+      icon
+      label
+      description
+      stat
+    }
+    methodsTitle
+    methodsSubtitle
+    methodology {
+      Order
+      OrderTitleText
+      OrderSubtitleText
+      image {
+        url
       }
-      Why_Matters {
-        title
-        subtitle
-        ans1
-        ans2
-        ans3
-        ans4
-      }
-      WhatsIncludedtitle
-      WhatsIncludedsubtitle
-      whats_include_features {
-        label
-        description
-        stat
-      }
-      methodsTitle
-      methodsSubtitle
-      methodology {
-        Order
-        OrderTitleText
-        OrderSubtitleText
-      }
-      sectorBenefitsTitle
-      sectorBenefitsSubtitle
-      sectorBenefits {
-        icon
-        label
-        list1
-        list2
-        list3
-      }
-      resultsTitle
-      resultsSubtitle
-      resultsStat {
-        percentage
-        description
-      }
-      resultName {
-        icon
-        label
-        description
-      }
-      readyTitle
-      readySubtitle
-      readyButton1
-      readyButton1Link
-      readyButton2
-      readyButton2Link
-      relatedTitle
-      relatedSubtitle
-      relatedServices {
-        icon
-        label
-        description
-      }
-      faqTitle
-      faqSubtitle
-      questions {
-        questionName
-        questionAns
-      }
-      technicalTitle
-      technicalItems {
-        icon
-        label
-        format
-      }
+    }
+    sectorBenefitsTitle
+    sectorBenefitsSubtitle
+    sectorBenefits {
+      icon
+      label
+      list1
+      list2
+      list3
+    }
+    resultsTitle
+    resultsSubtitle
+    resultsStat {
+      percentage
+      description
+    }
+    resultName {
+      icon
+      label
+      description
+    }
+    readyTitle
+    readySubtitle
+    readyButton1
+    readyButton1Link
+    readyButton2
+    readyButton2Link
+    relatedTitle
+    relatedSubtitle
+    relatedServices {
+      icon
+      label
+      description
+    }
+    faqTitle
+    faqSubtitle
+    questions {
+      questionName
+      questionAns
+    }
+    technicalTitle
+    technicalItems {
+      icon
+      label
+      format
+     }
     }
   }
 `;
+
+
+
 
 
 

@@ -64,7 +64,7 @@ if (!homeData) {
       <div className="w-3/4 h-8 bg-gray-300 rounded-lg"></div>
 
       {/* Inner content / stats placeholders */}
-      <div className="w-full flex flex-col sm:flex-row items-center justify-between gap-4 mt-4">
+      <div className="w-full flex flex-col sm:flex-row items-center  justify-between gap-4 mt-4">
         <div className="w-full sm:w-[30%] h-24 bg-gray-300 rounded-lg"></div>
         <div className="w-full sm:w-[30%] h-24 bg-gray-300 rounded-lg"></div>
          <div className="w-full sm:w-[30%] h-24 bg-gray-300 rounded-lg"></div>
@@ -86,7 +86,7 @@ if (!homeData) {
   <div 
   data-aos="fade-up"
   data-aos-duration="2000"
-  className=" flex flex-col items-center justify-center border boreder-[#0f172914] w-11/12 md:w-4/5 lg:w-3/5 md:h-[85%] xl:w-[80%] xl:mt-16 2xl:mt-0  2xl:w-[65%] mt-10 md:mt-2 glass-panel rounded-3xl p-4 md:p-6">
+  className=" flex flex-col items-center justify-center border boreder-[#0f172914] w-11/12 md:w-4/5 lg:w-[85%] md:h-[85%] xl:w-[80%] lg:mt-5  xl:mt-16 2xl:mt-0  2xl:w-[65%] mt-10 md:mt-2 glass-panel rounded-3xl p-4 md:p-6">
     <div className="w-full flex flex-col items-center justify-evenly space-y-6 md:space-y-8">
 
       {/* Heading Button */}
