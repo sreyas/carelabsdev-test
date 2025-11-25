@@ -372,7 +372,7 @@ const Page = () => {
                       </li>
 
 
-      <li>
+                        <li>
                         <h4 className="font-semibold mb-2 text-lg montserrat-font">Start with a clear safety and reliability question</h4>
                         <p className="text-gray-700 poppins-font ">
                           For example: "Which LV and MV panels pose the highest thermal risk in the next 12 months?" or 
@@ -401,7 +401,7 @@ const Page = () => {
                       <li>
                         <h4 className="font-semibold text-lg mb-2 montserrat-font">Start with a clear safety and reliability question</h4>
                         <p className="text-gray-700 poppins-font ">
-                          For example: "Which LV and MV panels pose the highest thermal risk in the next 12 months?" or 
+                          For example: "Which Live and Mv panels pose the highest thermal risk in the next 12 months?" or 
                           "Which critical feeders are most likely to trip under fault conditions?"
                         </p>
                       </li>
