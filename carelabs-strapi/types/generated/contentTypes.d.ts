@@ -874,6 +874,7 @@ export interface ApiInsightblogInsightblog extends Struct.CollectionTypeSchema {
     author: Schema.Attribute.String;
     authoricon: Schema.Attribute.String;
     badge: Schema.Attribute.String;
+    badgeicon: Schema.Attribute.String;
     button1icon: Schema.Attribute.String;
     button1link: Schema.Attribute.String;
     button1text: Schema.Attribute.String;
@@ -910,6 +911,7 @@ export interface ApiInsightblogInsightblog extends Struct.CollectionTypeSchema {
         'insights.the-road-ahead',
       ]
     >;
+    slug: Schema.Attribute.String;
     subscribebutton: Schema.Attribute.String;
     subscribebuttonlink: Schema.Attribute.String;
     time: Schema.Attribute.String;

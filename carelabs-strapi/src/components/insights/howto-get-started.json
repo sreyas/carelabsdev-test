@@ -23,6 +23,9 @@
     },
     "imagetext": {
       "type": "text"
+    },
+    "slug": {
+      "type": "string"
     }
   },
   "config": {}

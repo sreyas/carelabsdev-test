@@ -109,6 +109,7 @@ export interface InsightsChallenges extends Struct.ComponentSchema {
     >;
     conclusion: Schema.Attribute.Text;
     introduction: Schema.Attribute.Text;
+    slug: Schema.Attribute.String;
     title: Schema.Attribute.RichText;
   };
 }
@@ -133,6 +134,7 @@ export interface InsightsHowtoGetStarted extends Struct.ComponentSchema {
     content: Schema.Attribute.RichText;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     imagetext: Schema.Attribute.Text;
+    slug: Schema.Attribute.String;
     title: Schema.Attribute.RichText;
   };
 }
@@ -149,6 +151,7 @@ export interface InsightsKeyBuildingBlocks extends Struct.ComponentSchema {
       'insights.key-building-blocks-items',
       true
     >;
+    slug: Schema.Attribute.String;
     title: Schema.Attribute.RichText;
   };
 }
@@ -176,6 +179,7 @@ export interface InsightsRealWorld extends Struct.ComponentSchema {
       'insights.real-world-items',
       true
     >;
+    slug: Schema.Attribute.String;
     title: Schema.Attribute.RichText;
   };
 }
@@ -201,6 +205,7 @@ export interface InsightsTheRoadAhead extends Struct.ComponentSchema {
   attributes: {
     conclusion: Schema.Attribute.Text;
     content: Schema.Attribute.RichText;
+    slug: Schema.Attribute.String;
     title: Schema.Attribute.RichText;
   };
 }
@@ -215,6 +220,7 @@ export interface InsightsWhatAiPoweredPredictive
     content: Schema.Attribute.RichText;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     imagetext: Schema.Attribute.Text;
+    slug: Schema.Attribute.String;
     title: Schema.Attribute.String;
   };
 }
@@ -238,6 +244,7 @@ export interface InsightsWhyTraditionalMaintenance
   };
   attributes: {
     introduction: Schema.Attribute.RichText;
+    slug: Schema.Attribute.String;
     title: Schema.Attribute.RichText;
     WhyTraditionalItems: Schema.Attribute.Component<
       'insights.why-traditional-items',

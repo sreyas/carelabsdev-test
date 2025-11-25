@@ -14,6 +14,12 @@
     "badge": {
       "type": "string"
     },
+    "badgeicon": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "string"
+    },
     "mainheading": {
       "type": "richtext"
     },
