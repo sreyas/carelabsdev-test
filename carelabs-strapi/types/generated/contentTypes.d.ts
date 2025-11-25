@@ -856,6 +856,49 @@ export interface ApiInsightInsight extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiInsightblogInsightblog extends Struct.CollectionTypeSchema {
+  collectionName: 'insightblogs';
+  info: {
+    displayName: 'Insightblog';
+    pluralName: 'insightblogs';
+    singularName: 'insightblog';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    articleSection: Schema.Attribute.Component<
+      'insights.article-section',
+      false
+    >;
+    author: Schema.Attribute.String;
+    authoricon: Schema.Attribute.String;
+    badge: Schema.Attribute.String;
+    category: Schema.Attribute.Component<'insights.category', true>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    introcontent: Schema.Attribute.Text;
+    introtitle: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::insightblog.insightblog'
+    > &
+      Schema.Attribute.Private;
+    mainheading: Schema.Attribute.RichText;
+    publishedAt: Schema.Attribute.DateTime;
+    publishedicon: Schema.Attribute.String;
+    publishedOn: Schema.Attribute.String;
+    time: Schema.Attribute.String;
+    timeicon: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiNavbarNavbar extends Struct.SingleTypeSchema {
   collectionName: 'navbars';
   info: {
@@ -1655,6 +1698,7 @@ declare module '@strapi/strapi' {
       'api::home-service-item.home-service-item': ApiHomeServiceItemHomeServiceItem;
       'api::home.home': ApiHomeHome;
       'api::insight.insight': ApiInsightInsight;
+      'api::insightblog.insightblog': ApiInsightblogInsightblog;
       'api::navbar.navbar': ApiNavbarNavbar;
       'api::region.region': ApiRegionRegion;
       'api::service-page.service-page': ApiServicePageServicePage;

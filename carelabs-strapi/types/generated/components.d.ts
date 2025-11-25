@@ -64,6 +64,71 @@ export interface FooterSocialLink extends Struct.ComponentSchema {
   };
 }
 
+export interface InsightsArticleItems extends Struct.ComponentSchema {
+  collectionName: 'components_insights_article_items';
+  info: {
+    displayName: 'article-items';
+  };
+  attributes: {
+    order: Schema.Attribute.Integer;
+    slug: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface InsightsArticleSection extends Struct.ComponentSchema {
+  collectionName: 'components_insights_article_sections';
+  info: {
+    displayName: 'article-section';
+  };
+  attributes: {
+    articleItems: Schema.Attribute.Component<'insights.article-items', true>;
+    title: Schema.Attribute.String;
+    whyTraditionalMaintenance: Schema.Attribute.Component<
+      'insights.why-traditional-maintenance',
+      false
+    >;
+  };
+}
+
+export interface InsightsCategory extends Struct.ComponentSchema {
+  collectionName: 'components_insights_categories';
+  info: {
+    displayName: 'category';
+  };
+  attributes: {
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface InsightsWhyTraditionalItems extends Struct.ComponentSchema {
+  collectionName: 'components_insights_why_traditional_items';
+  info: {
+    displayName: 'WhyTraditionalItems';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface InsightsWhyTraditionalMaintenance
+  extends Struct.ComponentSchema {
+  collectionName: 'components_insights_why_traditional_maintenances';
+  info: {
+    displayName: 'whyTraditionalMaintenance';
+  };
+  attributes: {
+    conclusion: Schema.Attribute.Text;
+    introduction: Schema.Attribute.RichText;
+    slug: Schema.Attribute.String;
+    WhyTraditionalItems: Schema.Attribute.Component<
+      'insights.why-traditional-items',
+      true
+    >;
+  };
+}
+
 export interface NavbarNavbarItem extends Struct.ComponentSchema {
   collectionName: 'components_navbar_navbar_items';
   info: {
@@ -333,6 +398,11 @@ declare module '@strapi/strapi' {
       'footer.footer-menu': FooterFooterMenu;
       'footer.menu-link': FooterMenuLink;
       'footer.social-link': FooterSocialLink;
+      'insights.article-items': InsightsArticleItems;
+      'insights.article-section': InsightsArticleSection;
+      'insights.category': InsightsCategory;
+      'insights.why-traditional-items': InsightsWhyTraditionalItems;
+      'insights.why-traditional-maintenance': InsightsWhyTraditionalMaintenance;
       'navbar.navbar-item': NavbarNavbarItem;
       'new.new-item': NewNewItem;
       'services.benefit-sector': ServicesBenefitSector;

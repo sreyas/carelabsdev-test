@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_insights_article_sections",
+  "info": {
+    "displayName": "article-section"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "articleItems": {
+      "type": "component",
+      "component": "insights.article-items",
+      "repeatable": true
+    },
+    "whyTraditionalMaintenance": {
+      "type": "component",
+      "component": "insights.why-traditional-maintenance",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

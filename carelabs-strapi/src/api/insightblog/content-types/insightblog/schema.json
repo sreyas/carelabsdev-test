@@ -1,0 +1,58 @@
+{
+  "kind": "collectionType",
+  "collectionName": "insightblogs",
+  "info": {
+    "singularName": "insightblog",
+    "pluralName": "insightblogs",
+    "displayName": "Insightblog"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "badge": {
+      "type": "string"
+    },
+    "mainheading": {
+      "type": "richtext"
+    },
+    "description": {
+      "type": "text"
+    },
+    "authoricon": {
+      "type": "string"
+    },
+    "author": {
+      "type": "string"
+    },
+    "publishedicon": {
+      "type": "string"
+    },
+    "publishedOn": {
+      "type": "string"
+    },
+    "timeicon": {
+      "type": "string"
+    },
+    "time": {
+      "type": "string"
+    },
+    "category": {
+      "type": "component",
+      "component": "insights.category",
+      "repeatable": true
+    },
+    "introtitle": {
+      "type": "string"
+    },
+    "introcontent": {
+      "type": "text"
+    },
+    "articleSection": {
+      "type": "component",
+      "component": "insights.article-section",
+      "repeatable": false
+    }
+  }
+}
