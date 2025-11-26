@@ -154,7 +154,8 @@ const fetchGlobalReach = async () => {
                             <h4 className="mb-3 font-semibold text-[14px] primary-color">KEY FEATURES</h4>
                             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2  text-sm sm:text-base">
                                 {activeItem?.serviceFeatures?.map((feat, idx) => (
-                                  <div className="flex items-center  gap-2 ">
+                                  <div key={idx}
+                                  className="flex items-center  gap-2 ">
                                     <CircleCheckBig size={20} className='text-green-300' />
                                     <li key={idx} className='poppins-font text-[16px] font-medium'> {feat.name}</li>
                                   </div>

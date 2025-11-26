@@ -289,15 +289,7 @@ if (!navbarData) {
                       {navbarData.items[activeIndex].submenus[selectedSubmenuIndex].Button}
                       </Link> */}
 
-                      {(() => {
-                      const submenu = navbarData.items[activeIndex].submenus[selectedSubmenuIndex];
-                       console.log // index 2 is Insights/Blog
-
-                      const finalURL = isBlog 
-                      ? `/blogs/${submenu.slug}`
-                      : `/services/${submenu.slug}`;
-
-                      return (
+                    
                       <Link
                         href={finalURL}
                         className="group relative inline-flex items-center justify-center bg-[#157de5] text-white text-[14px] font-semibold py-2 px-4 rounded-full w-[45%] text-center transition-all duration-300 ease-in-out transform hover:scale-105 hover:bg-gradient-to-r hover:from-[#157de5] hover:to-[#ff7038] hover:shadow-[0_20px_30px_rgba(0,0,0,0.3)]"
@@ -307,8 +299,7 @@ if (!navbarData) {
                           <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
                         </span>
                       </Link>
-                      );
-                      })()}
+                    
 
                     </div>
                   
