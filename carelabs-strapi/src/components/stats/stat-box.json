@@ -5,11 +5,11 @@
   },
   "options": {},
   "attributes": {
-    "number": {
-      "type": "string"
-    },
     "label": {
       "type": "string"
+    },
+    "number": {
+      "type": "richtext"
     }
   },
   "config": {}

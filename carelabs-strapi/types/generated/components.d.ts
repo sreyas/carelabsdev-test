@@ -504,7 +504,7 @@ export interface StatsStatBox extends Struct.ComponentSchema {
   };
   attributes: {
     label: Schema.Attribute.String;
-    number: Schema.Attribute.String;
+    number: Schema.Attribute.RichText;
   };
 }
 
