@@ -80,46 +80,46 @@ if (!navbarData) {
             </div>
 
             <div className="menuList hidden lg:flex lg:w-[50%] xl:w-[38%] lg:justify-center h-full">
-                <ul className='flex text-[14px] font-medium justify-evenly items-center gap-6 w-[90%] p-3'>
+                <ul className='flex text-[14px] font-medium justify-evenly items-center gap-6 w-[99%] p-3'>
                 {navbarData.items.map((item, index) => (
-                  <li
-                    key={item.id}
-                  onMouseEnter={() => {
-                      setActiveIndex(index);
-                      setSelectedSubmenuIndex(0); 
-                    }}
-
-                    className="cursor-pointer"
-                  >
-                    {item.label}
-                  </li>
-
                   // <li
                   //   key={item.id}
-                  //   className="relative cursor-pointer group hover:text-[#1f7fdb] transition-colors duration-300"
-                  //   onMouseEnter={() => {
-                  //     if (item.submenus?.length > 0) {
-                  //       setActiveIndex(index);
-                  //       setSelectedSubmenuIndex(0);
-                  //     }
+                  // onMouseEnter={() => {
+                  //     setActiveIndex(index);
+                  //     setSelectedSubmenuIndex(0); 
                   //   }}
-                  //   onClick={() => {
-                  //     if (!item.submenus || item.submenus.length === 0) {
-                  //       window.location.href = item.slug || "/blogs";
-                  //     }
-                  //   }}
+
+                  //   className="cursor-pointer"
                   // >
                   //   {item.label}
-
-                  //   {/* Only show chevron for first 3 items */}
-                  //   {/* {index < 3 && item.submenus?.length > 0 && (
-                  //     <ChevronDown
-                  //       className="w-4 h-4 transition-transform duration-300 group-hover:-rotate-180"
-                  //     />
-                  //   )} */}
-
-                  //   <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#1f7fdb] transition-all duration-300 group-hover:w-full"></span>
                   // </li>
+
+                  <li
+                    key={item.id}
+                    className="relative cursor-pointer group hover:text-[#1f7fdb] transition-colors duration-300"
+                    onMouseEnter={() => {
+                      if (item.submenus?.length > 0) {
+                        setActiveIndex(index);
+                        setSelectedSubmenuIndex(0);
+                      }
+                    }}
+                    onClick={() => {
+                      if (!item.submenus || item.submenus.length === 0) {
+                        window.location.href = item.slug || "/blogs";
+                      }
+                    }}
+                  >
+                    {item.label}
+
+                    {/* Only show chevron for first 3 items */}
+                    {/* {index < 3 && item.submenus?.length > 0 && (
+                      <ChevronDown
+                        className="w-4 h-4 transition-transform duration-300 group-hover:-rotate-180"
+                      />
+                    )} */}
+
+                    <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#1f7fdb] transition-all duration-300 group-hover:w-full"></span>
+                  </li>
                 ))}
               </ul>
 
@@ -237,7 +237,24 @@ if (!navbarData) {
                         </a>
                       </button>
 
+                      {/* {(() => {
+  const selectedItem = navbarData.items[activeIndex];
+  const hasSubmenus = selectedItem?.submenus?.length > 0;
 
+  const finalURL = hasSubmenus
+    ? `/services/${selectedItem.submenus[selectedSubmenuIndex].slug}`
+    : selectedItem?.slug || "/blogs";
+
+  const finalText = hasSubmenus
+    ? selectedItem.submenus[selectedSubmenuIndex].Button
+    : selectedItem?.buttonText || "Read More";
+
+  return (
+    <button className="bg-blue-500 text-white py-2 px-4 rounded-full w-[40%]">
+      <a href={finalURL}>{finalText}</a>
+    </button>
+  );
+})()} */}
 
                     </div>
                   
