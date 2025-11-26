@@ -504,7 +504,7 @@ export interface StatsStatBox extends Struct.ComponentSchema {
   };
   attributes: {
     label: Schema.Attribute.String;
-    number: Schema.Attribute.RichText;
+    number: Schema.Attribute.String;
   };
 }
 
@@ -529,6 +529,7 @@ export interface SubmenusServiceItem extends Struct.ComponentSchema {
     Button: Schema.Attribute.String;
     featureheading: Schema.Attribute.String;
     features: Schema.Attribute.Component<'features.feature-item', true>;
+    icon: Schema.Attribute.String;
     slug: Schema.Attribute.String;
     subtitle: Schema.Attribute.String;
     title: Schema.Attribute.String;

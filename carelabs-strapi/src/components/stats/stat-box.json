@@ -9,7 +9,7 @@
       "type": "string"
     },
     "number": {
-      "type": "richtext"
+      "type": "string"
     }
   },
   "config": {}

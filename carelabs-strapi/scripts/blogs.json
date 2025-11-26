@@ -1,58 +1,144 @@
 [
-    {
-        "title": "What is Harmonic Study and Analysis and Why is it Done",
-        "slug": "what-how-harmonic-study-analysis-done",
-        "link": "https://carelabz.com/what-how-harmonic-study-analysis-done/",
-        "pubDate": "2017-12-27T11:06:22.000Z",
-        "category": "Blog",
-        "description": "The current significant growth in electronic devices focusing providing our installations has given rise to a significant change in the last few years on the type of loads connected to the electrical distribution system.",
-        "content": "The current significant growth in electronic devices focusing providing our installations has given rise to a significant change in the last few years on the type of loads connected to the electrical distribution system. Not so long ago the only concern there was when using electricity at home, in establishments and productive centres was simply the voltage, without giving a thought to anything other than whether the equipment and devices were working or not.\n\nThese devices, present equipped electronics which in some way or another provide increased performance in the tasks and productive processes we carry out.\n\nEveryone uses computers for their personal use, for the process, control of any production system with variable speed drives, air conditioning units, lifts which adjust slowly on approaching the destination floor etc. These devices equipped with promoters, modulators and distort the current wave form for them to work properly.\n\n<b>Technical costs </b>are those which bring about a loss of performance on our installation.\n<ul>\n \t<li>Loss of capacity on energy distribution line</li>\n \t<li>Transformer overload</li>\n \t<li>Conductor overload</li>\n \t<li>Voltage drop</li>\n \t<li>Derating of transformers</li>\n \t<li>Losses on lines and machines due to the Joule's effect</li>\n \t<li>Magnetic losses on electrical machines</li>\n</ul>\nNormally, all technical cost turn into economic costs. Here is where importance of control in our installation.\n\n<b>Economic costs </b>are those which we can economically quantify, although in some cases it is difficult. These costs can  divide into <b>hidden cost </b>and <b>visible costs</b>.\n<ul>\n \t<li>Increased electricity consumption</li>\n \t<li>Electricity consumption peaks</li>\n \t<li>Surcharge or payment on reactive energy</li>\n \t<li>Distribution losses</li>\n \t<li>Power and energy loss (due to the Joule effect and magnets)</li>\n \t<li>Enlargement of the installations</li>\n \t<li>Stoppage of productive process</li>\n</ul>\nAll these phenomena can find to a lesser or greater extent depending on the installation itself and the loads connected.\n\n<strong>The main effects of the voltage and current harmonics in a power system can cited as:</strong>\n<ul>\n \t<li>The chance for elaboration of some harmonics as a result of serial and parallel resonance.</li>\n \t<li>Performance reduction in generation, transport and energy usage systems.</li>\n \t<li>The aging of the grid insulation peripherals and as issue, energy reduction.</li>\n \t<li>Malfunctioning of the system or some of its elements.</li>\n</ul>\nHowever to understand these effects better we must know the nature of harmonics. Harmonics produced by not-linear loads that absorb non-sinusoidal current. The most common loads, both in industrial surroundings and domestic ones, are the following ones:\n<ul>\n \t<li>Frequency / Variable speed drives</li>\n \t<li>Discharge lamps (high pressure sodium vapour lamp, mercury vapour lamp, low consumption, fluorescent)</li>\n \t<li>Rectifiers</li>\n \t<li>AC/DC Converters</li>\n \t<li>Arc welding</li>\n \t<li>Induction ovens</li>\n \t<li>UPS</li>\n \t<li>Computers and laptops</li>\n</ul>\nHarmonics are contortion of the normal electrical waveform, generally transmitted by nonlinear loads. Switch-Mode Power supplies variable speed motors drives, photocopiers, personal computers, laser printers, fax machines, battery chargers and UPSs are examples of nonlinear loads.\n\nSingle phase nonlinear loads existing in modern office buildings, while three-phase nonlinear loads are common in organisations and industrial plants. A great section of the non-linear electrical load on most electrical distribution systems comes from Switch-Mode Power Supplies equipment. For example, all computer systems use Switch-Mode Power Supplies that convert utility Air Conditioner voltage to regulated low-voltage DC for internal electronics.\n\nThese non-linear power supplies consume electricity in high-amplitude short pulses that create significant distortion in the electrical and voltage wave shape harmonic distortion, measured as Total Harmonic Distortion. The exaggeration travels back into the power source and affect other equipment connected to the same source. Most power systems can take certain level of harmonic currents but will experience problems when harmonics become a significant element of the overall load. As great frequency harmonic electricity flow through power system, would cause communication errors, overheating and hardware damage such as:\n<ul>\n \t<li>Overheating of electrical distribution equipment, cables, transformers, standby generators etc.</li>\n \t<li>High voltages and circulating currents caused by harmonic resonance</li>\n \t<li>Equipment defect due to excessive voltage exaggeration</li>\n \t<li>High internal energy losses in connected equipment, causing component failure and shortened life span</li>\n \t<li>False tripping of branch circuit breakers</li>\n \t<li>Metering errors</li>\n \t<li>Fires in wiring and distribution systems</li>\n \t<li>Generator failures</li>\n \t<li>Crest elements and related problems</li>\n \t<li>Lower system element, resulting in fines on monthly utility bills</li>\n</ul>\nA standard transformer is not designed for high harmonic currents produced by non-linear loads. It will overheat and fail early when connected to these loads. When harmonics introduced into electrical systems at levels that showed adverse effects (about 1980), the industry responded by developing the K-rated transformer. K-rated transformers not meant for consonants, but they would handle heat produced by consonant electricity and efficiently used under their K-element value.\n\nK-element ratings range between 1 and 50. A standard transformer designed for linear loads have K-element of 1. The higher the K-element, the more heat from harmonic currents the transformer is able to handle. Making the right choice of K-element is very important, because it affects cost and safety. The table shows proper K-element ratings to use for different percentages of non-linear current in the electrical system.\n\nThe K-rated transformer commonly used in electrical industries, have more growth in transformer design that offer better performance in decreasing  voltage exaggeration and power losses due to electric consonants. Eaton’s energy-efficient Harmonic Mitigating Transformer designed to handle the non-linear loads of today's electrical infrastructures. This transformer uses electromagnetic reduction to deal exactly with the triplen (3rd, 9th, 15th etc.) consonants.\n\nSecondary windings of the transformer arranged to cancel zero sequence fluxes and ignore primary winding circulating currents. This transformer addresses the 5th and 7th consonant by using phase shifting. Using electromagnetic strategies, Eaton Harmonic Mitigating Transformer allows promote in same aspect as their operator designed them, while decreasing impact of consonants to energy losses and exaggeration. Eaton Harmonic Mitigating Transformer exceeds NEMA TP-1 efficiency standards, even when analysed with 100% nonlinear loads.\n\nWherever a K-rated transformer specified, an equal Harmonic Mitigating Transformer is a direct substitute. Power ware PDUs supplied with Harmonic Mitigating Transformer are efficient and effective at reducing the consonants produced by computer equipment and other nonlinear electronic loads.\n<h2><b>Advantages of using Power ware PDUs with Harmonic Mitigating Transformer</b></h2>\n<ul>\n \t<li>Prevents voltage flat-topping caused by non-linear loads</li>\n \t<li>Reduces upstream harmonic currents</li>\n \t<li>Eliminates transformer overheating and high operating temperatures</li>\n \t<li>Eliminates primary winding circulating current</li>\n \t<li>Saves energy by reducing harmonic losses</li>\n \t<li>Maintains high energy efficiency even under severe non-loading conditions</li>\n \t<li>Treats power quality harmonic issues that K-rated transformers do not address</li>\n \t<li>Suitable for high K-element loads without increasing in-rush current</li>\n \t<li>Improves power factor</li>\n</ul>",
-        "featureImage": {
-            "url": null
-        },
-        "blog_category": {
-            "category": "blog"
-        },
-        "seo": {
-            "canonicalURL": "https://carelabz.com/what-how-harmonic-study-analysis-done/",
-            "keywords": "What is Harmonic Study and Analysis, Why is Harmonic Study and Analysis Done, harmonic study analysis, harmonic study, harmonic analysis, Harmonic Study and Analysis Services, Harmonic Study Service, Harmonic Analysis Service",
-            "metaDescription": "Harmonics are contortion of the normal electrical waveform, generally transmitted by nonlinear loads. ",
-            "metaTitle": "What is Harmonic Study and Analysis and Why is it Done | Carelabz.com",
-            "metaRobots": "index, follow",
-            "metaViewport": "width=device-width, initial-scale=1.0",
-            "metaImage": {
-                "url": null
-            },
-            "structuredData": {
-                "@context": "https://schema.org",
-                "@type": "Article",
-                "headline": "What is Harmonic Study and Analysis and Why is it Done",
-                "description": "Harmonics are contortion of the normal electrical waveform, generally transmitted by nonlinear loads.",
-                "image": null,
-                "author": {
-                    "@type": "Person",
-                    "name": "Shahariyar"
-                },
-                "publisher": {
-                    "@type": "Organization",
-                    "name": "Carelabz",
-                    "logo": {
-                        "@type": "ImageObject",
-                        "url": null
-                    }
-                },
-                "datePublished": "Wed, 27 Dec 2017 11:06:22 +0000",
-                "url": "https://carelabz.com/what-how-harmonic-study-analysis-done/"
-            },
-            "openGraph": {
-                "ogUrl": "https://carelabz.com/what-how-harmonic-study-analysis-done/",
-                "ogType": "article",
-                "ogTitle": "What is Harmonic Study and Analysis and Why is it Done",
-                "ogDescription": "Harmonics are contortion of the normal electrical waveform, generally transmitted by nonlinear loads.",
-                "ogImage": {
-                    "url": null
-                }
-            }
+  {
+    "id": 4,
+    "documentId": "p51rljna8ymuy8jamb16m51c",
+    "buttontext": "Contact Our Experts",
+    "buttonlink": "/",
+    "regionSelector": "Global",
+    "regionTitle": "Explore Carelabs in your region",
+    "viewText": "View details",
+    "createdAt": "2025-11-21T07:49:36.947Z",
+    "updatedAt": "2025-11-24T09:52:03.011Z",
+    "publishedAt": "2025-11-24T09:52:05.180Z",
+    "Logo": {
+      "id": 5,
+      "documentId": "hnfg14p6rkss73g1c4qmeqjf",
+      "name": "carelab-logo.png",
+      "alternativeText": null,
+      "caption": null,
+      "width": 385,
+      "height": 82,
+      "formats": {
+        "thumbnail": {
+          "ext": ".png",
+          "url": "https://competent-belief-4c86b8d649.media.strapiapp.com/thumbnail_carelab_logo_269b3739ff.png",
+          "hash": "thumbnail_carelab_logo_269b3739ff",
+          "mime": "image/png",
+          "name": "thumbnail_carelab-logo.png",
+          "path": null,
+          "size": 12.04,
+          "width": 245,
+          "height": 52,
+          "sizeInBytes": 12036
         }
-    }
+      },
+      "hash": "carelab_logo_269b3739ff",
+      "ext": ".png",
+      "mime": "image/png",
+      "size": 3.42,
+      "url": "https://competent-belief-4c86b8d649.media.strapiapp.com/carelab_logo_269b3739ff.png",
+      "previewUrl": null,
+      "provider": "strapi-provider-upload-strapi-cloud",
+      "provider_metadata": null,
+      "createdAt": "2025-11-21T11:05:23.400Z",
+      "updatedAt": "2025-11-22T10:12:21.263Z",
+      "publishedAt": "2025-11-21T11:05:23.404Z"
+    },
+    "items": [
+      {
+        "order": 1,
+        "id": 14,
+        "label": "What We Do",
+        "link": "/",
+        "heading": "SERVICES",
+        "badge": "Service"
+      },
+      {
+        "order": 2,
+        "id": 15,
+        "label": " How We Solve",
+        "link": "/",
+        "heading": "SOLUTIONS",
+        "badge": "Solution"
+      },
+      {
+        "order": 3,
+        "id": 16,
+        "label": "Insights Hub",
+        "link": "/",
+        "heading": "INSIGHT CATEGORIES",
+        "badge": "Service"
+      },
+      {
+        "order": 4,
+        "id": 13,
+        "label": "Our Team",
+        "link": "/",
+        "heading": null,
+        "badge": null
+      }
+    ],
+    "regions": [
+      {
+        "id": 6,
+        "documentId": "hhbcydoxuhqtky3od9zkhedh",
+        "name": "Global",
+        "link": "/",
+        "siteUrl": "Go to: www.carelabs.com",
+        "isDefault": true,
+        "order": 1,
+        "createdAt": "2025-11-21T08:39:24.286Z",
+        "updatedAt": "2025-11-21T08:45:33.398Z",
+        "publishedAt": "2025-11-21T08:45:33.521Z"
+      },
+      {
+        "id": 7,
+        "documentId": "u4bg0t581krmw3u4t97g7ivr",
+        "name": "Middle East & Africa ",
+        "link": "/",
+        "siteUrl": "Go to: carelabs-mea.com",
+        "isDefault": null,
+        "order": 2,
+        "createdAt": "2025-11-21T08:40:56.869Z",
+        "updatedAt": "2025-11-21T08:45:42.073Z",
+        "publishedAt": "2025-11-21T08:45:42.213Z"
+      },
+      {
+        "id": 8,
+        "documentId": "hhouaxj2lpbl93mx1zaivyed",
+        "name": "Asia-Pacific",
+        "link": "/",
+        "siteUrl": "Go to: carelabs-apac.com",
+        "isDefault": null,
+        "order": 3,
+        "createdAt": "2025-11-21T08:41:59.822Z",
+        "updatedAt": "2025-11-21T08:45:51.861Z",
+        "publishedAt": "2025-11-21T08:45:51.980Z"
+      },
+      {
+        "id": 9,
+        "documentId": "glsjc5j54mocv7ls2pxmh77s",
+        "name": " Europe",
+        "link": "/",
+        "siteUrl": "Go to: carelabs-eu.com",
+        "isDefault": null,
+        "order": 4,
+        "createdAt": "2025-11-21T08:43:23.809Z",
+        "updatedAt": "2025-11-21T08:45:59.264Z",
+        "publishedAt": "2025-11-21T08:45:59.388Z"
+      },
+      {
+        "id": 10,
+        "documentId": "qcbaj0f0ioe1e1zmikqonbsd",
+        "name": " Americas ",
+        "link": "/",
+        "siteUrl": "Go to: carelabs-americas.com",
+        "isDefault": null,
+        "order": 5,
+        "createdAt": "2025-11-21T08:44:48.957Z",
+        "updatedAt": "2025-11-21T08:46:08.429Z",
+        "publishedAt": "2025-11-21T08:46:08.570Z"
+      }
+    ]
+  }
 ]

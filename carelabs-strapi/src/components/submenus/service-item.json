@@ -24,6 +24,9 @@
       "type": "component",
       "component": "features.feature-item",
       "repeatable": true
+    },
+    "icon": {
+      "type": "string"
     }
   },
   "config": {}
