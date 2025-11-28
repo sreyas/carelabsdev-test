@@ -1025,7 +1025,7 @@ export interface ApiInsightblogInsightblog extends Struct.CollectionTypeSchema {
     emailplaceholder: Schema.Attribute.String;
     exploresubtitle: Schema.Attribute.Text;
     exploretitle: Schema.Attribute.RichText;
-    introcontent: Schema.Attribute.Text;
+    IntroductionContent: Schema.Attribute.RichText;
     introtitle: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<

@@ -52,8 +52,8 @@
     "introtitle": {
       "type": "string"
     },
-    "introcontent": {
-      "type": "text"
+    "IntroductionContent": {
+      "type": "richtext"
     },
     "articleSection": {
       "type": "component",
