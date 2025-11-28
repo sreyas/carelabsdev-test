@@ -183,7 +183,8 @@ if (!homeData) {
 
   <button
   onClick={openRandomVideo}
-  className="flex items-center justify-center gap-2 hover:bg-[#FF7038] border hover:border-[#157de54d] hover:text-white border-[#0f172914] bg-white py-2 px-6 rounded-full text-[14px] poppins-font"
+  //className="flex items-center justify-center gap-2 hover:bg-[#FF7038] border hover:border-[#157de54d] hover:text-white border-[#0f172914] bg-white py-2 px-6 rounded-full text-[14px] poppins-font"
+  className="flex items-center justify-center gap-2 bg-white text-gray-800 border-2 border-gray-200 py-2 px-6 rounded-full text-[14px] poppins-font transition-all duration-300 hover:border-blue-500 hover:bg-[#FF7038] hover:text-white"
 >
   <Play size={14} />
   {homeData.btn2_text}
@@ -255,14 +256,13 @@ if (!homeData) {
 
       {/* youtubevideo */}
 
-      {showVideo && (
-  <div
+  {/* {showVideo && (
+    <div
     className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50"
     onClick={(e) => e.target === e.currentTarget && setShowVideo(false)}
-  >
+    >
     <div className="bg-black rounded-2xl shadow-xl relative w-[90%] max-w-3xl">
       
-      {/* Close button */}
       <button
         onClick={() => setShowVideo(false)}
         className="absolute top-3 right-3 text-white text-xl font-bold"
@@ -270,13 +270,46 @@ if (!homeData) {
         ✖
       </button>
 
-      {/* YouTube iframe */}
       <iframe
         className="w-full aspect-video rounded-xl"
         src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
         allow="autoplay; encrypted-media"
         allowFullScreen
       ></iframe>
+    </div>
+  </div>
+)} */}
+
+{showVideo && (
+  <div
+    className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50 p-4"
+    onClick={(e) => {
+      if (e.target === e.currentTarget) {
+        setShowVideo(false);
+      }
+    }}
+  >
+    <div className="bg-black rounded-2xl shadow-2xl relative w-full max-w-4xl">
+      
+      {/* Close button */}
+      <button
+        onClick={() => setShowVideo(false)}
+        className="absolute -top-10 right-0 text-white hover:text-red-500 transition-colors duration-200 text-2xl font-bold z-10"
+        aria-label="Close video"
+      >
+        ✖
+      </button>
+
+      {/* YouTube iframe - REMOVED autoplay=1 */}
+      <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+        <iframe
+          className="absolute top-0 left-0 w-full h-full rounded-2xl"
+          src={`https://www.youtube.com/embed/${videoId}?rel=0`}
+          allow="encrypted-media; fullscreen"
+          allowFullScreen
+          title="YouTube video player"
+        ></iframe>
+      </div>
     </div>
   </div>
 )}

@@ -81,9 +81,9 @@ const openRandomVideo = () => {
             </p>
           </div> */}
 
-          <div className="w-fit">
-  <div className="px-4 py-2 text-xs sm:text-sm rounded-full 
-                  card-shadow bg-white flex items-center gap-2">
+    <div className="w-fit">
+     <div className="px-4 py-2 text-xs sm:text-sm rounded-full 
+                  card-shadow bg-white flex items-center gap-2 border border-blue-300">
 
     {/* Dynamic Icon */}
     {badgeicon && (() => {
@@ -100,18 +100,22 @@ const openRandomVideo = () => {
 
           {/* Heading */}
           <div className="w-full flex flex-col gap-3">
-           <div className=" w-[80%] text-3xl sm:text-4xl lg:text-5xl 2xl:text-6xl font-bold ">
-             <p className=" gradient-text ">
+           <div className=" text-5xl sm:text-4xl lg:text-5xl 2xl:text-6xl font-bold montserrat-font ">
+
+             <h1 className=" gradient-text text-6xl font-bold ">
               {/* Power System Analysis   */}
               {mainheading1}
-            </p>
-            <p className="text-black "> 
+            </h1>
+            <h1 className="text-black text-6xl font-bold "> 
               {/* for Safe, Reliable Networks */}
-              {mainheading2}
-              </p>
+              {/* {mainheading2} */}
+              {mainheading2?.split('Networks')[0]}
+              <br />
+              Networks
+              </h1>
            </div>
 
-            <p className="w-[80%] text-sm sm:text-base lg:text-lg leading-7 text-gray-700">
+            <p className="w-[80%] text-sm sm:text-base lg:text-lg leading-7 text-gray-500">
               {/* Comprehensive electrical studies to identify risks, optimize
               performance, and ensure compliance with international standards
               across all voltage levels. */}
@@ -153,7 +157,7 @@ const openRandomVideo = () => {
       className="
         group relative px-6 sm:px-8 py-2 rounded-lg text-sm 
         bg-blue-600 text-white overflow-hidden 
-        flex items-center gap-2
+        flex items-center gap-2 cursor-pointer
       "
     >
       
@@ -225,7 +229,7 @@ const openRandomVideo = () => {
     group relative px-6 sm:px-8 py-2 text-sm 
     border-2 rounded-lg border-blue-500 
     bg-white text-gray-600
-    overflow-hidden flex items-center gap-2
+    overflow-hidden flex items-center gap-2 cursor-pointer
   "
 >
   <span
@@ -237,10 +241,10 @@ const openRandomVideo = () => {
   ></span>
 
   {/* ICON */}
-  <Download className="relative z-10 w-4 h-4" />
+  <Download className="relative z-10 w-4 h-4 group-hover:text-white transition-colors duration-300 " />
 
   {/* TEXT */}
-  <span className="relative z-10">{mainbutton2}</span>
+  <span className="relative z-10 group-hover:text-white transition-colors duration-300 ">{mainbutton2}</span>
 </button>
 
 
@@ -306,14 +310,14 @@ const openRandomVideo = () => {
 >
   <span
     className="
-      absolute inset-0 bg-blue-200/40 
+      absolute inset-0 bg-orange-200/40 
       opacity-0 group-hover:opacity-100 
       transition-opacity duration-300
     "
   ></span>
 
-  <PlayCircle className="relative z-10 w-5 h-5 text-orange-500" />
-  <span className="relative z-10">{mainbutton3}</span>
+  <PlayCircle className="relative z-10 w-5 h-5 text-orange-500 group-hover:text-white transition-colors duration-300 " />
+  <span className="relative z-10 group-hover:text-white transition-colors duration-300 ">{mainbutton3}</span>
 </button>
 
 
@@ -420,7 +424,7 @@ const openRandomVideo = () => {
   >
 
     {/* Image Container */}
-    <div className="relative w-full h-full rounded-4xl shadow-lg overflow-hidden">
+    {/* <div className="relative w-full h-full rounded-4xl shadow-lg overflow-hidden">
       <img
         src={mainimage?.url}
         alt="Service"
@@ -432,7 +436,21 @@ const openRandomVideo = () => {
         "
       />
       <div className="absolute inset-0 bg-gradient-to-t from-white/90 via-white/40 to-transparent"></div>
-    </div>
+    </div> */}
+
+    <div className="relative w-full h-[320px] sm:h-[380px] md:h-[430px] rounded-4xl shadow-lg overflow-hidden">
+  <img
+    src={mainimage?.url}
+    alt="Service"
+    className="
+      w-full h-full object-cover
+      transition-transform duration-[1100ms]
+      ease-[cubic-bezier(.13,.62,.31,1)]
+      group-hover:scale-[1.08]
+    "
+  />
+  <div className="absolute inset-0 bg-gradient-to-t from-white/90 via-white/40 to-transparent"></div>
+</div>
 
     {/* Floating Stats */}
     <div

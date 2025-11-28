@@ -115,16 +115,14 @@ if (!navbarData) {
 }
 
 //slugmethod 
-const currentItem =
-  navbarData?.items?.[activeIndex] ?? null;
+const currentItem = navbarData?.items?.[activeIndex] ?? null;
+const currentSubmenu = currentItem?.submenus?.[selectedSubmenuIndex] ?? null;
 
-const currentSubmenu =
-  currentItem?.submenus?.[selectedSubmenuIndex] ?? null;
+const isBlogMenu = currentItem?.label === "Insights Hub";
 
-const targetSlug =
-  currentItem?.label?.toLowerCase() === "blogs"
-    ? `/blogs/${currentSubmenu?.slug ?? ""}`
-    : `/services/${currentSubmenu?.slug ?? ""}`;
+const targetSlug = isBlogMenu
+  ? `/blogs/${currentSubmenu?.slug}`
+  : `/services/${currentSubmenu?.slug}`;
      
     console.log("NAV DATA:", navbarData.items);
 
@@ -221,7 +219,7 @@ const targetSlug =
                   </div> */}
 
                   <div className="nav-bttn hidden lg:flex justify-center items-center rounded-md xl:w-[35%] 2xl:w-[45%] bg-[#157de5]">
-                    <button className="text-sm lg:py-[10px] lg:px-3"onClick={() => setIsContactModalOpen(true)}>
+                    <button className="text-sm lg:py-[10px] lg:px-3 cursor-pointer"onClick={() => setIsContactModalOpen(true)}>
                       <span className="text-[14px] text-white font-medium">
                         {navbarData?.buttontext}
                       </span>
@@ -314,7 +312,7 @@ const targetSlug =
                 {/* RIGHT SECTION */}
                 <div className="w-[55%] h-full card-shadow rounded-2xl">
                 
-                    <div  className="p-5 flex flex-col">
+                    <div  className="p-5 flex flex-col h-full justify-between">
 
                       <div className=" w-full flex items-center gap-3">
                         {ActiveIcon && (
@@ -352,19 +350,13 @@ const targetSlug =
                         </span>
                       </Link> */}
 
-                      {activeIndex !== null &&
- currentItem &&
- currentSubmenu && (
-  <Link href={targetSlug} className="group relative inline-flex items-center justify-center bg-[#157de5] text-white text-[14px] font-semibold py-2 px-4 rounded-full w-[45%] text-center transition-all duration-300 ease-in-out transform hover:scale-105 hover:bg-gradient-to-r hover:from-[#157de5] hover:to-[#ff7038] hover:shadow-[0_20px_30px_rgba(0,0,0,0.3)]">
-    <span className="flex items-center gap-2">
-      {currentSubmenu?.Button}
-      <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-    </span>
-  </Link>
-)}
+                    <Link href={targetSlug} className="group relative inline-flex items-center justify-center bg-[#157de5] text-white text-[14px] font-semibold py-2 px-4 rounded-full w-[45%] text-center transition-all duration-300 ease-in-out transform hover:scale-105 hover:bg-gradient-to-r hover:from-[#157de5] hover:to-[#ff7038] hover:shadow-[0_20px_30px_rgba(0,0,0,0.3)]">
+                    <span className="flex items-center gap-2">
+                    {currentSubmenu?.Button}
+                    <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+                    </span>
+                    </Link>
 
-
-                    
                       {/* <Link
                         //href={finalURL}
                         className="group relative inline-flex items-center justify-center bg-[#157de5] text-white text-[14px] font-semibold py-2 px-4 rounded-full w-[45%] text-center transition-all duration-300 ease-in-out transform hover:scale-105 hover:bg-gradient-to-r hover:from-[#157de5] hover:to-[#ff7038] hover:shadow-[0_20px_30px_rgba(0,0,0,0.3)]"

@@ -88,7 +88,8 @@ export default async function Page({ params }) {
     <div className="w-full sm:w-[90%] lg:w-[70%] flex flex-wrap justify-center gap-6">
 
       {service?.service_features?.map((feat, idx) => {
-        const Icon = LucideIcons[feat.icon] || LucideIcons.CircleCheck; // fallback icon
+        const iconName = feat.icon.trim();
+        const Icon = LucideIcons[iconName] || LucideIcons.CircleCheck; // fallback icon
 
         return (
           <div
@@ -105,7 +106,7 @@ export default async function Page({ params }) {
             <Icon className="w-8 h-8 text-[#1764e8]" />
 
             <p className="text-xl font-bold">{feat.title}</p>
-            <p className="text-sm text-gray-700">{feat.description}</p>
+            <p className="text-sm text-gray-600">{feat.description}</p>
           </div>
         );
       })}
@@ -203,7 +204,7 @@ export default async function Page({ params }) {
                   .filter(Boolean)
                   .map((item, i) => (
                     <div key={i} className="flex gap-2 text-sm">
-                      <i className="fa-solid fa-angle-right" />
+                      <i className="fa-solid fa-angle-right text-red-500" />
                       <p>{item}</p>
                     </div>
                   ))}
@@ -238,7 +239,7 @@ export default async function Page({ params }) {
                   .filter(Boolean)
                   .map((item, i) => (
                     <div key={i} className="flex gap-2 text-sm">
-                      <i className="fa-regular fa-circle-check" />
+                      <i className="fa-regular fa-circle-check text-orange-500 " />
                       <p>{item}</p>
                     </div>
                   ))}
@@ -262,7 +263,8 @@ export default async function Page({ params }) {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10 w-[90%] lg:w-[70%]">
             {service?.whats_include_features?.map((f, idx) => {
-              const Icon = LucideIcons[f.icon] || LucideIcons.Circle;
+              const iconName = f.icon?.trim();
+              const Icon = LucideIcons[iconName] || LucideIcons.Circle;
               return (
                 <div
                   key={idx}
@@ -378,7 +380,8 @@ export default async function Page({ params }) {
                   {step.Order}
                 </div>
                 {step.icon && (() => {
-                    const StepIcon = LucideIcons[step.icon] || LucideIcons.Circle;
+                    const iconName = step.icon.trim();
+                    const StepIcon = LucideIcons[iconName] || LucideIcons.Circle;
                     return <StepIcon className="text-[#157be2] w-12 h-10" />;
                   })()}
                 <div>                      
@@ -451,8 +454,8 @@ export default async function Page({ params }) {
                   <div className="w-[50px] h-[50px] bg-yellow-300 rounded-xl flex justify-center items-center">
                     <i className="fa-solid fa-circle-exclamation" />
                   </div>
-                  <p className="text-4xl font-bold">{stat.percentage}</p>
-                  <p className="text-sm">{stat.description}</p>
+                  <p className="text-4xl font-bold bg-gradient-to-r from-[#5b68c3] to-[#c58a7a] bg-clip-text text-transparent">{stat.percentage}</p>
+                  <p className="text-sm text-gray-600 ">{stat.description}</p>
                 </div>
               ))}
             </div>
@@ -465,7 +468,7 @@ export default async function Page({ params }) {
                     <i className={item.icon} />
                     <p className="text-xl font-bold">{item.label}</p>
                   </div>
-                  <p className="text-sm pl-10">{item.description}</p>
+                  <p className="text-sm pl-10 text-gray-600 ">{item.description}</p>
                 </div>
               ))}
             </div>

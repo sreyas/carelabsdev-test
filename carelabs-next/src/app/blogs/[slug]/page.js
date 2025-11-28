@@ -174,9 +174,36 @@ export default function Page(props) {
                     <h1 className="mb-5 text-[30px] font-semibold montserrat-font">
                       {section.title}
                     </h1>
-                    {section.introduction && (
+
+                    {/* {section.introduction && (
                       <p className="poppins-font text-[16px] mb-5">{section.introduction}</p>
-                    )}
+                    )} */}
+
+              {section.introduction && (() => {
+              const lines = section.introduction.split("\n").map(l => l.trim()).filter(l => l !== "");
+
+              const firstParagraph = lines[0];
+
+              const bulletItems = lines.slice(1, -1);
+              const lastParagraph = lines[lines.length - 1];
+
+  return (
+    <div className="poppins-font text-[16px] leading-relaxed mb-5">
+      
+      <p className="mb-4">{firstParagraph}</p>
+
+      <ul className="list-disc ml-6 space-y-1 mb-4">
+        {bulletItems.map((item, idx) => (
+          <li key={idx}>{item}</li>
+        ))}
+      </ul>
+      <p>{lastParagraph}</p>
+    </div>
+  );
+})()}
+
+
+
                     {section.WhyTraditionalItems && (
                       <div className="grid grid-cols-1 lg:grid-cols-2 gap-3">
                         {section.WhyTraditionalItems.map((item, idx) => (
@@ -194,36 +221,108 @@ export default function Page(props) {
               }
 
               // What AI Powered Predictive Section
+              // if (section.__typename === "ComponentInsightsWhatAiPoweredPredictive") {
+              //   return (
+              //     <React.Fragment key={index}>
+              //       <div id={section.slug} className="glass-panel rounded-2xl p-10">
+              //         <h2 className="mb-5 text-[30px] font-semibold montserrat-font">
+              //           {section.title}
+              //         </h2>
+              //         <div
+              //           className="poppins-font text-[16px]"
+              //           dangerouslySetInnerHTML={{ __html: section.content }}
+              //         />
+              //       </div>
+              //       {section.image?.url && (
+              //         <div className="glass-panel rounded-2xl">
+              //           <div
+              //             className="h-[350px] rounded-t-2xl w-full"
+              //             style={{
+              //               backgroundImage: `url(${section.image.url})`,
+              //               backgroundSize: "cover",
+              //               backgroundPosition: "center",
+              //             }}
+              //           />
+              //           {section.imagetext && (
+              //             <p className="p-4 poppins-font italic">{section.imagetext}</p>
+              //           )}
+              //         </div>
+              //       )}
+              //     </React.Fragment>
+              //   );
+              // }
+
               if (section.__typename === "ComponentInsightsWhatAiPoweredPredictive") {
-                return (
-                  <React.Fragment key={index}>
-                    <div id={section.slug} className="glass-panel rounded-2xl p-10">
-                      <h2 className="mb-5 text-[30px] font-semibold montserrat-font">
-                        {section.title}
-                      </h2>
-                      <div
-                        className="poppins-font text-[16px]"
-                        dangerouslySetInnerHTML={{ __html: section.content }}
-                      />
-                    </div>
-                    {section.image?.url && (
-                      <div className="glass-panel rounded-2xl">
-                        <div
-                          className="h-[350px] rounded-t-2xl w-full"
-                          style={{
-                            backgroundImage: `url(${section.image.url})`,
-                            backgroundSize: "cover",
-                            backgroundPosition: "center",
-                          }}
-                        />
-                        {section.imagetext && (
-                          <p className="p-4 poppins-font italic">{section.imagetext}</p>
-                        )}
-                      </div>
-                    )}
-                  </React.Fragment>
-                );
-              }
+  return (
+    <React.Fragment key={index}>
+      <div id={section.slug} className="glass-panel rounded-2xl p-10">
+        
+        {/* Title */}
+        <h2 className="mb-5 text-[30px] font-semibold montserrat-font">
+          {section.title}
+        </h2>
+
+        {/* Content Parsing (paragraph → list → paragraph) */}
+        {section.content && (() => {
+          const lines = section.content
+            .split("\n")
+            .map((t) => t.trim())
+            .filter((t) => t !== "");
+
+          if (lines.length === 1) {
+            return (
+              <p className="poppins-font text-[16px] leading-relaxed">
+                {lines[0]}
+              </p>
+            );
+          }
+
+          const firstParagraph = lines[0];
+          const bulletItems = lines.slice(1, -1);
+          const lastParagraph = lines[lines.length - 1];
+
+          return (
+            <div className="poppins-font text-[16px] leading-relaxed">
+              {/* First paragraph */}
+              <p className="mb-4">{firstParagraph}</p>
+
+              {/* Bullet list */}
+              {bulletItems.length > 0 && (
+                <ul className="list-disc ml-6 space-y-1 mb-4">
+                  {bulletItems.map((item, idx) => (
+                    <li key={idx}>{item}</li>
+                  ))}
+                </ul>
+              )}
+
+              {/* Last paragraph */}
+              <p>{lastParagraph}</p>
+            </div>
+          );
+        })()}
+
+      </div>
+
+      {/* Image Block */}
+      {section.image?.url && (
+        <div className="glass-panel rounded-2xl">
+          <div
+            className="h-[350px] rounded-t-2xl w-full"
+            style={{
+              backgroundImage: `url(${section.image.url})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          />
+          {section.imagetext && (
+            <p className="p-4 poppins-font italic">{section.imagetext}</p>
+          )}
+        </div>
+      )}
+    </React.Fragment>
+  );
+}
+
 
               // Key Building Blocks Section
               if (section.__typename === "ComponentInsightsKeyBuildingBlocks") {

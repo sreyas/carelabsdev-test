@@ -49,10 +49,8 @@ const QuoteBar = () => {
             
             >Request a Quote</a>
           </button>
-          <button className='w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gray-200 flex items-center justify-center'>
-            <a href="">
+          <button className='w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gray-200 flex items-center justify-center' onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
               <i className="fa-solid fa-arrow-up text-black"></i>
-            </a>
           </button>
         </div>
 
