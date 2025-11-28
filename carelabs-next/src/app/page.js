@@ -14,10 +14,10 @@ import { ArrowRight, Play, Zap } from "lucide-react";
 import { useEffect, useState } from "react";
 
 
+
 export default function Home() {
 
   const [homeData,setHomeData]=useState();
-
   const [showVideo, setShowVideo] = useState(false);
   const [videoId, setVideoId] = useState(null);
 

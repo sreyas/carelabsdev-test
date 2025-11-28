@@ -6,6 +6,15 @@ import Footer from "@/components/Footer";
 import QuoteBar from "@/components/QuoteBar";
 import Script from "next/script";
 
+export const metadata = {
+  title: {
+    default: "Carelabs",
+    template: "%s | Carelabs"
+  },
+  description: "Electrical safety, power system studies, and compliance services.",
+};
+
+
 export default function RootLayout({ children }) {
 
 
