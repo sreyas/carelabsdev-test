@@ -13,4 +13,5 @@ module.exports = () => ({
   seo: {
     enabled: true,
   },
+  'content-type-builder': { enabled: true, },
 });
