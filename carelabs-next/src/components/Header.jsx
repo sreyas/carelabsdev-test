@@ -9,6 +9,8 @@ import * as LucideIcons from 'lucide-react';
 
 
 const Header = () => {
+    
+
     const [navbarData,setNavbarData]=useState();
     const [activeIndex, setActiveIndex] = useState(null);
     const [selectedSubmenuIndex, setSelectedSubmenuIndex] = useState(0);
@@ -31,6 +33,7 @@ const Header = () => {
         "Asia-Pacific",
         "Europe",
         "Americas",
+        "Canada"
       ];
     
       const handleRegionChange = (e) => {
@@ -134,7 +137,7 @@ const targetSlug = isBlogMenu
           <div className="header w-full  h-full flex items-center justify-between lg:justify-center 2xl:w-[80%] 2xl:p-3 ">
 
             <div className="logo flex item center justify-center w-[50%] sm:w-[40%]  lg:w-[22%] ">
-              <a href="/">
+              <a href="">
                 <img className=' p-3 md:w-[60%] lg:w-[75%]' src={navbarData.Logo?.url} alt="Logo" />
               </a>
             </div>
@@ -405,7 +408,7 @@ const targetSlug = isBlogMenu
 
         {/* Globe Modal */}
 
-             {isModalOpen && (
+      {isModalOpen && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm"
           onClick={(e) => e.target === e.currentTarget && setIsModalOpen(false)}
@@ -427,7 +430,7 @@ const targetSlug = isBlogMenu
             </div>
 
             {/* SELECT DROPDOWN */}
-          <div className="relative">
+           <div className="relative">
             <button
               onClick={() => setIsDropdownOpen(!isDropdownOpen)}
               className="w-full bg-white border border-gray-300 rounded-full px-4 py-3 pr-10 flex justify-between items-center"
@@ -457,7 +460,7 @@ const targetSlug = isBlogMenu
                 ))}
               </ul>
             )}
-          </div>
+           </div>
 
 
             <p className="text-center text-sm text-gray-600 p-3">
@@ -470,220 +473,14 @@ const targetSlug = isBlogMenu
                  <Mail size={14} />
             </div>
               
-          </div>
-        </div>
-
-        
-         
-
-         )}
-
-           {/* Contact Modal */}
-
-{/* {isContactModalOpen && (
-  <div
-    className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4 z-[2000]"
-    onClick={(e) => e.target === e.currentTarget && setIsContactModalOpen(false)}
-  >
-    <div className="relative w-full max-w-[650px] lg:max-w-[700px] rounded-2xl shadow-xl bg-white overflow-hidden">
-      
-      
-      <div className="max-h-[85vh] overflow-y-auto scrollbar-hide px-6 py-8 md:px-12 md:py-10">
-        
-        <button
-          onClick={() => setIsContactModalOpen(false)}
-          className="absolute top-4 right-4 p-1 rounded-lg text-gray-400 hover:text-gray-600 hover:bg-gray-100 transition-colors z-10"
-        >
-          <X size={24} />
-        </button>
-
-        
-        <div className="flex justify-center mb-4">
-          <div className="text-2xl font-bold">
-            <span className="text-blue-600">care</span>
-            <span className="text-orange-500">labs</span>
-          </div>
-        </div>
-
-        
-        <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-800 mb-2">
-          Connect with Us!
-        </h2>
-
-        <p className="text-center text-sm text-gray-600 mb-6">
-          Please complete the form to schedule a <span className="text-orange-500 font-semibold">FREE</span> consultation.
-        </p>
-
-        <form 
-          className="space-y-4"
-          onSubmit={async (e) => {
-            e.preventDefault();
-            
-            const formData = new FormData(e.target);
-            const data = {
-              "Contact Name": formData.get("contactName"),
-              "Company Name": formData.get("companyName"),
-              "Country": formData.get("country"),
-              "Email": formData.get("email"),
-              "Phone": `${formData.get("countryCode")}${formData.get("phone")}`,
-              "Services": formData.get("services"),
-              "Issue Faced": formData.get("issueFaced")
-            };
-
-            // Create query string
-            const queryString = new URLSearchParams(data).toString();
-            const webhookUrl = `https://shahariyar.app.n8n.cloud/webhook/8720-cms-lead-v1?${queryString}`;
-
-            try {
-              const response = await fetch(webhookUrl, {
-                method: 'GET',
-              });
-
-              if (response.ok) {
-                alert('Form submitted successfully!');
-                setIsContactModalOpen(false);
-                e.target.reset();
-              } else {
-                alert('Failed to submit form. Please try again.');
-              }
-            } catch (error) {
-              console.error('Error submitting form:', error);
-              alert('An error occurred. Please try again.');
-            }
-          }}
-        >
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1.5">
-                Contact Name <span className="text-red-500">*</span>
-              </label>
-              <input
-                type="text"
-                name="contactName"
-                placeholder="Your First & Last Name"
-                required
-                className="w-full px-3 py-2.5 text-sm border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none transition-colors"
-              />
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1.5">
-                Company Name <span className="text-red-500">*</span>
-              </label>
-              <input
-                type="text"
-                name="companyName"
-                placeholder="Your Company Name"
-                required
-                className="w-full px-3 py-2.5 text-sm border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none transition-colors"
-              />
-            </div>
+           </div>
           </div>
 
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1.5">
-                Country <span className="text-red-500">*</span>
-              </label>
-              <div className="relative">
-                <select 
-                  name="country"
-                  required
-                  className="w-full px-3 py-2.5 text-sm border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none bg-white appearance-none pr-10 transition-colors"
-                >
-                  <option value="">Select your Country</option>
-                  <option value="India">India</option>
-                  <option value="USA">USA</option>
-                  <option value="UK">UK</option>
-                  <option value="Canada">Canada</option>
-                  <option value="Australia">Australia</option>
-              
-                </select>
-                <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-gray-500">
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </div>
-              </div>
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1.5">
-                Email <span className="text-red-500">*</span>
-              </label>
-              <input
-                type="email"
-                name="email"
-                placeholder="your.email@example.com"
-                required
-                className="w-full px-3 py-2.5 text-sm border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none transition-colors"
-              />
-            </div>
-          </div>
+      )}
 
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1.5">
-                Phone <span className="text-red-500">*</span>
-              </label>
-              <div className="flex gap-2">
-                <input
-                  type="text"
-                  name="countryCode"
-                  defaultValue="+1"
-                  className="w-14 px-2 py-2.5 text-sm text-center border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none flex-shrink-0 transition-colors"
-                />
-                <input
-                  type="tel"
-                  name="phone"
-                  placeholder="123456789"
-                  required
-                  className="flex-1 min-w-0 px-3 py-2.5 text-sm border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none transition-colors"
-                />
-              </div>
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1.5">
-                Services <span className="text-red-500">*</span>
-              </label>
-              <input
-                type="text"
-                name="services"
-                placeholder="Services you're interested in"
-                required
-                className="w-full px-3 py-2.5 text-sm border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none transition-colors"
-              />
-            </div>
-          </div>
 
-          
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1.5">
-              Issue Faced <span className="text-red-500">*</span>
-            </label>
-            <textarea
-              name="issueFaced"
-              placeholder="Please describe the issue you're facing"
-              rows={4}
-              required
-              className="w-full px-3 py-2.5 text-sm border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none resize-none transition-colors"
-            />
-          </div>
 
-          
-          <button
-            type="submit"
-            className="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 rounded-md transition-colors duration-200 mt-6"
-          >
-            Submit
-          </button>
-        </form>
-      </div>
-    </div>
-  </div>
-)} */}
-
+  {/* Contact Modal */}
 
   {isContactModalOpen && (
         <div

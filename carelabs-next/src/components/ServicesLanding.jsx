@@ -102,10 +102,12 @@ const openRandomVideo = () => {
           <div className="w-full flex flex-col gap-3">
            <div className=" text-5xl sm:text-4xl lg:text-5xl 2xl:text-6xl font-bold montserrat-font ">
 
-             <h1 className=" gradient-text text-6xl font-bold ">
-              {/* Power System Analysis   */}
-              {mainheading1}
-            </h1>
+
+            <h1 
+             className="text-6xl font-bold"
+             dangerouslySetInnerHTML={{ __html: mainheading1 || '' }}
+             />
+
             <h1 className="text-black text-6xl font-bold "> 
               {/* for Safe, Reliable Networks */}
               {/* {mainheading2} */}
@@ -115,10 +117,7 @@ const openRandomVideo = () => {
               </h1>
            </div>
 
-            <p className="w-[80%] text-sm sm:text-base lg:text-lg leading-7 text-gray-500">
-              {/* Comprehensive electrical studies to identify risks, optimize
-              performance, and ensure compliance with international standards
-              across all voltage levels. */}
+            <p className="w-[80%] text-sm sm:text-base lg:text-lg leading-7 text-gray-500 ">
                {maindesc}
             </p>
           </div>

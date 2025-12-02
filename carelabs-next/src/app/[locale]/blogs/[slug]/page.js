@@ -1,5 +1,5 @@
 import client from "@/lib/appollo-client";
-import { GET_INSIGHTS_BY_SLUG } from "@/lib/api-Collection";
+import { GET_INSIGHTS_BY_SLUG_By_LOCALE } from "@/lib/api-Collection";
 import { Globe } from "lucide-react";
 import Image from "next/image";
 import carlabz from "@/assets/carlabz.jpg";
@@ -7,9 +7,19 @@ import React from "react";
 
 export default function Page(props) {
   const params = React.use(props.params);
+  console.log("Params",params);
+  
   const slug = params?.slug;
+  var locale=params?.locale;
 
   console.log(" Server → Slug:", slug);
+  console.log(" Server → Locale:", locale);
+
+  if(locale=="CA"){
+    locale="en-CA";
+  }
+
+   console.log(" Server → Locales :", locale);
 
   if (!slug) {
     return (
@@ -21,11 +31,11 @@ export default function Page(props) {
 
   async function loadBlog() {
     const response = await client.query({
-      query: GET_INSIGHTS_BY_SLUG,
-      variables: { slug },
+      query: GET_INSIGHTS_BY_SLUG_By_LOCALE,
+      variables: { slug,locale },
       fetchPolicy: "no-cache",
     });
-
+      console.log(" Blog:::::::::::::::::::::");
     console.log(" Blog:", response.data);
     return response?.data?.insightblogs?.[0] || null;
   }
@@ -90,7 +100,7 @@ export default function Page(props) {
       </div>
 
       {/* MAIN CONTENT WRAPPER */}
-      <div className="w-full flex items-center justify-center">
+      <div className="w-full flex items-center justify-center mb-5">
         <div className="w-full md:w-[80%] xl:w-[70%] flex flex-col items-center justify-center lg:items-start lg:flex-row gap-3">
           
           {/* SIDEBAR */}

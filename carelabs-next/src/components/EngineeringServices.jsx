@@ -4,24 +4,6 @@
 import * as LucideIcons from "lucide-react";
 
 
-// const services = [
-//   {
-//     icon: Zap,
-//     title: "Arc-Flash Analysis",
-//     description: "Comprehensive hazard assessment and PPE labeling",
-//   },
-//   {
-//     icon: Activity,
-//     title: "Electrical Testing",
-//     description: "On-site testing of switchgear, relays, and protection devices",
-//   },
-//   {
-//     icon: Target,
-//     title: "Thermography Inspection",
-//     description: "Infrared imaging to detect hotspots and prevent failures",
-//   },
-// ];
-
 export default function EngineeringServices({ service }) {
   return (
     // <section>
@@ -75,40 +57,113 @@ export default function EngineeringServices({ service }) {
           {/* TOP TITLE */}
           <div className="w-full flex items-center justify-center text-center mb-10 px-4">
             <div className="flex flex-col items-center gap-3">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold gradient-text">
+              {/* <h1 className="text-3xl sm:text-4xl md:text-5xl montserrat-font font-bold gradient-text leading-normal">
                 {service?.relatedTitle}
-              </h2>
+              </h1> */}
 
-              <p className="text-sm sm:text-md md:text-lg w-[95%] sm:w-[80%] text-center text-muted-foreground">
+              <h1 
+  className="text-3xl sm:text-4xl md:text-5xl montserrat-font font-bold leading-normal"
+  dangerouslySetInnerHTML={{ __html: service?.relatedTitle || '' }}
+/>
+
+              <p className="text-sm sm:text-md md:text-lg w-[95%] sm:w-[80%] text-gray-600 text-center text-muted-foreground">
                 {service?.relatedSubtitle}
               </p>
             </div>
           </div>
 
           {/* SERVICES GRID */}
-          <div className="w-[80%] xl:w-full grid grid-cols-1 xl:grid-cols-3 gap-6">
+          {/* <div className="w-[80%] xl:w-full grid grid-cols-1 xl:grid-cols-3 gap-6">
             {service?.relatedServices?.map((item, index) => (
               <div
                 key={index}
                 className="bg-background rounded-2xl p-8 card-hover flex flex-col items-start gap-4 navbar-shadow"
               >
-                {/* ICON BOX */}
+                
                 <div className="w-14 h-14 rounded-full bg-icon-bg flex items-center justify-center">
-                  {/* If Strapi gives icon name, use <i> */}
                     
                   <i className={item.icon || "fa-solid fa-bolt text-primary"}></i>
                 </div>
 
-                {/* TITLE */}
                 <h3 className="text-xl font-bold text-foreground">
                   {item.label}
                 </h3>
 
-                {/* DESCRIPTION */}
                 <p className="text-muted-foreground">{item.description}</p>
               </div>
             ))}
-          </div>
+          </div> */}
+
+          {/* <div className="w-[80%] xl:w-full grid grid-cols-1 xl:grid-cols-3 gap-6">
+  {service?.relatedServices?.map((item, index) => {
+    
+    const iconName = item.icon?.trim();
+    const LucideIcon = LucideIcons[iconName] || LucideIcons.Zap; 
+
+    return (
+      <div
+        key={index}
+        className="bg-background rounded-2xl p-8 card-hover flex flex-col items-start gap-4 navbar-shadow"
+      >
+        
+        <div className="w-14 h-14 rounded-xl bg-icon-bg flex items-center justify-center  bg-gradient-to-br from-[#E9F3FF] to-[#F4F6FF] shadow-[0px_4px_12px_rgba(0,0,0,0.08)] backdrop-blur-[2px] ">
+          <LucideIcon className="w-7 h-7 text-[#4A8DFF]" strokeWidth={2.2} />
+        </div>
+
+        <h3 className="text-xl font-bold text-foreground">
+          {item.label}
+        </h3>
+
+        <p className="text-muted-foreground">{item.description}</p>
+      </div>
+    );
+  })}
+</div> */}
+
+<div className="w-[80%] xl:w-full grid grid-cols-1 xl:grid-cols-3 gap-6">
+  {service?.relatedServices?.map((item, index) => {
+    const iconName = item.icon?.trim();
+    const LucideIcon = LucideIcons[iconName] || LucideIcons.Zap;
+
+    return (
+      <div
+        key={index}
+        className="bg-background rounded-2xl p-8 card-hover flex flex-col items-start gap-4 navbar-shadow
+                   transition-all duration-300 ease-out group
+                   hover:-translate-y-2 hover:shadow-2xl hover:scale-[1.02]"
+      >
+        {/* ICON BOX */}
+        <div
+          className="w-14 h-14 rounded-xl flex items-center justify-center
+                     bg-gradient-to-br from-[#E9F3FF] to-[#F4F6FF]
+                     shadow-[0px_4px_12px_rgba(0,0,0,0.08)] backdrop-blur-[2px]
+                     transition-all duration-300 ease-out
+                     group-hover:scale-110 group-hover:rotate-6"
+        >
+          <LucideIcon
+            className="w-7 h-7 text-[#4A8DFF] transition-all duration-300 ease-out
+                       group-hover:text-orange-500"
+            strokeWidth={2.2}
+          />
+        </div>
+
+        {/* FLOATING DECORATION ICON (RIGHT SIDE) */}
+
+
+        {/* TITLE */}
+        <h3 className="text-xl montserrat-font font-bold transition-all duration-300 group-hover:text-[#157be2]">
+          {item.label}
+        </h3>
+
+        {/* DESCRIPTION */}
+        <p className="text-muted-foreground transition-all duration-300 group-hover:text-gray-700 text-gray-600">
+          {item.description}
+        </p>
+      </div>
+    );
+  })}
+</div>
+
 
         </div>
       </div>

@@ -65,7 +65,7 @@ const HomeTestimonials = () => {
   };
   return (
     <div>
-        <div className="text w-full h-auto flex flex-col items-center justify-center py-10">
+        <div className="text w-full h-auto flex flex-col items-center justify-center mt-40 lg:mt-60">
 
     <div  
     data-aos="fade-up"

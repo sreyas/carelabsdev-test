@@ -1,11 +1,24 @@
 
 import React, { useEffect, useState } from 'react'
 import client from '@/lib/appollo-client';
-import { GET_GLOBAL_REACH } from '@/lib/api-Collection';
+import { GET_GLOBAL_REACH, GET_HOME_SERVICES_BY_LOCALE } from '@/lib/api-Collection';
 import { CircleCheckBig, Zap } from 'lucide-react';
 import * as LucideIcons from "lucide-react";
+import { useParams } from 'next/navigation';
 
 const HomeServices = () => {
+
+  const params=useParams();
+    let locale= params.locale;
+  
+    if(locale=="CA"||locale=="ca"){
+      locale="en-CA"
+    }else{
+      locale="en"
+    }
+  
+    console.log("Local",locale);
+
 
 const [globalReachData, setGlobalReachData] = useState(null)
 const [activeServiceIndex, setActiveServiceIndex] = useState(0)
@@ -14,8 +27,9 @@ const [activeServiceIndex, setActiveServiceIndex] = useState(0)
 
 const fetchGlobalReach = async () => {
     try {
-        const response = await client.query({
-            query:GET_GLOBAL_REACH,
+      const response = await client.query({
+          query:GET_HOME_SERVICES_BY_LOCALE,
+          variables: {locale },
         });
         console.log("globalData:", response.data.homeSerivices)
 
@@ -94,13 +108,14 @@ const fetchGlobalReach = async () => {
                   const IconComponent = LucideIcons[item.icon]; // item.icon must match the Lucide icon name exactly
 
                   return (
-                    <div
-                      key={index}
-                      onClick={() => setActiveServiceIndex(index)}
-                      className={`w-full sm:w-[85%] lg:w-full min-h-[70px] lg:h-[80px] rounded-2xl p-4 lg:p-5 flex justify-start gap-3 shadow-md hover:shadow-lg transition-shadow cursor-pointer ${
-                        activeServiceIndex === index ? "border border-[#2575b6] bg-[#dae9fd]" : ""
-                      }`}
-                    >
+                   <div
+                    key={index}
+                    onClick={() => setActiveServiceIndex(index)}
+                    className={`w-full sm:w-[85%] lg:w-full min-h-[70px] lg:h-[80px] rounded-2xl p-4 lg:p-5 flex justify-start gap-3 shadow-md hover:shadow-lg transition-shadow cursor-pointer
+                      ${activeServiceIndex === index ? "bg-[#dae9fd] border border-[#2575b6]" : "bg-[#f2f6fc]"}
+                    `}
+                  >
+
                       <div className="text-[#2575b6] w-[20%] flex items-center justify-center">
                         <div className="w-[50px] h-[50px] flex items-center justify-center bg-[#dae9fd] rounded-xl">
                           {IconComponent ? <IconComponent size={30} /> : null}

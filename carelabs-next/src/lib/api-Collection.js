@@ -209,6 +209,39 @@ query {
 }
   
 `
+export const GET_INSIGHTS_BY_LOCALE = gql`
+query  ($locale: I18NLocaleCode!){
+  insight (locale: $locale){
+    title
+    description
+    button
+    buttonLink
+    articles {
+      title
+      slug
+      image {
+        url
+      }
+      featuredText
+      featured
+      description
+      date
+      content
+      icon
+      category
+      buttontext
+      buttonlink
+      blog_category {
+        category
+      }
+      locale
+    }
+  }
+}
+  
+`
+
+
 export const GET_TESTIMONIALS = gql`
  query {
   testimonialsSection {
@@ -227,7 +260,6 @@ export const GET_TESTIMONIALS = gql`
 `
 
 export const GET_FOOTER = gql`
-
 query {
   footer {
     logo {
@@ -458,127 +490,6 @@ export const GET_SINGLE_SERVICE_BY_SLUG = gql`
   }
 `;
 
-// export const GET_INSIGHTS_BY_SLUG = gql`
-// query ($slug: String!) {
-//   insightblogs (filters: { slug: { eq: $slug } }) {
-//     badge
-//     badgeicon
-//     mainheading
-//     description
-//     authoricon
-//     author
-//     publishedicon
-//     publishedOn
-//     timeicon
-//     time
-//     slug
-//     category {
-//       title
-//     }
-//     introtitle
-//     introcontent
-//     articleSection {
-//       title
-//       articleItems {
-//         order
-//         slug
-//         title
-//       }
-//     }
-//     Weeklytitle
-//     Weeklydesc
-//     emailplaceholder
-//     subscribebutton
-//     subscribebuttonlink
-//     sections {
-//       ... on ComponentInsightsWhyTraditionalMaintenance {
-//         title
-//         slug
-//         introduction
-//         WhyTraditionalItems {
-//           title
-//           description
-//         }
-//       }
-//       ... on ComponentInsightsWhatAiPoweredPredictive {
-//         title
-//         slug
-//         content
-//         imagetext
-//         image {
-//           url
-//         }
-//       }
-//       ... on ComponentInsightsKeyBuildingBlocks {
-//         title
-//         slug
-//         KeyBuildingBlocksItems {
-//           order
-//           title
-//           icon
-//           content
-//         }
-//         image {
-//           url
-//         }
-//         imagetext
-//       }
-//       ... on ComponentInsightsRealWorld {
-//         title
-//         slug
-//         RealWorldItems {
-//           icon
-//           title
-//           content
-//           result
-//         }
-//       }
-//       ... on ComponentInsightsHowtoGetStarted {
-//         title
-//         content
-//         image {
-//           url
-//         }
-//         imagetext
-//         slug
-//       }
-//       ... on ComponentInsightsChallenges {
-//         title
-//         slug
-//         introduction
-//         ChallengesItems {
-//           title
-//           description
-//         }
-//         conclusion
-//       }
-//       ... on ComponentInsightsTheRoadAhead {
-//         title
-//         slug
-//         content
-//         conclusion
-//       }
-//     }
-//     exploretitle
-//     exploresubtitle
-//     button1text
-//     button1icon
-//     button1link
-//     button2text
-//     button2link
-//     RelatedArticlesText
-//     RelatedArticleItems {
-//       icon
-//       category
-//       title
-//       readtext
-//       readicon
-//       link
-//     }
-//   }
-// }
-  
-// `
 
 export const GET_INSIGHTS_BY_SLUG = gql`
   query ($slug: String!) {
@@ -828,10 +739,64 @@ export const GET_INSIGHTS_BY_SLUG_By_LOCALE = gql`
 `;
 
 
+export const GET_REGIONCOMPLIANCE_BY_LOCALE = gql`
+query ($locale: I18NLocaleCode) {
+  homeCompliances (locale:$locale) {
+    locale
+    description
+    badgeicon
+    badge
+    notetext
+    components_features {
+      color
+      description
+      icon
+      subtitle
+      title
+    }
+    title
+  }
+}
+`
 
 
 
 
 
+
+export const GET_HOME_SERVICES_BY_LOCALE = gql`
+query ($locale: I18NLocaleCode) {
+   homeSerivices (locale:$locale) {
+    badge
+    title
+    description
+    home_service_items {
+      order
+      name
+      icon
+      Image {
+        url
+      }
+      button1link
+      button1text
+      button2link
+      button2text
+      description
+      featureheading
+      linktext
+      performanceheading
+      performance {
+        name
+        stats
+      }
+      serviceFeatures {
+        name
+      }
+    }
+    locale
+  }
+}
+
+`
 
 

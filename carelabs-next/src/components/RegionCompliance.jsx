@@ -1,54 +1,128 @@
-import React from 'react'
+import { GET_REGIONCOMPLIANCE_BY_LOCALE } from '@/lib/api-Collection';
+import client from '@/lib/appollo-client';
+import * as Icons from "lucide-react";
+import { useParams } from 'next/navigation'
+import React, { useEffect, useState } from 'react'
 
 const RegionCompliance = () => {
-  return (
-     <div className='w-full flex flex-col items-center justify-center mt-20'>
-        <div className="flex flex-col w-[85%] p-5 text-center
-                2xl:w-[65%]    ">
-                    <h2 className='text-[30px] montserrat-font font-semibold mb-4'>Standards & Codes We Work To in Canada</h2>
-                    <p className='text-[18px]  para-text  poppins-font'>These values guide every study, inspection, and client interaction.</p>
-                </div>
+  
+  const params=useParams();
+  let locale= params.locale;
 
-        <div className="flex flex-col w-[85%] p- rounded-2xl mt-10
+  if(locale=="CA"||locale=="ca"){
+    locale="en-CA"
+  }else{
+    locale="en"
+  }
+
+  console.log("Local",locale);
+  
+  const [compliance,setCompliance]=useState(null);
+
+  const fetchComplianceByLocale = async()=>{
+    try{
+       const response = await client.query({
+          query:GET_REGIONCOMPLIANCE_BY_LOCALE,
+          variables: {locale },
+        });
+
+        console.log("REGIONCOMPLIANCE Data:", response.data.homeCompliances[0])
+        setCompliance(response.data.homeCompliances[0]); 
+    }catch(err){
+       console.log("ERROR at Fetching RegionCompliance in Component",err);
+       
+    }
+
+  }
+
+  const getIcon = (name) => {
+   return Icons[name] || Icons.Zap;  // fallback icon
+  };
+
+  
+
+  useEffect(()=>{
+  fetchComplianceByLocale();
+  },[])
+
+
+    
+if (!compliance) return null;
+  const BadgeIcon = Icons[compliance.badgeicon] || Icons.Zap;
+  
+
+  return (
+     <div className='w-full flex flex-col items-center justify-center  mt-40 lg:mt-60'>
+
+        <div className="flex flex-col  items-center justify-center w-[85%] p-5 text-center
+                2xl:w-[65%]">
+              <div className="w-fit flex items-center justify-center ">
+                  <h1 className="text-xs flex items-center justify-center gap-2 sm:text-sm md:text-base px-3 py-1 rounded-full border border-[#157de5] poppins-font">
+                    <div className="text-[#157de5]">
+                       <BadgeIcon size={18} />
+                    </div>
+                     {compliance.badge}
+                  </h1>
+              </div>    
+               
+              <div className="w-full sm:w-[80%] flex items-center justify-center flex-col py-5">
+                  <h2 className="gradient-text  text-3xl sm:text-4xl md:text-5xl lg:text-[60px] py-4 font-semibold montserrat-font"
+                    dangerouslySetInnerHTML={{ __html: compliance.title }}
+                  >
+               
+                  </h2>
+                  <div className="w-full sm:w-[90%] text-center py-5">
+                    <p className=" sm:px-8 text-lg  md:text-xl poppins-font para-text">
+                     {compliance.description}
+                    </p>
+                  </div>
+                  
+              </div> 
+        </div>
+
+        <div className="flex flex-col  items-center justify-center w-[85%] sm:w-[80%] p- rounded-2xl mt-10
             2xl:w-[65%]">
             <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 ">
 
-                 <div className="p-8 flex flex-col justify-center gap-4 glass-panel ">
-                    <div className="w-[70px] h-[70px] rounded-xl flex items-center justify-center light-blue"></div>
-                    <h2 className='montserrat-font font- text-[20px]'>CSA C22.1</h2>
-                    <h3 className='montserrat-font font-semibold text-[20px]'>Canadian Electrical Code, Part I</h3>
-                    <p className='poppins-font text-[16px] para-text'>Core wiring and installation requirements for Canadian electrical systems.</p>
-                </div>
+                {compliance.components_features?.map((item, index) => {
+                    const FeatureIcon = getIcon(item.icon);
 
-                 <div className="p-8 flex flex-col justify-center gap-4 glass-panel">
-                   <div className="w-[70px] h-[70px] rounded-xl flex items-center justify-center light-blue"></div>
-                    <h2 className='montserrat-font font- text-[20px]'>CSA Z462</h2>
-                    <h3 className='montserrat-font font-semibold text-[20px]'>Workplace Electrical Safety</h3>
-                    <p className='poppins-font text-[16px] para-text'>Canadian implementation aligned with NFPA 70E for arc-flash and shock protection.</p>
-                </div>
+                    return (
+                      <div key={index} className="p-8 flex flex-col justify-center gap-4 glass-panel">
+                        <div className="w-[70px] h-[70px] rounded-xl flex items-center justify-center light-blue"
+                        style={{ backgroundColor: item.color + "10" }}
+>
+                          <FeatureIcon size={32} color={item.color}  />
+                        </div>
 
-                 <div className="p-8 flex flex-col justify-center gap-4 glass-panel">
-                    <div className="w-[70px] h-[70px] rounded-xl flex items-center justify-center light-blue"></div>
-                      <h2 className='montserrat-font font- text-[20px]'>NFPA 70E / IEEE 1584</h2>
-                    <h3 className='montserrat-font font-semibold text-[20px]'>Arc-Flash Reference Standards</h3>
-                    <p className='poppins-font text-[16px] para-text'>Supporting guidance for arc-flash hazard analysis and PPE selection.</p>
-                </div>
+                        <h2 className="montserrat-font font-semibold text-[20px]"
+                        style={{color:item.color}}
+                        >
+                          {item.title}
+                        </h2>
 
-                 <div className="p-8 flex flex-col justify-center gap-4 glass-panel ">
-                    <div className="w-[70px] h-[70px] rounded-xl flex items-center justify-center light-blue"></div>
-                    <h2 className='montserrat-font font- text-[20px]'>NERC Standards</h2>
-                    <h3 className='montserrat-font font-semibold text-[20px]'>Reliability Standards</h3>
-                    <p className='poppins-font text-[16px] para-text'>Every recommendation starts with protecting people and assets from electrical hazards.</p>
-                </div>
+                        <h3 className="montserrat-font font-semibold text-[20px]">
+                          {item.subtitle}
+                        </h3>
 
-                 <div className="p-8 flex flex-col justify-center gap-4 glass-panel ">
-                    <div className="w-[70px] h-[70px] rounded-xl flex items-center justify-center light-blue"></div>
-                    <h2 className='montserrat-font font- text-[20px]'>Provincial & AHJ</h2>
-                    <h3 className='montserrat-font font-semibold text-[20px]'>Local Requirements</h3>
-                    <p className='poppins-font text-[16px] para-text'>Following relevant provincial and local authority rules for jurisdiction-specific compliance.</p>
-                </div>
+                        <p className="poppins-font text-[16px] para-text">
+                          {item.description}
+                        </p>
+                      </div>
+                    );
+                  })}
 
             </div>
+          
+           <div className=" w-full lg:w-[80%]  text-[#2575b6] flex items-center justify-center mt-10 p-6 rounded-2xl  card-shadow ">
+            <div className="icon p-5 lg:p-1">
+              <Icons.Check size={18}/>
+            </div>
+            <div className="poppins-font text-[16px] ">
+                <p> All studies and reports delivered with full traceability to applicable Canadian standards</p>
+            </div>
+           </div>
+
         </div>       
     </div>
   )

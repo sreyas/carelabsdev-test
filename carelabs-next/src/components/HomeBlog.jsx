@@ -1,12 +1,26 @@
 import React, { useEffect, useState } from 'react'
 import client from "@/lib/appollo-client";
-import { GET_INSIGHTS } from "@/lib/api-Collection";
+import { GET_INSIGHTS, GET_INSIGHTS_BY_LOCALE } from "@/lib/api-Collection";
 import Link from 'next/link';
 import * as LucideIcons from 'lucide-react';
 import { ArrowRight } from "lucide-react";
+import { useParams } from 'next/navigation';
 
 
 const HomeBlog = () => {
+  const params=useParams();
+  console.log("Params",params);
+  var locale=params.locale;
+  console.log("Locale",locale);
+  
+  if(locale=="CA" || locale=="ca"){
+    locale="en-CA"
+  }else{
+    locale="en"
+  }
+
+  
+  
  
 const [insights, setInsights] = useState(null);
 
@@ -14,7 +28,8 @@ const fetchInsights = async () => {
   try {
 
     const response = await client.query({
-      query:GET_INSIGHTS
+      query:GET_INSIGHTS_BY_LOCALE,
+       variables: {locale },
     });
     console.log("Insights Data:", response.data.insight)
 
@@ -65,7 +80,7 @@ if (!featured) {
             </div>
 
             <Link href="/services/power-system-analysis" legacyBehavior>
-              <a className="px-5 py-3 border border-blue-400 rounded-xl inline-block">
+              <a className="px-5 py-3 border border-blue-400 rounded-xl inline-block poppins-font">
                 {insights.button}
               </a>
             </Link>

@@ -35,12 +35,13 @@ const PowerSystemAnalysisCTA = ({ service }) => {
 
     <section className="w-full py-12 md:py-20">
       <div className="w-full min-h-[50vh] flex items-center justify-center">
-        <div className="w-[95%] sm:w-[85%] lg:w-[55%] rounded-4xl flex flex-col items-center justify-center gap-6 sm:gap-8 p-6 sm:p-10 gradient-bg">
+        <div className=" w-[95%] sm:w-[85%] lg:w-[70%] xl:w-[65%] 2xl:w-[60%] rounded-4xl flex flex-col items-center justify-center gap-6 sm:gap-8 p-6 sm:p-10 bg-gradient-to-br from-[#4A88FF] via-[#4A88FF] to-[#F38A4C] ">
 
           {/* TITLE */}
-          <p className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center text-white leading-tight">
+          <p className="text-xl sm:text-3xl md:text-4xl lg:text-5xl montserrat-font font-bold text-center text-white leading-tight  line-clamp-2 ">
             {service?.readyTitle}
           </p>
+
 
           {/* SUBTITLE */}
           <p className="text-sm sm:text-base md:text-lg text-center w-[95%] sm:w-[85%] text-white leading-relaxed">
