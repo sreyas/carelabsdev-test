@@ -1,6 +1,6 @@
 import client from "@/lib/appollo-client";
 import { GET_INSIGHTS_BY_SLUG } from "@/lib/api-Collection";
-import { Brain, Globe } from "lucide-react";
+import { Brain, Calendar, Clock, Globe, User } from "lucide-react";
 import Image from "next/image";
 import carlabz from "@/assets/carlabz.jpg";
 import React from "react";
@@ -31,7 +31,6 @@ export default function Page(props) {
     return response?.data?.insightblogs?.[0] || null;
   }
   
-
   const blog = React.use(loadBlog());
 
   if (!blog) {
@@ -55,7 +54,7 @@ export default function Page(props) {
       {/* HERO SECTION */}
       <div className="w-full md:w-[80%] xl:w-[70%] bg-red flex flex-col md:flex-row items-center gap-6 p-4 md:p-10 glass-panel rounded-2xl">
         <div className="w-full md:w-1/2 flex flex-col gap-4">
-          <div className="flex items-center gap-2 bg-amber-100 rounded-full py-2 px-4 w-max">
+          <div className="flex items-center gap-2 gradient-bg-badge rounded-full py-2 px-4 w-max">
             <Brain size={18} color="#2575b6"/>
             <p className="montserrat-font primary-color font-medium text-sm">{blog.badge}</p>
           </div>
@@ -64,26 +63,26 @@ export default function Page(props) {
             {blog.mainheading}
           </h1>
 
-          <p className="text-[16px] xl:text-[18px] poppins-font">{blog.description}</p>
+          <p className="text-[16px] xl:text-[18px] poppins-font para-text">{blog.description}</p>
 
           <hr className="w-full border-gray-300 my-4" />
 
-          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 text-sm poppins-font">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 text-sm poppins-font para-text">
             <div className="flex items-center gap-2">
-              <Globe size={14} /> {blog.author}
+              <User size={14} /> {blog.author}
             </div>
             <div className="flex items-center gap-2">
-              <Globe size={14} /> {blog.publishedOn}
+              <Calendar size={14} /> {blog.publishedOn}
             </div>
             <div className="flex items-center gap-2">
-              <Globe size={14} /> {blog.time}
+              <Clock size={14} /> {blog.time}
             </div>
           </div>
         </div>
  
            
         <div
-          className="w-full md:w-1/2 h-64 md:h-[400px] rounded-2xl bg-red-600"
+          className="w-full md:w-1/2 h-64 md:h-[400px] rounded-2xl"
           style={{
             backgroundImage: `url(${blog.sections?.[1]?.image?.url || carlabz.src})`,
             backgroundSize: "cover",
@@ -100,13 +99,13 @@ export default function Page(props) {
           <div className="w-[90%] md:w-full lg:w-[25%] flex flex-col gap-5">
             {/* Table of Contents */}
             {blog.articleSection && (
-              <div className="glass-panel rounded-2xl">
-                <h2 className="p-5 text-[14px] font-semibold montserrat-font">
+              <div className="glass-panel rounded-2xl py-5">
+                <h2 className="p-5 text-[14px] font-semibold montserrat-font uppercase">
                   {blog.articleSection.title || "IN THIS ARTICLE"}
                 </h2>
                 <ul>
                   {blog.articleSection.articleItems?.map((item, index) => (
-                    <li key={index} className="px-10 py-3 poppins-font text-[14px]">
+                    <li key={index} className="px-10 py-3 poppins-font text-[14px] para-text">
                       <a href={`#${item.slug}`}>{item.title}</a>
                     </li>
                   ))}
@@ -119,7 +118,7 @@ export default function Page(props) {
               <h2 className="text-[14px] font-semibold montserrat-font">
                 {blog.Weeklytitle || "Weekly Insights"}
               </h2>
-              <p className="py-2 poppins-font text-[14px]">
+              <p className="py-2 poppins-font text-[14px] para-text">
                 {blog.Weeklydesc || "Get the latest insights delivered to your inbox."}
               </p>
               <input
@@ -135,17 +134,17 @@ export default function Page(props) {
           </div>
 
           {/* MAIN CONTENT */}
-          <div className="w-[90%] md:w-full lg:w-[75%] flex flex-col gap-5 bg-red-50">
+          <div className="w-[90%] md:w-full lg:w-[75%] flex flex-col gap-5">
           
 
- {blog.introtitle && blog.IntroductionContent && (
-  <div className="glass-panel rounded-2xl p-10">
-    <h1 className="mb-5 text-[30px] font-semibold montserrat-font">
-      {blog.introtitle}
-    </h1>
+      {blog.introtitle && blog.IntroductionContent && (
+        <div className="glass-panel rounded-2xl p-10">
+          <h1 className="mb-5 text-[30px] font-semibold montserrat-font">
+            {blog.introtitle}
+          </h1>
 
     <div
-      className="poppins-font text-[16px] leading-[1.7]"
+      className="poppins-font text-[16px] para-text leading-[1.7]"
       dangerouslySetInnerHTML={{
         __html: blog.IntroductionContent.includes("<")
           ? blog.IntroductionContent
@@ -189,7 +188,7 @@ export default function Page(props) {
               const lastParagraph = lines[lines.length - 1];
 
     return (
-      <div className="poppins-font text-[16px] leading-relaxed mb-5">
+      <div className="poppins-font text-[16px] para-text leading-relaxed mb-5">
         
         <p className="mb-4">{firstParagraph}</p>
 
@@ -212,7 +211,7 @@ export default function Page(props) {
                             <h2 className="font-semibold text-[16px] montserrat-font py-2">
                               {item.title}
                             </h2>
-                            <p className="text-[14px] poppins-font">{item.description}</p>
+                            <p className="text-[14px] poppins-font para-text">{item.description}</p>
                           </div>
                         ))}
                       </div>
@@ -272,7 +271,7 @@ export default function Page(props) {
 
           if (lines.length === 1) {
             return (
-              <p className="poppins-font text-[16px] leading-relaxed">
+              <p className="poppins-font text-[16px] para-text leading-relaxed">
                 {lines[0]}
               </p>
             );
@@ -283,7 +282,7 @@ export default function Page(props) {
           const lastParagraph = lines[lines.length - 1];
 
           return (
-            <div className="poppins-font text-[16px] leading-relaxed">
+            <div className="poppins-font para-text text-[16px] leading-relaxed">
               {/* First paragraph */}
               <p className="mb-4">{firstParagraph}</p>
 
@@ -316,7 +315,7 @@ export default function Page(props) {
             }}
           />
           {section.imagetext && (
-            <p className="p-4 poppins-font italic">{section.imagetext}</p>
+            <p className="p-4 poppins-font para-text italic">{section.imagetext}</p>
           )}
         </div>
       )}
@@ -339,7 +338,7 @@ export default function Page(props) {
                             {item.order}. {item.title}
                           </h2>
                           <div
-                            className="poppins-font"
+                            className="poppins-font para-text"
                             dangerouslySetInnerHTML={{ __html: item.content }}
                           />
                         </div>
@@ -356,7 +355,7 @@ export default function Page(props) {
                           }}
                         />
                         {section.imagetext && (
-                          <p className="p-4 poppins-font italic">{section.imagetext}</p>
+                          <p className="p-4 poppins-font para-text italic">{section.imagetext}</p>
                         )}
                       </div>
                     )}
@@ -398,7 +397,7 @@ export default function Page(props) {
                         {section.title}
                       </h2>
                       <div
-                        className="poppins-font"
+                        className="poppins-font para-text"
                         dangerouslySetInnerHTML={{ __html: section.content }}
                       />
                     </div>
@@ -413,7 +412,7 @@ export default function Page(props) {
                           }}
                         />
                         {section.imagetext && (
-                          <p className="p-4 poppins-font">{section.imagetext}</p>
+                          <p className="p-4 poppins-font para-text">{section.imagetext}</p>
                         )}
                       </div>
                     )}
@@ -429,14 +428,14 @@ export default function Page(props) {
                       {section.title}
                     </h1>
                     {section.introduction && (
-                      <p className="poppins-font mb-5">{section.introduction}</p>
+                      <p className="poppins-font para-text mb-5">{section.introduction}</p>
                     )}
                     {section.ChallengesItems && (
                       <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 py-5">
                         {section.ChallengesItems.map((item, idx) => (
                           <div key={idx} className="p-3 border rounded-2xl">
                             <h2 className="font-semibold montserrat-font">{item.title}</h2>
-                            <p className="poppins-font">{item.description}</p>
+                            <p className="poppins-font para-text">{item.description}</p>
                           </div>
                         ))}
                       </div>
@@ -456,7 +455,7 @@ export default function Page(props) {
                       {section.title}
                     </h1>
                     <div
-                      className="poppins-font"
+                      className="poppins-font para-text"
                       dangerouslySetInnerHTML={{ __html: section.content }}
                     />
                     {section.conclusion && (
@@ -478,9 +477,9 @@ export default function Page(props) {
                   {blog.exploretitle}
                 </h2>
                 {blog.exploresubtitle && (
-                  <p className="poppins-font py-10">{blog.exploresubtitle}</p>
+                  <p className="poppins-font para-text py-10">{blog.exploresubtitle}</p>
                 )}
-                <div className="flex flex-col lg:flex-row items-center gap-4 justify-center poppins-font">
+                <div className="flex flex-col lg:flex-row items-center gap-4 justify-center para-text poppins-font">
                   {blog.button1text && (
                     <button className="bg-[#2575b6] py-2 px-6 rounded-lg text-white">
                       <a href={blog.button1link || "#"}>{blog.button1text}</a>

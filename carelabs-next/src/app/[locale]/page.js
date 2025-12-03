@@ -117,11 +117,11 @@ console.log("Pararar111",params['locale']);
         <div 
           data-aos="fade-up"
           data-aos-duration="2000"
-          className="  w-11/12 flex flex-col items-center justify-center border boreder-[#0f172914] glass-panel rounded-3xl  p-4
+          className="  w-11/12 flex flex-col items-center justify-center border boreder-[#0f172914] glass-panel rounded-3xl  p-4 
           md:w-4/5 md:h-[85%] md:mt-2  md:p-6
           lg:w-[85%] lg:mt-5
           xl:w-[80%] xl:mt-16
-          2xl:mt-0 2xl:w-[65%]">
+          2xl:mt-0 2xl:w-[65%]"  >
 
             <div className="w-full flex flex-col items-center justify-evenly space-y-6 md:space-y-8">
                 {/* Heading Button */}
@@ -139,25 +139,25 @@ console.log("Pararar111",params['locale']);
                   </button>
                 </div>
 
-                  {/* Title */}
-                <div className="w-full flex flex-col items-center justify-center text-center xl:text-[72px] title-Text">
-                  <p className="w-full  md:w-3/5  text-3xl sm:text-4xl md:text-5xl lg:text-6xl gradient-text  py-2">
-                    {homeData.title1}
-                  </p>
+                {/* Title */}
+               <div className="w-full flex flex-col items-center justify-center text-center xl:text-[72px] title-Text">
 
-                  <p className=" w-full md:w-3/5  text-3xl sm:text-4xl md:text-5xl lg:text-6xl  py-2">
-                    {homeData.title2}
-                  </p>
+               <p className="w-full md:w-[90%] text-3xl sm:text-4xl md:text-5xl lg:text-6xl py-1">
+               {homeData.title1}
+               </p>
 
-                  <p className="w-full md:w-3/5  text-3xl sm:text-4xl md:text-5xl lg:text-6xl  py-2 text-[#157de5]">
-                    {homeData.title3}
-                  </p>
-                </div>
+               <p className="w-full md:w-[90%] text-3xl sm:text-4xl md:text-5xl lg:text-6xl py-1 gradient-text">
+               {homeData.title2} <span className="text-[#157de5]">{homeData.title3}</span>
+               </p>
+
+           </div>
+
+
             </div>
 
             {/* Description */}
             <div className="w-full flex items-center justify-center text-center px-4 md:px-8">
-              <div className="w-full md:w-11/12 text-[20px]   md:text-xl py-2 ">
+              <div className="w-full md:w-11/12 text-[20px]   md:text-xl py-5 ">
                 <p className="para-text poppins-font">{homeData.description}</p>
               </div>
             </div>
@@ -165,11 +165,11 @@ console.log("Pararar111",params['locale']);
             {/* Buttons */}
             <div className="w-full flex items-center justify-center py-4">
               <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 items-center justify-center w-full md:w-3/5">
-                <button className="secondary-bg flex items-center justify-center gap-2  text-white py-2 px-6 rounded-full text-[14px] poppins-font">
+                <button className="secondary-bg flex items-center justify-center gap-2  text-white py-3 px-6 rounded-full text-[14px] poppins-font">
                   <a href={homeData.btn1_link}>{homeData.btn1_text}</a>
                   <ArrowRight size={14} />
                 </button>
-                <button className=" flex items-center justify-center gap-2 border hover:bg-[#f15c30] hover:text-white border-[#0f172914] bg-white py-2 px-6 rounded-full text-[14px] poppins-font">
+                <button className=" flex items-center justify-center gap-2 border hover:bg-[#f15c30] hover:text-white border-[#0f172914] bg-white py-3 px-6 rounded-full text-[14px] poppins-font">
                   <Play  size={14}/>
                   <a href={homeData.btn2_link}>{homeData.btn2_text}</a>
                 </button>

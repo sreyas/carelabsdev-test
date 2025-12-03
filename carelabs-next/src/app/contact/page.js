@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from 'react'
-import { CheckCircle, FileText, HelpCircle, Headphones, Users, ChevronDown } from "lucide-react";
+import { CheckCircle, FileText, HelpCircle, Headphones, Users, ChevronDown, Mail } from "lucide-react";
 
 
 const moreFaqs = [
@@ -932,7 +932,60 @@ const page = () => {
           ))}
         </div>
       </div>
-    </section>
+    </section> 
+
+
+    {/* <section className="w-full flex flex-col items-center py-12 bg-[#F7F8FB]">
+      <div
+        className="
+          w-[98%] md:w-[90%] lg:w-[85%] xl:w-[78%] 2xl:w-[72%]
+        "
+      >
+        <div className='w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5'>
+          <div className='bg-red-400 flex flex-col gap-5  items-center justify-center p-5'>
+            <div className='w-[50px] h-[50px]  flex items-center justify-center bg-[#2575b610] roun'>
+              <Mail color='#2575b6' />
+            </div>
+             <h3 className='montserrat-font font-semibold '>
+              Email our experts
+             </h3>
+             <p>solutions@carelabs.com</p>
+          </div>
+
+             <div className='card-shadow'>
+            <div className='w-[50px] h-[50px]'>
+              <Mail color='#2575b6' />
+            </div>
+             <h3 className='montserrat-font font-semibold '>
+              Email our experts
+             </h3>
+             <p>solutions@carelabs.com</p>
+          </div>
+
+             <div className='bg-red-400'>
+            <div className='w-[50px] h-[50px]'>
+              <Mail color='#2575b6' />
+            </div>
+             <h3>
+              Email our experts
+             </h3>
+             <p>solutions@carelabs.com</p>
+          </div>
+
+             <div className='bg-red-400'>
+            <div className='w-[50px] h-[50px]'>
+              <Mail color='#2575b6' />
+            </div>
+             <h3>
+              Email our experts
+             </h3>
+             <p>solutions@carelabs.com</p>
+          </div>
+          
+        </div>
+      </div>
+
+    </section> */}
 
 
 

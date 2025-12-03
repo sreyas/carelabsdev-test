@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { ChevronDown, FileText, Download } from "lucide-react";
 import { cn } from "@/lib/utils";
-
+import {SquareArrowOutUpRight} from "lucide-react";
 import * as LucideIcons from "lucide-react";
 
 
@@ -139,7 +139,7 @@ const ResourceCard = ({ label, format, icon }) => {
         <p className="text-xs text-gray-500">{format}</p>
       </div>
 
-      <LucideIcons.Download className="h-5 w-5 text-gray-400" />
+      <LucideIcons.SquareArrowOutUpRight className="h-5 w-5 text-gray-400" />
     </div>
   );
 };

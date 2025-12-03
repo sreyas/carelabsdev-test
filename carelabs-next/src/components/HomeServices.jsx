@@ -54,15 +54,15 @@ const fetchGlobalReach = async () => {
 <div className="">
          <div className="text w-full h-auto flex flex-col items-center justify-center py-8">
     
-    <div
+  <div
     data-aos="fade-up"
      data-aos-anchor-placement="top-center"
-    className="w-11/12 sm:w-4/5 md:w-3/5 lg:w-[80%] 2xl:w-[65%] bg-white flex items-center justify-center text-center flex-col gap-5 p-4 not-odd:">
+    className="w-11/12 sm:w-4/5 md:w-3/5 lg:w-[80%] 2xl:w-[65%] bg-white flex items-center justify-center text-center flex-col gap-5 p-4 mt-10 not-odd:">
       
       {/* Heading */}
-      <h1 className="text-xs flex items-center justify-center gap-2 sm:text-sm md:text-base px-3 py-1 rounded-full border border-[#157de5] poppins-font">
+      <h1 className="text-[13px] bg-white flex items-center justify-center gap-2  px-5 py-2 rounded-full border border-[#157de5] poppins-font">
         <div className="text-[#157de5]">
-              <Zap size={18} />
+              <Zap size={17} />
           </div>
 
         {/* Global Reach */}
@@ -100,7 +100,7 @@ const fetchGlobalReach = async () => {
             <div 
             data-aos="fade-up"
             data-aos-anchor-placement="top-center"
-            className=" w-full h-full flex flex-col justify-start items-center p-3 gap-3 lg:gap-5 overflow-y-auto
+            className=" w-full h-full flex flex-col justify-start items-center p-3 gap-3 lg:gap-5 overflow-y-auto -mt-35
             lg:w-[85%] 
             xl:w-[40%]   ">
 
@@ -133,11 +133,11 @@ const fetchGlobalReach = async () => {
             </div>
 
             {/* Detail Panel */}
-            <div      
+          <div      
             className="w-full  h-auto flex p-3 justify-center
             md:w-[85%]
             lg:h-full
-            xl:w-[60%] ">
+            xl:w-[60%] -mt-35 ">
                 <div 
                  data-aos="fade-up"
                     data-aos-anchor-placement="top-center"

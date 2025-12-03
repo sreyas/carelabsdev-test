@@ -150,15 +150,15 @@ if (!homeData) {
     <div className="w-full flex flex-col items-center justify-center text-center xl:text-[72px] title-Text"
 
     >
-      <p className="w-full  md:w-3/5  text-3xl sm:text-4xl md:text-5xl lg:text-6xl gradient-text  py-2">
+      <p className="w-full  md:w-3/5  text-3xl sm:text-4xl md:text-5xl lg:text-6xl gradient-text  py-1">
         {homeData.title1}
       </p>
 
-      <p className=" w-full md:w-3/5  text-3xl sm:text-4xl md:text-5xl lg:text-6xl  py-2">
+      <p className=" w-full md:w-3/5  text-3xl sm:text-4xl md:text-5xl lg:text-6xl  py-1">
         {homeData.title2}
       </p>
 
-      <p className="w-full md:w-3/5  text-3xl sm:text-4xl md:text-5xl lg:text-6xl  py-2 text-[#157de5]">
+      <p className="w-full md:w-3/5  text-3xl sm:text-4xl md:text-5xl lg:text-6xl  py-1 text-[#157de5]">
         {homeData.title3}
       </p>
     </div>
@@ -168,7 +168,7 @@ if (!homeData) {
 
       {/* Description */}
       <div className="w-full flex items-center justify-center text-center px-4 md:px-8">
-        <div className="w-full md:w-11/12 text-[20px]   md:text-xl py-2 ">
+        <div className="w-full md:w-11/12 text-[20px]   md:text-xl py-5 ">
           <p className="para-text poppins-font">{homeData.description}</p>
         </div>
       </div>
@@ -176,7 +176,7 @@ if (!homeData) {
       {/* Buttons */}
       <div className="w-full flex items-center justify-center py-4">
         <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 items-center justify-center w-full md:w-3/5">
-          <button className="bg-[#FF7038] flex items-center justify-center gap-2  text-white py-2 px-6 rounded-full text-[14px] poppins-font hover:bg-[#FF4C05]">
+          <button className="bg-[#FF7038] flex items-center justify-center gap-2  text-white py-3 px-6 rounded-full text-[14px] poppins-font hover:bg-[#FF4C05]">
             <a 
             
             //href={homeData.btn1_link}
@@ -197,7 +197,7 @@ if (!homeData) {
   <button
   onClick={openRandomVideo}
   //className="flex items-center justify-center gap-2 hover:bg-[#FF7038] border hover:border-[#157de54d] hover:text-white border-[#0f172914] bg-white py-2 px-6 rounded-full text-[14px] poppins-font"
-  className="flex items-center justify-center gap-2 bg-white text-gray-800 border-2 border-gray-200 py-2 px-6 rounded-full text-[14px] poppins-font transition-all duration-300 hover:border-blue-500 hover:bg-[#FF7038] hover:text-white"
+  className="flex items-center justify-center gap-2 bg-white text-gray-800 border-2 border-gray-200 py-3 px-6 rounded-full text-[14px] poppins-font transition-all duration-300 hover:border-blue-500 hover:bg-[#FF7038] hover:text-white"
 >
   <Play size={14} />
   {homeData.btn2_text}
@@ -233,7 +233,7 @@ if (!homeData) {
   data-aos="fade-up"
   data-aos-duration="2000"
   className="w-full flex flex-col sm:flex-row items-center justify-center 
-             gap-6 sm:gap-8 py-6"
+             gap-6 sm:gap-8 py-8"
 >
   {homeData.stats?.map((item, idx) => {
     let numberColor = "";
@@ -246,7 +246,7 @@ if (!homeData) {
         className="
           w-[90%] sm:w-[32%] lg:w-[28%]
           flex flex-col items-center justify-center
-          p-6 rounded-2xl card-shadow 
+          p-6 rounded-2xl shadow-[0_12px_40px_rgba(0,0,0,0.15)] 
           transition-all duration-500
           hover:scale-[1.04] hover:-translate-y-1 hover:shadow-xl
         "
@@ -257,7 +257,9 @@ if (!homeData) {
           animationDelay: `${idx * 0.15}s`,
         }}
       >
+        <div className="text-4xl font-extrabold montserrat-font">
         <HomeCounter end={item.number} duration={2} color={numberColor} />
+        </div>
         <p className="text-[14px] py-1 text-[#65758B] poppins-font">
           {item.label}
         </p>

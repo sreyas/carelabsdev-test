@@ -1,13 +1,9 @@
 import { GET_PAGE_SEO } from "@/lib/api-Collection";
 import client from "@/lib/appollo-client";
 
-export default async function Layout({ children, params }) {
-    console.log("PARA",params);
-    
-  const { locale } = params; // Server-side only
-  console.log("SERVER locale:", locale);
-
-  let seo = { metaTitle: "Carelabs | My Brand", metaDescription: "", keywords: "" };
+export async function generateMetadata({ params }) {
+  const locale = params?.locale || "en-CA"; // FIXED
+  console.log("META LOCALE:", locale);
 
   try {
     const res = await client.query({
@@ -17,26 +13,24 @@ export default async function Layout({ children, params }) {
     });
 
     const data = res.data?.homePage?.homeseo;
+
     if (data) {
-      seo = {
-        metaTitle: data.metaTitle,
-        metaDescription: data.metaDescription,
-        keywords: data.keywords || "",
+      return {
+        title: data.metaTitle,
+        description: data.metaDescription,
+        keywords: data.keywords || undefined,
       };
     }
   } catch (err) {
     console.error("SEO fetch error:", err);
   }
 
-  return (
-    <>
-      <head>
-        <title>{seo.metaTitle}</title>
-        <meta name="description" content={seo.metaDescription} />
-        {seo.keywords && <meta name="keywords" content={seo.keywords} />}
-      </head>
+  return {
+    title: "Carelabs",
+    description: "",
+  };
+}
 
-      {children}
-    </>
-  );
+export default function Layout({ children}) {
+  return <>{children}</>;
 }

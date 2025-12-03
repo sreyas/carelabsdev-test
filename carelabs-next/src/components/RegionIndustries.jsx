@@ -80,9 +80,9 @@ const RegionIndustries = () => {
             className="w-11/12 sm:w-4/5 md:w-3/5 lg:w-[80%] 2xl:w-[65%] bg-white flex items-center justify-center text-center flex-col gap-5 p-4 not-odd:">
             
                 {/* Heading */}
-                <h1 className="text-xs flex items-center justify-center gap-2 sm:text-sm md:text-base px-3 py-1 rounded-full border border-[#157de5] poppins-font">
-                    <div className="text-[#157de5]">
-                        <Zap size={18} />
+                <h1 className="text-[13px] bg-white flex items-center justify-center gap-2  px-5 py-2 rounded-full border border-[#157de5] poppins-font">
+                  <div className="text-[#157de5]">
+                        <Zap size={17} />
                     </div>
 
                     {/* Global Reach */}
@@ -97,7 +97,7 @@ const RegionIndustries = () => {
                 </h2>
                 
                 {/* Description */}
-                <p className="px-4 sm:px-8 text-lg  md:text-xl poppins-font para-text">
+                <p className="px-4 sm:px-8 text-xl  md:text-lg poppins-font para-text">
                   {/* From analysis to optimization, we deliver end-to-end power system solutions backed by cutting-edge technology and decades of expertise. */}
                   Focused on protecting critical Canadian infrastructure across sectors with power system expertise and safety-first solutions.
                 </p>
@@ -145,7 +145,7 @@ const RegionIndustries = () => {
                     {item.title}
                 </h4>
 
-                <ul className="list-disc px-5">
+                <ul className="list-disc px-5 text-gray-500">
                     {item.points.map((point, i) => (
                     <li key={i}>{point}</li>
                     ))}

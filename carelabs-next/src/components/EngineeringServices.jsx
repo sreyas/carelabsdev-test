@@ -2,6 +2,7 @@
 
 //import { Zap, Activity, Target } from "lucide-react";
 import * as LucideIcons from "lucide-react";
+import {SquareArrowOutUpRight} from "lucide-react";
 
 
 export default function EngineeringServices({ service }) {
@@ -128,7 +129,7 @@ export default function EngineeringServices({ service }) {
     return (
       <div
         key={index}
-        className="bg-background rounded-2xl p-8 card-hover flex flex-col items-start gap-4 navbar-shadow
+        className="bg-background rounded-2xl p-8 card-hover flex flex-col items-start gap-4 shadow-[0_6px_10px_rgba(0,0,0,0.15)]
                    transition-all duration-300 ease-out group
                    hover:-translate-y-2 hover:shadow-2xl hover:scale-[1.02]"
       >
@@ -151,9 +152,20 @@ export default function EngineeringServices({ service }) {
 
 
         {/* TITLE */}
-        <h3 className="text-xl montserrat-font font-bold transition-all duration-300 group-hover:text-[#157be2]">
-          {item.label}
-        </h3>
+        <div className="flex items-center justify-between w-full">
+          <h3 className="text-xl montserrat-font font-bold transition-all duration-300 group-hover:text-[#157be2]">
+            {item.label}
+          </h3>
+
+          {/* HOVER ICON (hidden until hover) */}
+          <SquareArrowOutUpRight
+            className="
+              w-4 h-4 text-[#157be2] opacity-0
+              transition-all duration-300 ease-out
+              group-hover:opacity-100
+            "
+          />
+        </div>
 
         {/* DESCRIPTION */}
         <p className="text-muted-foreground transition-all duration-300 group-hover:text-gray-700 text-gray-600">
