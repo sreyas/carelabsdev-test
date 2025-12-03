@@ -460,7 +460,10 @@ const targetSlug = isBlogMenu
                       setIsModalOpen(false);
                       
                       if (region === "Canada") {
-                      router.push("/CA");
+                      router.push("/ca");
+                      }
+                      if (region === "Global") {
+                      router.push("/");
                       }
 
                     }}

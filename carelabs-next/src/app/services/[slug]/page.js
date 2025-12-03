@@ -59,8 +59,8 @@ export default async function Page({ params }) {
 
 
 <section>
-  <div className="w-full min-h-[300px] flex items-center justify-center px-4 py-25">
-    <div className="w-full sm:w-[90%] lg:w-[70%] flex flex-wrap justify-center gap-6">
+  <div className="w-full min-h-[300px] flex items-center justify-center px-4 py-25 bg-[#f9fbfe]">
+    <div className="w-full sm:w-[90%] lg:w-[82%] flex flex-wrap justify-center gap-6">
 
       {service?.service_features?.map((feat, idx) => {
         const iconName = feat.icon.trim();
@@ -71,16 +71,16 @@ export default async function Page({ params }) {
             key={idx}
             className="
               w-full sm:w-[45%] lg:w-[30%] 
-              bg-white p-6 rounded-2xl card-shadow flex flex-col gap-3
+              bg-[#ffffffd9] p-6 rounded-2xl shadow-[0_6px_10px_rgba(0,0,0,0.15)] flex flex-col gap-3
 
               transform transition-all duration-500 
               hover:scale-[1.05] hover:shadow-xl hover:-translate-y-1
             "
           >
-            <Icon className="w-8 h-8 text-[#1764e8]" />
+            <Icon className="w-8 h-8 text-[#157de5]" />
 
-            <p className="text-xl font-bold montserrat-font">{feat.title}</p>
-            <p className="text-sm text-gray-600">{feat.description}</p>
+            <p className="text-lg font-bold montserrat-font">{feat.title}</p>
+            <p className="text-sm text-gray-500">{feat.description}</p>
           </div>
         );
       })}
@@ -146,17 +146,17 @@ export default async function Page({ params }) {
       </section> */}
 
       <section>
-  <div className="w-full flex justify-center px-4 py-10">
+  <div className="w-full flex justify-center px-4 py-10 bg-[#f9fbfe]">
     <div className="
-      w-[95%] sm:w-[90%] lg:w-[85%] xl:w-[80%] 
+      w-[95%] sm:w-[90%] lg:w-[90%] xl:w-[86%] 
       flex flex-col lg:flex-row gap-10 justify-center
     ">
 
       {/* LEFT CARD */}
       <div className="
-        bg-white p-8 rounded-2xl 
+        bg-gradient-to-br from-white/20 to-[#f0f5fd] p-8 rounded-2xl 
         w-full lg:w-[50%] xl:w-[48%] 
-        card-shadow flex flex-col gap-6
+        shadow-[0_6px_10px_rgba(0,0,0,0.15)] flex flex-col gap-6
       ">
         <div className="w-[55px] h-[55px] bg-[#f9e0e2] rounded-xl flex justify-center items-center">
           {service?.Why_Matters?.[0]?.icon && (() => {
@@ -170,14 +170,14 @@ export default async function Page({ params }) {
           className="
             text-[22px] md:text-[24px] font-bold 
             leading-tight montserrat-font 
-            whitespace-nowrap overflow-hidden text-ellipsis
+             text-ellipsis
           "
           dangerouslySetInnerHTML={{ __html: service?.Why_Matters?.[0]?.title || '' }}
         />
 
-        <p className="text-gray-700">{service?.Why_Matters?.[0]?.subtitle}</p>
+        <p className="text-gray-500 text-[16px]">{service?.Why_Matters?.[0]?.subtitle}</p>
 
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-4">
           {[
             service?.Why_Matters?.[0]?.ans1,
             service?.Why_Matters?.[0]?.ans2,
@@ -187,8 +187,8 @@ export default async function Page({ params }) {
             .filter(Boolean)
             .map((item, i) => (
               <div key={i} className="flex gap-2 text-sm">
-                <i className="fa-solid fa-angle-right text-red-500" />
-                <p>{item}</p>
+                <i className="fa-solid fa-angle-right text-red-500 mt-1 text-[15px]" />
+                <p className="text-[16px] text-[#0F1729]">{item}</p>
               </div>
             ))}
         </div>
@@ -196,9 +196,9 @@ export default async function Page({ params }) {
 
       {/* RIGHT CARD */}
       <div className="
-        bg-white p-8 rounded-2xl 
-        w-full lg:w-[50%] xl:w-[48%]
-        card-shadow flex flex-col gap-6
+        bg-gradient-to-br from-[#f0f5fd] to-white/20 p-8 rounded-2xl 
+        w-full lg:w-[50%] xl:w-[48%] 
+        shadow-[0_6px_10px_rgba(0,0,0,0.15)] flex flex-col gap-6
       ">
         <div className="w-[55px] h-[55px] bg-[#e2ecf8] rounded-xl flex justify-center items-center">
           {service?.Why_Matters?.[1]?.icon && (() => {
@@ -212,14 +212,14 @@ export default async function Page({ params }) {
           className="
             text-[22px] md:text-[24px] font-bold 
             leading-tight montserrat-font 
-            whitespace-nowrap overflow-hidden text-ellipsis
+             text-ellipsis
           "
           dangerouslySetInnerHTML={{ __html: service?.Why_Matters?.[1]?.title || '' }}
         />
 
-        <p className="text-gray-700">{service?.Why_Matters?.[1]?.subtitle}</p>
+        <p className="text-gray-500 text-[16px]">{service?.Why_Matters?.[1]?.subtitle}</p>
 
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-4">
           {[
             service?.Why_Matters?.[1]?.ans1,
             service?.Why_Matters?.[1]?.ans2,
@@ -229,8 +229,8 @@ export default async function Page({ params }) {
             .filter(Boolean)
             .map((item, i) => (
               <div key={i} className="flex gap-2 text-sm">
-                <i className="fa-regular fa-circle-check text-orange-500" />
-                <p>{item}</p>
+                <i className="fa-regular fa-circle-check text-orange-500 mt-1 text-[17px]" />
+                <p className="text-[16px] text-[#0F1729]">{item}</p>
               </div>
             ))}
         </div>

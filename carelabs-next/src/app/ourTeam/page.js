@@ -10,6 +10,8 @@ import OurTeamsWrkProjcet from '@/components/OurTeams/OurTeamsWrkProjcet';
 import OurTeamsWrkTogether from '@/components/OurTeams/OurTeamsWrkTogether';
 import React from 'react'
 
+
+
 const page = () => {
  
 
@@ -43,9 +45,9 @@ const page = () => {
         <OurTeamPartner/>
       </section>
 
-      {/* <section>
+      <section>
         <OurTeamMilestone/>
-      </section> */}
+      </section>
 
       <section>
         <OurTeamRecognitions/>

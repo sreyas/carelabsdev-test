@@ -801,3 +801,16 @@ query ($locale: I18NLocaleCode) {
 `
 
 
+
+export const GET_PAGE_SEO = gql`
+query ($locale: I18NLocaleCode) {
+   homePage(locale:$locale) {
+    homeseo {
+      metaTitle
+      keywords
+      metaDescription
+    }
+    locale
+  }
+}   
+`

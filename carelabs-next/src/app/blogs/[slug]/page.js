@@ -1,6 +1,6 @@
 import client from "@/lib/appollo-client";
 import { GET_INSIGHTS_BY_SLUG } from "@/lib/api-Collection";
-import { Globe } from "lucide-react";
+import { Brain, Globe } from "lucide-react";
 import Image from "next/image";
 import carlabz from "@/assets/carlabz.jpg";
 import React from "react";
@@ -46,7 +46,7 @@ export default function Page(props) {
   return (
     <div className="relative w-full flex flex-col items-center justify-center gap-5 overflow-y-auto">
       {/* Breadcrumbs */}
-      <div className="w-full md:w-[80%] xl:w-[70%] mt-20 md:mt-24 lg:mt-40 px-4 md:px-0">
+      <div className="w-full md:w-[80%] xl:w-[70%] mt-20 md:mt-24 lg:mt-30 px-4 md:px-0">
         <p className="text-para text-[14px] poppins-font">
           Home / Insights / {blog.mainheading}
         </p>
@@ -55,12 +55,12 @@ export default function Page(props) {
       {/* HERO SECTION */}
       <div className="w-full md:w-[80%] xl:w-[70%] bg-red flex flex-col md:flex-row items-center gap-6 p-4 md:p-10 glass-panel rounded-2xl">
         <div className="w-full md:w-1/2 flex flex-col gap-4">
-          <div className="flex items-center gap-2 bg-amber-100 rounded-full py-1 px-2 w-max">
-            <Globe size={14} />
-            <p className="montserrat-font text-sm">{blog.badge}</p>
+          <div className="flex items-center gap-2 bg-amber-100 rounded-full py-2 px-4 w-max">
+            <Brain size={18} color="#2575b6"/>
+            <p className="montserrat-font primary-color font-medium text-sm">{blog.badge}</p>
           </div>
 
-          <h1 className="text-[28px] lg:text-[36px] 2xl:text-[48px] font-semibold montserrat-font leading-snug">
+          <h1 className="text-[28px] lg:text-[36px] 2xl:text-[48px] font-semibold montserrat-font leading-12">
             {blog.mainheading}
           </h1>
 
@@ -80,9 +80,10 @@ export default function Page(props) {
             </div>
           </div>
         </div>
-
+ 
+           
         <div
-          className="w-full md:w-1/2 h-64 md:h-[400px] rounded-2xl bg-white"
+          className="w-full md:w-1/2 h-64 md:h-[400px] rounded-2xl bg-red-600"
           style={{
             backgroundImage: `url(${blog.sections?.[1]?.image?.url || carlabz.src})`,
             backgroundSize: "cover",

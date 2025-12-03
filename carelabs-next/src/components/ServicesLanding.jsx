@@ -64,7 +64,7 @@ const openRandomVideo = () => {
 
 
   return (
-    <div className="w-full min-h-[80vh] pt-[80px] flex justify-center px-4 ">
+    <div className="w-full min-h-[80vh] pt-[80px] flex justify-center px-4 bg-[#f9fbfe]">
       <div className="w-full xl:w-[90%] xl:px-6 2xl:w-[70%] flex flex-col lg:flex-row mt-12 gap-10 ">
 
         {/* LEFT SECTION */}
@@ -83,7 +83,7 @@ const openRandomVideo = () => {
 
     <div className="w-fit">
      <div className="px-4 py-2 text-xs sm:text-sm rounded-full 
-                  card-shadow bg-white flex items-center gap-2 border border-blue-300">
+                   bg-white flex items-center gap-2 border border-[#c3e3fa] shadow-[0_6px_10px_rgba(0,0,0,0.15)]">
 
     {/* Dynamic Icon */}
     {badgeicon && (() => {
@@ -117,7 +117,7 @@ const openRandomVideo = () => {
               </h1>
            </div>
 
-            <p className="w-[80%] text-sm sm:text-base lg:text-lg leading-7 text-gray-500 ">
+            <p className="w-[85%] mt-4 text-sm sm:text-base lg:text-lg leading-7 text-[#65758b] ">
                {maindesc}
             </p>
           </div>
@@ -155,8 +155,8 @@ const openRandomVideo = () => {
       }}
       className="
         group relative px-6 sm:px-8 py-2 rounded-lg text-sm 
-        bg-blue-600 text-white overflow-hidden 
-        flex items-center gap-2 cursor-pointer
+        bg-[#157de5] text-white overflow-hidden 
+        flex items-center gap-2 cursor-pointer font-semibold
       "
     >
       
@@ -167,11 +167,9 @@ const openRandomVideo = () => {
           transition-opacity duration-300
         "
       ></span>
-
-      
-      <ArrowRight className="relative z-10 w-4 h-4" />
-
       <span className="relative z-10">{mainbutton1}</span>
+       <ArrowRight className="relative z-10 w-4 h-4" />
+ 
     </a>
 
          {/* section2 */}
@@ -226,7 +224,7 @@ const openRandomVideo = () => {
   onClick={downloadRandomPdf}
   className="
     group relative px-6 sm:px-8 py-2 text-sm 
-    border-2 rounded-lg border-blue-500 
+    border-2 rounded-lg border-[#add9f8] 
     bg-white text-gray-600
     overflow-hidden flex items-center gap-2 cursor-pointer
   "
@@ -240,10 +238,10 @@ const openRandomVideo = () => {
   ></span>
 
   {/* ICON */}
-  <Download className="relative z-10 w-4 h-4 group-hover:text-white transition-colors duration-300 " />
+  <Download className="relative z-10 w-4 h-4 group-hover:text-white transition-colors duration-300 text-black" />
 
   {/* TEXT */}
-  <span className="relative z-10 group-hover:text-white transition-colors duration-300 ">{mainbutton2}</span>
+  <span className="relative z-10 text-black group-hover:text-white transition-colors duration-300 ">{mainbutton2}</span>
 </button>
 
 
@@ -302,8 +300,8 @@ const openRandomVideo = () => {
   onClick={openRandomVideo}
   className="
     group relative px-6 sm:px-8 py-2 text-sm rounded-lg 
-    border-2 border-orange-400 text-gray-600
-    lg:w-[60%] xl:w-[50%] 2xl:w-[40%]
+    border-2 border-[#fcd3c4] text-gray-600
+    lg:w-[50%] xl:w-[40%] 2xl:w-[40%]
     overflow-hidden flex items-center gap-2 cursor-pointer
   "
 >
@@ -315,8 +313,8 @@ const openRandomVideo = () => {
     "
   ></span>
 
-  <PlayCircle className="relative z-10 w-5 h-5 text-orange-500 group-hover:text-white transition-colors duration-300 " />
-  <span className="relative z-10 group-hover:text-white transition-colors duration-300 ">{mainbutton3}</span>
+  <PlayCircle className="relative z-10 w-5 h-5 text-black group-hover:text-white transition-colors duration-300 " />
+  <span className="relative z-10 group-hover:text-white text-black transition-colors duration-300 ">{mainbutton3}</span>
 </button>
 
 
@@ -417,7 +415,7 @@ const openRandomVideo = () => {
   <div
     className="
       group relative w-full 
-      h-[260px] sm:h-[340px] md:h-[420px] lg:h-[480px]
+      h-[360px] sm:h-[440px] md:h-[600px] lg:h-[580px]
       pb-16 sm:pb-20
     "
   >
@@ -437,7 +435,7 @@ const openRandomVideo = () => {
       <div className="absolute inset-0 bg-gradient-to-t from-white/90 via-white/40 to-transparent"></div>
     </div> */}
 
-    <div className="relative w-full h-[320px] sm:h-[380px] md:h-[430px] rounded-4xl shadow-lg overflow-hidden">
+    <div className="relative w-full h-[320px] sm:h-[380px] md:h-[530px] rounded-4xl shadow-lg overflow-hidden">
   <img
     src={mainimage?.url}
     alt="Service"
@@ -448,7 +446,7 @@ const openRandomVideo = () => {
       group-hover:scale-[1.08]
     "
   />
-  <div className="absolute inset-0 bg-gradient-to-t from-white/90 via-white/40 to-transparent"></div>
+  <div className="absolute inset-0 bg-gradient-to-t from-white/90 via-white/30 to-transparent"></div>
 </div>
 
     {/* Floating Stats */}
@@ -463,14 +461,20 @@ const openRandomVideo = () => {
         <div
           key={idx}
           className="
-            bg-white w-1/3 py-3 sm:py-4 px-2 sm:px-3 rounded-lg sm:rounded-xl text-start shadow-lg
-
+            bg-white w-1/3 py-3 sm:py-4 px-2 sm:px-3 rounded-lg sm:rounded-xl text-start
+            shadow-[0_8px_20px_rgba(0,0,0,0.15)]
             transform transition-all duration-500
-            hover:scale-[1.06] hover:-translate-y-1 hover:shadow-xl
+            hover:scale-[1.06] hover:-translate-y-1 hover:shadow-[0_8px_20px_rgba(0,0,0,0.2)]
           "
         >
-          <p className="text-base sm:text-lg lg:text-xl text-blue-500 font-bold">{stat.number}</p>
-          <p className="text-xs sm:text-sm text-gray-600">{stat.label}</p>
+          <p className="text-base sm:text-lg lg:text-2xl font-bold" style={{
+              background: 'linear-gradient(180deg, #51a2ff 0%, #1e40af 100%)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text'
+            }}
+          >{stat.number}</p>
+          <p className="text-[12px] sm:text-[12px] text-gray-500">{stat.label}</p>
         </div>
       ))}
     </div>

@@ -81,7 +81,7 @@ const HomeTestimonials = () => {
       </h1>
     
     {/* Title */}
-    <p className="gradient-text w-full py-4  font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-[60px] montserrat-font"
+    <p className=" w-full py-4  font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-[60px] montserrat-font"
        dangerouslySetInnerHTML={{ __html: testimonialData.title }}
     >
         {/* {testimonialData.title} */}

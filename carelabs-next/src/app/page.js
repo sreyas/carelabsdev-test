@@ -72,6 +72,19 @@ useEffect(()=> {
   }
 },[])
 
+const popIn = `
+  @keyframes popIn {
+    0% { opacity: 0; transform: translateY(20px) scale(0.9); }
+    60% { opacity: 1; transform: translateY(-4px) scale(1.03); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+  }
+`;
+
+useEffect(() => {
+  const styleTag = document.createElement("style");
+  styleTag.innerHTML = popIn;
+  document.head.appendChild(styleTag);
+}, []);
 
 
 
@@ -195,9 +208,9 @@ if (!homeData) {
       </div>
 
       {/* Stats */}
-      <div
-      data-aos="fade-up"
-     data-aos-duration="2000"
+  {/* <div
+    data-aos="fade-up"
+      data-aos-duration="2000"
       className="w-full flex flex-col sm:flex-row  items-center justify-evenly py-4 gap-4 ">
         {homeData.stats?.map((item, idx) => {
           let numberColor = "";
@@ -214,7 +227,45 @@ if (!homeData) {
             </div>
           );
         })}
+</div> */}
+
+<div
+  data-aos="fade-up"
+  data-aos-duration="2000"
+  className="w-full flex flex-col sm:flex-row items-center justify-center 
+             gap-6 sm:gap-8 py-6"
+>
+  {homeData.stats?.map((item, idx) => {
+    let numberColor = "";
+    if (idx === 0 || idx === 2) numberColor = "#157DE5";
+    else if (idx === 1) numberColor = "#FF7038";
+
+    return (
+      <div
+        key={item.id}
+        className="
+          w-[90%] sm:w-[32%] lg:w-[28%]
+          flex flex-col items-center justify-center
+          p-6 rounded-2xl card-shadow 
+          transition-all duration-500
+          hover:scale-[1.04] hover:-translate-y-1 hover:shadow-xl
+        "
+        style={{
+          opacity: 0,
+          transform: "translateY(10px) scale(0.95)",
+          animation: `popIn 0.6s ease-out forwards`,
+          animationDelay: `${idx * 0.15}s`,
+        }}
+      >
+        <HomeCounter end={item.number} duration={2} color={numberColor} />
+        <p className="text-[14px] py-1 text-[#65758B] poppins-font">
+          {item.label}
+        </p>
       </div>
+    );
+  })}
+</div>
+
 
     </div>
   </div>
@@ -255,30 +306,6 @@ if (!homeData) {
       </section>
 
       {/* youtubevideo */}
-
-  {/* {showVideo && (
-    <div
-    className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50"
-    onClick={(e) => e.target === e.currentTarget && setShowVideo(false)}
-    >
-    <div className="bg-black rounded-2xl shadow-xl relative w-[90%] max-w-3xl">
-      
-      <button
-        onClick={() => setShowVideo(false)}
-        className="absolute top-3 right-3 text-white text-xl font-bold"
-      >
-        ✖
-      </button>
-
-      <iframe
-        className="w-full aspect-video rounded-xl"
-        src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
-        allow="autoplay; encrypted-media"
-        allowFullScreen
-      ></iframe>
-    </div>
-  </div>
-)} */}
 
 {showVideo && (
   <div
