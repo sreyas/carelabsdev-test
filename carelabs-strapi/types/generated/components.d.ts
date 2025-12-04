@@ -1,5 +1,16 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface ContactBeforeYouReachOutItem extends Struct.ComponentSchema {
+  collectionName: 'components_contact_before_you_reach_out_items';
+  info: {
+    displayName: 'Before_you_reach_out_Item';
+  };
+  attributes: {
+    answer: Schema.Attribute.Text;
+    question: Schema.Attribute.Text;
+  };
+}
+
 export interface ContactButtons extends Struct.ComponentSchema {
   collectionName: 'components_contact_buttons';
   info: {
@@ -34,6 +45,20 @@ export interface ContactConnectItems extends Struct.ComponentSchema {
     sharelink: Schema.Attribute.String;
     sharetext: Schema.Attribute.String;
     title: Schema.Attribute.String;
+  };
+}
+
+export interface ContactContactCta extends Struct.ComponentSchema {
+  collectionName: 'components_contact_contact_ctas';
+  info: {
+    displayName: 'contact_cta';
+  };
+  attributes: {
+    heading: Schema.Attribute.String;
+    icon: Schema.Attribute.String;
+    link: Schema.Attribute.String;
+    message: Schema.Attribute.String;
+    subheading: Schema.Attribute.String;
   };
 }
 
@@ -1283,9 +1308,11 @@ export interface SubmenusServiceItem extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'contact.before-you-reach-out-item': ContactBeforeYouReachOutItem;
       'contact.buttons': ContactButtons;
       'contact.choose-how-to-connect': ContactChooseHowToConnect;
       'contact.connect-items': ContactConnectItems;
+      'contact.contact-cta': ContactContactCta;
       'contact.contact-form': ContactContactForm;
       'contact.contact-form-fields': ContactContactFormFields;
       'contact.contact-methods': ContactContactMethods;

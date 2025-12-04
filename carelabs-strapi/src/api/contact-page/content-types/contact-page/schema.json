@@ -57,6 +57,22 @@
       "type": "component",
       "component": "contact.local-expertise",
       "repeatable": false
+    },
+    "Before_you_reach_out_heading": {
+      "type": "richtext"
+    },
+    "Before_you_reach_out_subheading": {
+      "type": "string"
+    },
+    "Before_you_reach_out_Item": {
+      "type": "component",
+      "component": "contact.before-you-reach-out-item",
+      "repeatable": true
+    },
+    "contact_cta": {
+      "type": "component",
+      "component": "contact.contact-cta",
+      "repeatable": true
     }
   }
 }

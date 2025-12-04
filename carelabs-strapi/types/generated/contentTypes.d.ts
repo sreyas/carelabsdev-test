@@ -625,11 +625,18 @@ export interface ApiContactPageContactPage extends Struct.SingleTypeSchema {
   attributes: {
     badge: Schema.Attribute.String;
     badgeicon: Schema.Attribute.String;
+    Before_you_reach_out_heading: Schema.Attribute.RichText;
+    Before_you_reach_out_Item: Schema.Attribute.Component<
+      'contact.before-you-reach-out-item',
+      true
+    >;
+    Before_you_reach_out_subheading: Schema.Attribute.String;
     buttons: Schema.Attribute.Component<'contact.buttons', true>;
     Choose_how_to_connect: Schema.Attribute.Component<
       'contact.choose-how-to-connect',
       false
     >;
+    contact_cta: Schema.Attribute.Component<'contact.contact-cta', true>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
