@@ -671,6 +671,39 @@ export interface ApiContactPageContactPage extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiContactPopupContactPopup extends Struct.SingleTypeSchema {
+  collectionName: 'contact_popups';
+  info: {
+    displayName: 'ContactPopup';
+    pluralName: 'contact-popups';
+    singularName: 'contact-popup';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    buttonlink: Schema.Attribute.String;
+    buttontext: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    form_fields: Schema.Attribute.Component<'contact-popup.form-fields', true>;
+    heading: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::contact-popup.contact-popup'
+    > &
+      Schema.Attribute.Private;
+    logo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    publishedAt: Schema.Attribute.DateTime;
+    subheading: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiFloatingCtaFloatingCta extends Struct.SingleTypeSchema {
   collectionName: 'floating_ctas';
   info: {
@@ -1388,6 +1421,12 @@ export interface ApiInsightblogInsightblog extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
+    breadcrumbs: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     button1icon: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -1650,6 +1689,39 @@ export interface ApiOurTeamPageOurTeamPage extends Struct.SingleTypeSchema {
     What_it_feels: Schema.Attribute.Component<'ourteam.what-it-feels', false>;
     Where_you_work: Schema.Attribute.Component<'ourteam.where-you-work', false>;
     Work_Together: Schema.Attribute.Component<'ourteam.work-together', false>;
+  };
+}
+
+export interface ApiPagePage extends Struct.CollectionTypeSchema {
+  collectionName: 'pages';
+  info: {
+    displayName: 'Page';
+    pluralName: 'pages';
+    singularName: 'page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    badge: Schema.Attribute.String;
+    badgeicon: Schema.Attribute.String;
+    buttonlink: Schema.Attribute.String;
+    buttontext: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    introcontent: Schema.Attribute.RichText;
+    introtitle: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::page.page'> &
+      Schema.Attribute.Private;
+    mainimage: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.String;
+    title: Schema.Attribute.RichText;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
   };
 }
 
@@ -2552,6 +2624,7 @@ declare module '@strapi/strapi' {
       'api::article.article': ApiArticleArticle;
       'api::blog-category.blog-category': ApiBlogCategoryBlogCategory;
       'api::contact-page.contact-page': ApiContactPageContactPage;
+      'api::contact-popup.contact-popup': ApiContactPopupContactPopup;
       'api::floating-cta.floating-cta': ApiFloatingCtaFloatingCta;
       'api::footer.footer': ApiFooterFooter;
       'api::home-compliance.home-compliance': ApiHomeComplianceHomeCompliance;
@@ -2565,6 +2638,7 @@ declare module '@strapi/strapi' {
       'api::insightblog.insightblog': ApiInsightblogInsightblog;
       'api::navbar.navbar': ApiNavbarNavbar;
       'api::our-team-page.our-team-page': ApiOurTeamPageOurTeamPage;
+      'api::page.page': ApiPagePage;
       'api::region.region': ApiRegionRegion;
       'api::service-page.service-page': ApiServicePageServicePage;
       'api::service.service': ApiServiceService;

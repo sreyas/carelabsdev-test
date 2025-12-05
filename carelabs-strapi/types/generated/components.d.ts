@@ -1,5 +1,31 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface ContactPopupFormFields extends Struct.ComponentSchema {
+  collectionName: 'components_contact_popup_form_fields';
+  info: {
+    displayName: 'form_fields';
+  };
+  attributes: {
+    field_type: Schema.Attribute.Enumeration<
+      ['input', 'textarea', 'select', 'phone']
+    >;
+    label: Schema.Attribute.String;
+    options: Schema.Attribute.Component<'contact-popup.options', true>;
+    placeholder: Schema.Attribute.String;
+    required: Schema.Attribute.Boolean;
+  };
+}
+
+export interface ContactPopupOptions extends Struct.ComponentSchema {
+  collectionName: 'components_contact_popup_options';
+  info: {
+    displayName: 'options';
+  };
+  attributes: {
+    options_name: Schema.Attribute.String;
+  };
+}
+
 export interface ContactBeforeYouReachOutItem extends Struct.ComponentSchema {
   collectionName: 'components_contact_before_you_reach_out_items';
   info: {
@@ -1308,6 +1334,8 @@ export interface SubmenusServiceItem extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'contact-popup.form-fields': ContactPopupFormFields;
+      'contact-popup.options': ContactPopupOptions;
       'contact.before-you-reach-out-item': ContactBeforeYouReachOutItem;
       'contact.buttons': ContactButtons;
       'contact.choose-how-to-connect': ContactChooseHowToConnect;

@@ -285,6 +285,14 @@
       },
       "component": "shared.seo",
       "repeatable": false
+    },
+    "breadcrumbs": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }
