@@ -65,7 +65,7 @@ const ContactPopupModal = ({ isOpen, setIsOpen }) => {
             }
         } catch (error) {
             console.error("Error submitting form:", error);
-            alert("An error occurred. Please try again.");
+            alert("An error occurred. Please try again..");
         } finally {
             setIsSubmitting(false);
         }
