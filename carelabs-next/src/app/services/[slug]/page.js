@@ -1,3 +1,5 @@
+"use client";
+
 import client from "@/lib/appollo-client";
 import { GET_SINGLE_SERVICE_BY_SLUG } from "@/lib/api-Collection";
 import ServicesLanding from "@/components/ServicesLanding";
@@ -5,7 +7,7 @@ import EngineeringServices from "@/components/EngineeringServices";
 import FaqResourcesSection from "@/components/FaqResourcesSection";
 import PowerSystemAnalysisCTA from "@/components/PowerSystemAnalysisCTA";
 import { clientIcons } from "@/lib/clientIcons";
-import { ChevronDown, CircleCheck } from "lucide-react";
+
 
 
 export default async function Page({ params }) {
@@ -48,6 +50,8 @@ export default async function Page({ params }) {
       {service?.service_features?.map((feat, idx) => {
         const iconName = feat.icon.trim();
         const Icon = clientIcons[iconName] || clientIcons.CircleCheck; 
+        console.log("Icon Name",Icon);
+        
 
         return (
           <div
@@ -329,7 +333,7 @@ export default async function Page({ params }) {
           <div className="w-12 h-[2px] bg-gradient-to-l from-[#157DE5]/30 to-[#1F7FDB]/0"></div>
 
           {/* Icon */}
-          <ChevronDown className="text-blue-400 w-6 h-6" />
+          <clientIcons.ChevronDown className="text-blue-400 w-6 h-6" />
 
           {/* Right separator */}
           <div className="w-12 h-[2px] bg-gradient-to-r from-[#157DE5]/30 to-[#1F7FDB]/0"></div>
@@ -407,7 +411,7 @@ export default async function Page({ params }) {
             flex-shrink-0 mt-1
           "
         >
-          <CircleCheck className="text-orange-500 "/>
+          <clientIcons.CircleCheck className="text-orange-500 "/>
         </div>
 
         <p className="text-sm leading-relaxed text-gray-500">
@@ -431,6 +435,7 @@ export default async function Page({ params }) {
       {/* =====================================================================================
          SECTION 6 → Results Section (Stats + Bottom Cards)
       ===================================================================================== */}
+  
 
 <section>
   <div className="min-h-[80vh] flex justify-center py-10 bg-[#f9fbfe]">

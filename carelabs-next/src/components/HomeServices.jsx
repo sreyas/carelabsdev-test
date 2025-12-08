@@ -175,16 +175,24 @@ const HomeServices = () => {
                   relative 
                   w-[840.67px] 
                   h-[256px] 
-                  max-w-full       /* keeps it responsive on small screens */
+                  max-w-full      
                   bg-cover bg-center 
                   flex flex-col justify-end 
                   p-5 sm:p-6 lg:p-8 
                   gap-3
+                  overflow-hidden
                   "
                   
-                  // style={{ backgroundImage: `url('https://proper-hug-7f40206151.media.strapiapp.com/service2_9d7db5d882.jpg')` }}
-                  style={{ backgroundImage: `url('${activeItem?.Image?.url}')` }}
+                  //style={{ backgroundImage: `url('${activeItem?.Image?.url}')` }}
                 >
+
+                  <img
+    src={activeItem?.Image?.url}
+    alt={activeItem?.Image?.alt || "Electrical safety compliance service"}
+    className="absolute inset-0 w-full h-full object-cover"
+  />
+
+
                   <div className="absolute inset-0 bg-gradient-to-t from-white/90 via-white/70 to-transparent z-10"></div>
                   <div className="z-20 mb-2 sm:mb-4 lg:mb-5 flex flex-col justify-end gap-2 sm:gap-3 lg:gap-4">
                     <div className="flex items-center gap-2">
@@ -277,7 +285,8 @@ const HomeServices = () => {
       {activeItem?.button1text}
   
   </a>
-
+  
+  
   {/* Secondary Button */}
   <a href={activeItem?.button2link}
   
@@ -298,6 +307,7 @@ const HomeServices = () => {
       {activeItem?.button2text}
   
   </a>
+
 
 </div>
 

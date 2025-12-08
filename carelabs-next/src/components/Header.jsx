@@ -128,7 +128,8 @@ const Header = () => {
   //slugmethod 
   const currentItem = navbarData?.items?.[activeIndex] ?? null;
   const currentSubmenu = currentItem?.submenus?.[selectedSubmenuIndex] ?? null;
-
+ console.log("CurrentMenu Slug::::",);
+ 
   const isBlogMenu = currentItem?.label === "Insights Hub";
 
   const targetSlug = isBlogMenu
@@ -348,7 +349,7 @@ const Header = () => {
                         </span>
                       </Link> */}
 
-                  <Link href={targetSlug} className="group relative inline-flex items-center justify-center bg-[#157de5] text-white text-[14px] font-semibold py-2 px-4 rounded-full w-[45%] text-center  hover:bg-gradient-to-r hover:from-[#157de5] hover:to-[#ff7038] hover:shadow-[0_20px_30px_rgba(0,0,0,0.3)]">
+                  <Link href={targetSlug} className="relative inline-flex items-center justify-center bg-[#157de5] text-white text-[14px] font-semibold py-2 px-4 rounded-full w-[45%] text-center hover:bg-gradient-to-r hover:from-[#157de5] hover:to-[#ff7038] hover:shadow-[0_20px_30px_rgba(0,0,0,0.3)] transition-transform duration-300 hover:scale-105">
                     <span className="flex items-center gap-2 whitespace-nowrap">
                       {currentSubmenu?.Button}
                       <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
@@ -446,7 +447,7 @@ const Header = () => {
               onClick={() => setIsContactModalOpen(true)}
               >
              {navbarData?.buttontext}
-             </button>
+ </button>
 
               <ContactPopupModal
                 isOpen={isContactModalOpen}

@@ -31,7 +31,7 @@ const PowerSystemAnalysisCTA = ({ service }) => {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             
             {/* BUTTON 1 */}
-            <a href={service?.readyButton1Link || "#"} className="w-full sm:w-auto">
+            {/* <a href={service?.readyButton1Link || "#"} className="w-full sm:w-auto">
               <button className="flex items-center justify-center
                rounded-lg text-blue-600 bg-white px-5 py-3 w-full sm:w-auto text-base sm:text-lg font-medium
                transition-all duration-500 ease-out
@@ -41,10 +41,25 @@ const PowerSystemAnalysisCTA = ({ service }) => {
                 {service?.readyButton1}
                 <ArrowRight className="ml-2 h-5 w-5 transition-colors duration-300 group-hover:text-white" />
               </button>
-            </a>
+            </a> */}
+
+      {service?.readyButton1Link && (
+  <a
+    href={service.readyButton1Link}
+    className="w-full sm:w-auto flex items-center justify-center
+      rounded-lg text-blue-600 bg-white px-5 py-3 text-base sm:text-lg font-medium
+      transition-all duration-500 ease-out
+      hover:scale-[1.06] hover:-translate-y-1 
+      hover:bg-white/90 hover:text-white"
+  >
+    {service?.readyButton1}
+    <ArrowRight className="ml-2 h-5 w-5 transition-colors duration-300" />
+  </a>
+)}
+
 
             {/* BUTTON 2 */}
-            <a href={service?.readyButton2Link || "#"} className="w-full sm:w-auto">
+            {/* <a href={service?.readyButton2Link || "#"} className="w-full sm:w-auto">
               <button className="flex items-center justify-center
                rounded-lg text-white border-[2px] border-white/30 px-5 py-3 w-full sm:w-auto text-base sm:text-lg font-medium
                transition-all duration-500 ease-out
@@ -53,7 +68,20 @@ const PowerSystemAnalysisCTA = ({ service }) => {
                 {service?.readyButton2}
                 <ChevronRight className="ml-2 h-5 w-5" />
               </button>
-            </a>
+            </a> */}
+            {service?.readyButton2Link && (
+  <a
+    href={service.readyButton2Link}
+    className="w-full sm:w-auto flex items-center justify-center
+      rounded-lg text-white border-[2px] border-white/30 px-5 py-3
+      text-base sm:text-lg font-medium
+      transition-all duration-500 ease-out
+      hover:scale-[1.06] hover:-translate-y-1 hover:bg-white/30"
+  >
+    {service?.readyButton2}
+    <ChevronRight className="ml-2 h-5 w-5" />
+  </a>
+)}
 
           </div>
 

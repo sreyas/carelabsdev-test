@@ -1,3 +1,5 @@
+"use client";
+
 import React from 'react'
 import { clientIcons } from "@/lib/clientIcons";
 
@@ -23,7 +25,11 @@ const OurTeamPartner = ({data}) => {
                     lg:flex-row 2xl:w-[70%]">
 
       {items.map((item, index) => {
-        const Icon = clientIcons[item.icon] || Icons.HelpCircle; // fallback icon
+        const iconName = item.icon?.trim();
+        console.log("IconName",iconName);
+        
+        const ItemIcon = clientIcons[iconName] || clientIcons.HelpCircle;
+        // fallback icon
 
         return (
           <div key={index} className="flex items-center justify-around py-5 flex-col">
@@ -31,9 +37,9 @@ const OurTeamPartner = ({data}) => {
             {/* ICON BLOCK */}
             <div className="flex items-center justify-center lg:w-full">
               <div className="w-[80px] h-[80px] rounded-full bg-gradient-to-br
-     from-[#157defB3] 
+                     from-[#157defB3] 
       to-[#ff7038B3] text-[#157de5] flex items-center justify-center">
-                <Icon size={40}  className="transform transition-transform duration-500 ease-out hover:scale-125"/>
+                <ItemIcon size={40}  className="transform transition-transform duration-500 ease-out hover:scale-125"/>
               </div>
             </div>
 

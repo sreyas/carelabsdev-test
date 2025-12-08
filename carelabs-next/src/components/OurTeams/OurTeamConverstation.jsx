@@ -23,7 +23,7 @@ const OurTeamConverstation = ({data}) => {
           {/* Dynamic Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             {data.Ready_to_Talk_buttons?.map((btn, index) => {
-              const Icon = clientIcons[btn.icon.trim()] || Icons.ArrowRight;
+              const Icon = clientIcons[btn.icon.trim()] || clientIcons.ArrowRight;
               return (
                 <a key={index} href={btn.link || "#"} className="w-full sm:w-auto">
                   <button
