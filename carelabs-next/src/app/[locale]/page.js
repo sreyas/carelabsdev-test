@@ -12,7 +12,6 @@ import RegionCompliance from "@/components/RegionCompliance";
 import RegionIndustries from "@/components/RegionIndustries";
 import { GET_HOME_SECTION_12, GET_REGION_CLIENTS_BY_LOCALE, GET_REGION_INDUSTRIES } from "@/lib/api-Collection";
 import client from "@/lib/appollo-client";
-import { TextGenerateEffect } from "@/lib/ui/text-generate-effect";
 import Aos from "aos";
 import { ArrowRight, Play, Zap } from "lucide-react";
 import { useParams } from "next/navigation";

@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { GET_DEFAULT_PAGE } from "@/lib/api-Collection";
 import client from "@/lib/appollo-client";
 import React from 'react'
-import * as LucideIcons from "lucide-react";
+import { clientIcons } from "@/lib/clientIcons";
 import { useParams } from "next/navigation";
 
 const Page = (params) => {
@@ -81,7 +81,7 @@ const Page = (params) => {
                         <div className="w-full h-[30%] flex items-center justify-center lg:justify-start">
                             <div className="poppins-font flex items-center justify-start gap-4 gradient-bg-badge rounded-full py-2 px-4 w-max text-[#157DE5]">
                             {(() => {
-                                const BadgeIcon = LucideIcons[pageData.badgeicon] || null;
+                                const BadgeIcon = clientIcons[pageData.badgeicon] || null;
                                 return BadgeIcon ? <BadgeIcon size={18} /> : null;
                             })()}
                             <p className="poppins-font">{pageData.badge}</p>

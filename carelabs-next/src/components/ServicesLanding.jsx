@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import * as LucideIcons from 'lucide-react';
+import { clientIcons } from "@/lib/clientIcons";
 import { ArrowRight, Download, PlayCircle } from "lucide-react";
 
 
@@ -73,24 +73,14 @@ const openRandomVideo = () => {
         {/* LEFT SECTION */}
         <div className="w-full lg:w-[50%] flex flex-col gap-5 py-2 ">
 
-          {/* Badge */}
-          {/* <div className="w-fit">
-            <p className="px-4 py-2 text-xs sm:text-sm rounded-full text-center card-shadow bg-white">
-              {badgeicon && (() => {
-                const BadgeIcon = LucideIcons[badgeicon] || LucideIcons.Circle;
-                return <BadgeIcon className="w-4 h-4 text-[#ff7038]" />;
-              })()}
-              {badge}
-            </p>
-          </div> */}
-
+       
     <div className="w-fit">
      <div className="px-4 py-2 text-xs sm:text-sm rounded-full 
                    bg-white flex items-center gap-2 border border-[#c3e3fa] shadow-[0_6px_10px_rgba(0,0,0,0.15)]">
 
     {/* Dynamic Icon */}
     {badgeicon && (() => {
-      const BadgeIcon = LucideIcons[badgeicon] || LucideIcons.Circle;
+      const BadgeIcon = clientIcons[badgeicon] || clientIcons.Circle;
       return <BadgeIcon className="w-4 h-4 text-[#ff7038]" />;
     })()}
 

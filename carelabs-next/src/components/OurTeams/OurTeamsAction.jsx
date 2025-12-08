@@ -1,6 +1,6 @@
 import React from 'react'
 import carelabzImage from '@/assets/carlabz.jpg'
-import * as Icons from "lucide-react"; 
+import { clientIcons } from "@/lib/clientIcons";
 
 const OurTeamsAction = ({data}) => {
    if(!data)return null;
@@ -25,7 +25,7 @@ const OurTeamsAction = ({data}) => {
                         {data?.Teams_in_Action_Items?.map((item, index) => {
 
                           // Fetch icon dynamically
-                          const IconComponent = Icons[item.icon] || Icons.Zap;
+                          const IconComponent = clientIcons[item.icon] || clientIcons.Zap;
 
                           // Backend Image or Local fallback
                           const imageUrl = item.image?.url
@@ -77,7 +77,7 @@ const OurTeamsAction = ({data}) => {
                                         key={idx}
                                         className="flex items-center gap-2"
                                       >
-                                        <Icons.Dot size={45} color="#FF7038" />
+                                        <clientIcons.Dot size={45} color="#FF7038" />
                                         <p className="poppins-font text-[16px] text-white">
                                           {p.points}
                                         </p>

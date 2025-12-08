@@ -4,7 +4,7 @@ import ServicesLanding from "@/components/ServicesLanding";
 import EngineeringServices from "@/components/EngineeringServices";
 import FaqResourcesSection from "@/components/FaqResourcesSection";
 import PowerSystemAnalysisCTA from "@/components/PowerSystemAnalysisCTA";
-import * as LucideIcons from 'lucide-react';
+import { clientIcons } from "@/lib/clientIcons";
 import { ChevronDown, CircleCheck } from "lucide-react";
 
 
@@ -48,7 +48,7 @@ export default async function Page({ params }) {
 
       {service?.service_features?.map((feat, idx) => {
         const iconName = feat.icon.trim();
-        const Icon = LucideIcons[iconName] || LucideIcons.CircleCheck; 
+        const Icon = clientIcons[iconName] || clientIcons.CircleCheck; 
 
         return (
           <div
@@ -93,7 +93,7 @@ export default async function Page({ params }) {
       ">
         <div className="w-[55px] h-[55px] bg-[#f9e0e2] rounded-xl flex justify-center items-center">
           {service?.Why_Matters?.[0]?.icon && (() => {
-            const Icon1 = LucideIcons[service?.Why_Matters?.[0]?.icon] || LucideIcons.AlertCircle;
+            const Icon1 = clientIcons[service?.Why_Matters?.[0]?.icon] || clientIcons.AlertCircle;
             return <Icon1 className="w-7 h-7 text-red-500" />;
           })()}
         </div>
@@ -135,7 +135,7 @@ export default async function Page({ params }) {
       ">
         <div className="w-[55px] h-[55px] bg-[#e2ecf8] rounded-xl flex justify-center items-center">
           {service?.Why_Matters?.[1]?.icon && (() => {
-            const Icon2 = LucideIcons[service?.Why_Matters?.[1]?.icon] || LucideIcons.Circle;
+            const Icon2 = clientIcons[service?.Why_Matters?.[1]?.icon] || clientIcons.Circle;
             return <Icon2 className="w-7 h-7 text-[#2b7fff]" />;
           })()}
         </div>
@@ -188,7 +188,7 @@ export default async function Page({ params }) {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10 w-[90%] lg:w-[80%]">
             {service?.whats_include_features?.map((f, idx) => {
               const iconName = f.icon?.trim();
-              const Icon = LucideIcons[iconName] || LucideIcons.Circle;
+              const Icon = clientIcons[iconName] || clientIcons.Circle;
               return (
                 <div
                   key={idx}
@@ -284,48 +284,7 @@ export default async function Page({ params }) {
         <div key={index} className="flex flex-col items-center gap-4">
 
           <div className={`flex w-full ${index % 2 === 0 ? "md:justify-start" : "md:justify-end"}`}>
-  {/* <div
-      className={`
-      group bg-white rounded-2xl navbar-shadow flex overflow-hidden
-      w-full lg:w-[80%] xl:w-[75%] 2xl:w-[70%]
-      ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}
-     `}
-     >
-    
-    <div className="w-full md:w-[40%] h-56 md:h-auto overflow-hidden">
-      <div
-        className="
-          w-full h-full
-          transition-transform duration-[1100ms]
-          ease-[cubic-bezier(.13,.62,.31,1)]
-          group-hover:scale-[1.08]
-        "
-        style={{
-          backgroundImage: `url(${step?.image?.url})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      />
-    </div>
-
-    <div className="p-6 flex gap-4 md:w-[90%]">
-      <div className="w-[100px] h-[40px] flex justify-center items-center bg-[#e2ecf8] text-[#157be2] rounded-xl text-lg font-bold">
-        {step.Order}
-      </div>
-
-      {step.icon && (() => {
-        const iconName = step.icon.trim();
-        const StepIcon = LucideIcons[iconName] || LucideIcons.Circle;
-        return <StepIcon className="text-[#157be2] w-12 h-10" />;
-      })()}
-
-      <div>
-        <p className="text-xl font-bold">{step.OrderTitleText}</p>
-        <p className="text-sm text-gray-700 mt-2">{step.OrderSubtitleText}</p>
-      </div>
-    </div>
-  </div> */}
-
+  
   <div
   className={`
     group bg-white rounded-2xl shadow-[0_6px_10px_rgba(0,0,0,0.15)] flex
@@ -367,7 +326,7 @@ export default async function Page({ params }) {
     {/* ICON */}
     {step.icon && (() => {
       const iconName = step.icon.trim();
-      const StepIcon = LucideIcons[iconName] || LucideIcons.Circle;
+      const StepIcon = clientIcons[iconName] || clientIcons.Circle;
       return <StepIcon className="text-[#157be2] w-5 h-5 shrink-0 mt-1" />;
     })()}
 
@@ -397,72 +356,7 @@ export default async function Page({ params }) {
       {/* =====================================================================================
          SECTION 5 → Sector Benefits
       ===================================================================================== */}
-      {/* <section>
-        <div className="w-full flex flex-col items-center py-10">
-
-          <p className="gradient-text text-4xl font-bold">{service?.sectorBenefitsTitle}</p>
-          <p className="text-gray-700 max-w-xl text-center mt-3">{service?.sectorBenefitsSubtitle}</p>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 2xl:grid-cols-4 gap-6 mt-10 w-[90%] lg:w-[70%]">
-            {service?.sectorBenefits?.map((sec, idx) => (
-              <div key={idx} className="bg-white p-6 rounded-2xl card-shadow flex flex-col gap-4">
-
-                <div className="w-[50px] h-[50px] bg-blue-300 rounded-xl flex justify-center items-center">
-                  <i className={sec.icon} />
-                </div>
-
-                <p className="text-xl font-bold">{sec.label}</p>
-
-                {[sec.list1, sec.list2, sec.list3].map(
-                  (txt, i) =>
-                    txt && (
-                      <div key={i} className="flex gap-2">
-                        <i className="fa-solid fa-circle-exclamation" />
-                        <p>{txt}</p>
-                      </div>
-                    )
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section> */}
-
-      {/* <section>
-  <div className="w-full flex flex-col items-center py-10">
-
-    <p className="gradient-text text-4xl font-bold">{service?.sectorBenefitsTitle}</p>
-    <p className="text-gray-700 max-w-xl text-center mt-3">{service?.sectorBenefitsSubtitle}</p>
-
-    <div className="grid grid-cols-1 sm:grid-cols-2 2xl:grid-cols-4 gap-6 mt-10 w-[90%] lg:w-[70%]">
-      {service?.sectorBenefits?.map((sec, idx) => {
-        const iconName = sec.icon?.trim(); 
-        const Icon = LucideIcons[iconName] || LucideIcons.Circle; 
-
-        return (
-          <div key={idx} className="bg-white p-6 rounded-2xl card-shadow flex flex-col gap-4 transition-all duration-300 group hover:-translate-y-1 hover:shadow-xl">
-
-            <div className="w-[50px] h-[50px] bg-gray-300 rounded-xl flex justify-center items-center transition-all duration-300 group-hover:scale-110 ">
-              <Icon className="w-6 h-6 text-[#157be2] transition-all duration-300 group-hover:text-orange-500" />
-            </div>
-
-            <p className="text-xl font-bold">{sec.label}</p>
-
-            {[sec.list1, sec.list2, sec.list3].map(
-              (txt, i) =>
-                txt && (
-                  <div key={i} className="flex gap-2">
-                    <i className="fa-solid fa-circle-exclamation" />
-                    <p>{txt}</p>
-                  </div>
-                )
-            )}
-          </div>
-        );
-      })}
-    </div>
-  </div>
-</section> */}
+    
 
 <section>
   <div className="w-full flex flex-col items-center py-10 bg-[#f9fbfe]">
@@ -476,7 +370,7 @@ export default async function Page({ params }) {
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-10 w-[95%] lg:w-[90%] xl:w-[85%] 2xl:w-[80%] ">
   {service?.sectorBenefits?.map((sec, idx) => {
     const iconName = sec.icon?.trim();
-    const Icon = LucideIcons[iconName] || LucideIcons.Circle;
+    const Icon = clientIcons[iconName] || clientIcons.Circle;
 
     return (
       <div
@@ -602,7 +496,7 @@ export default async function Page({ params }) {
       <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 w-full mt-10">
         {service?.resultsStat?.map((stat, i) => {
           const iconName = stat.icon?.trim();
-          const StatIcon = LucideIcons[iconName] || LucideIcons.Circle;
+          const StatIcon = clientIcons[iconName] || clientIcons.Circle;
 
           return (
             <div key={i} className=" p-6 rounded-xl text-center flex flex-col items-center gap-3 group">
@@ -624,7 +518,7 @@ export default async function Page({ params }) {
       <div className="grid grid-cols-1 xl:grid-cols-3 gap-6 w-full mt-10">
         {service?.resultName?.map((item, idx) => {
           const iconName = item.icon?.trim();
-          const ItemIcon = LucideIcons[iconName] || LucideIcons.Circle;
+          const ItemIcon = clientIcons[iconName] || clientIcons.Circle;
 
           return (
             <div key={idx} className=" p-6 rounded-xl flex flex-col gap-4 group">

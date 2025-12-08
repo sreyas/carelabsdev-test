@@ -1,8 +1,9 @@
 import { GET_REGIONCOMPLIANCE_BY_LOCALE } from '@/lib/api-Collection';
 import client from '@/lib/appollo-client';
-import * as Icons from "lucide-react";
 import { useParams } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
+import { clientIcons } from "@/lib/clientIcons";
+
 
 const RegionCompliance = () => {
   
@@ -35,9 +36,10 @@ const RegionCompliance = () => {
 
   }
 
-  const getIcon = (name) => {
-   return Icons[name] || Icons.Zap;  // fallback icon
-  };
+const getIcon = (name) => {
+  return clientIcons[name?.trim()] || clientIcons.Zap;
+};
+
 
   
 
@@ -48,7 +50,7 @@ const RegionCompliance = () => {
 
     
 if (!compliance) return null;
-  const BadgeIcon = Icons[compliance.badgeicon] || Icons.Zap;
+const BadgeIcon = clientIcons[compliance.badgeicon?.trim()] || clientIcons.Zap;
   
 
   return (

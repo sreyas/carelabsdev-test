@@ -1,7 +1,9 @@
 
 
 import React from 'react'
-import * as Icons from "lucide-react";
+import { clientIcons } from "@/lib/clientIcons";
+
+
 
 
 
@@ -9,7 +11,7 @@ import * as Icons from "lucide-react";
 const OurTeamRecognitions = ({data}) => {
   if(!data)return null;
 
-    const IconComponent = Icons[data.icon.trim()];
+    const IconComponent = clientIcons[data.icon.trim()];
     const certifications=data.Recognitions_Item1 ||  [];
     const affiliations=data.Recognitions_Item2 || [];
     console.log("certifications",certifications);
@@ -41,7 +43,7 @@ const OurTeamRecognitions = ({data}) => {
           <div className="grid grid-cols-3 sm:grid-cols-6 gap-4 mb-12">
             {certifications.map((cert, index) => {
               const iconName = cert.icon.trim(); 
-               const IconComponent = Icons[iconName]
+               const IconComponent = clientIcons[iconName]
              
               return (
                 <div

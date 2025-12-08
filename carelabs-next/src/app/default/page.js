@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { GET_DEFAULT_PAGE } from "@/lib/api-Collection";
 import client from "@/lib/appollo-client";
 import React from 'react'
-import * as LucideIcons from "lucide-react";
+
 
 const Page = () => {
   const [pageData, setPageData] = useState(null);

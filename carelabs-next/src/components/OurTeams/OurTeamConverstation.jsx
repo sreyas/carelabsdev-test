@@ -1,4 +1,5 @@
-import * as Icons from "lucide-react";
+import { clientIcons } from "@/lib/clientIcons";
+
 import React from 'react';
 
 const OurTeamConverstation = ({data}) => {
@@ -22,7 +23,7 @@ const OurTeamConverstation = ({data}) => {
           {/* Dynamic Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             {data.Ready_to_Talk_buttons?.map((btn, index) => {
-              const Icon = Icons[btn.icon.trim()] || Icons.ArrowRight;
+              const Icon = clientIcons[btn.icon.trim()] || Icons.ArrowRight;
               return (
                 <a key={index} href={btn.link || "#"} className="w-full sm:w-auto">
                   <button

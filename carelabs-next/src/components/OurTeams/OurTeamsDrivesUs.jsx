@@ -1,6 +1,7 @@
 "use client";
 import React from 'react'
-import * as LucideIcons from "lucide-react";
+import { clientIcons } from "@/lib/clientIcons";
+
 
 
 const OurTeamsDrivesUs = ({data}) => {
@@ -16,7 +17,7 @@ const OurTeamsDrivesUs = ({data}) => {
            <div className="flex flex-col w-[85%] rounded-2xl lg:flex-row 2xl:w-[70%]">
       <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-8">
         {data.Drives_Us_Items.map((item, index) => {
-          const IconComponent = LucideIcons[item.icon] || LucideIcons["Target"]; // fallback icon
+          const IconComponent = clientIcons[item.icon] || clientIcons["Target"]; // fallback icon
 
           return (
             <div
@@ -37,7 +38,7 @@ const OurTeamsDrivesUs = ({data}) => {
               {item.Drives_Us_subItems?.map((subItem, subIndex) => (
                 <div key={subIndex} className="flex mb-3">
                   <div className="">
-                    <LucideIcons.Dot
+                    <clientIcons.Dot
                       size={45}
                       color={subIndex % 2 === 0 ? "#157de5" : "#ff7038"}
                     />

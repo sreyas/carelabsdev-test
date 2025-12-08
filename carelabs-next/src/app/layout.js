@@ -5,8 +5,21 @@ import "aos/dist/aos.css";
 import Footer from "@/components/Footer";
 import QuoteBar from "@/components/QuoteBar";
 import Script from "next/script";
-import  { Metadata } from 'next';
+import { Montserrat, Poppins } from "next/font/google";
 
+
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  weight: ["100","200","300","400","500","600","700","800","900"],
+  variable: "--font-montserrat",
+});
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["300","400","500","600"],
+  variable: "--font-poppins",
+});
 
 // export const metadata = {
 //   title: "Carelabs",
@@ -31,29 +44,21 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" >
       
-      <body>
+<body className={`${montserrat.variable} ${poppins.variable} font-sans`}>
           
         <Header/>
         {children}
         <QuoteBar/>
         <Footer/>
 
-
-  <link rel="stylesheet" 
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" 
-          integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-          crossOrigin="anonymous" 
-          referrerPolicy="no-referrer" />
-
-
-          <link rel="preconnect" href="https://fonts.googleapis.com"/>
-          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous"/>
-          <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"></link>
-
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet"/>
         
         {/* cloudflare */}
-        <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+     <Script
+          src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+          strategy="afterInteractive"
+          async
+          defer
+        />
 
 
       </body>

@@ -4,35 +4,9 @@ import { useState } from "react";
 import { ChevronDown, FileText, Download } from "lucide-react";
 import { cn } from "@/lib/utils";
 import {SquareArrowOutUpRight} from "lucide-react";
-import * as LucideIcons from "lucide-react";
+import { clientIcons } from "@/lib/clientIcons";
 
 
-
-
-// FAQ Item
-// const FaqItem = ({ question, answer, isOpen, onClick }) => {
-//   return (
-//     <div className="border-b border-border">
-//       <button
-//         onClick={onClick}
-//         className="w-full py-5 flex items-center justify-between text-left hover:opacity-70 transition-opacity"
-//       >
-//         <span className="font-semibold text-foreground pr-4">{question}</span>
-//         <ChevronDown
-//           className={cn(
-//             "h-5 w-5 text-muted-foreground transition-transform flex-shrink-0",
-//             isOpen && "rotate-180"
-//           )}
-//         />
-//       </button>
-//       {isOpen && (
-//         <div className="pb-5 text-muted-foreground leading-relaxed">
-//           {answer}
-//         </div>
-//       )}
-//     </div>
-//   );
-// };
 const FaqItem = ({ question, answer, isOpen, onClick }) => {
   return (
     <div className="border-b border-border">
@@ -74,49 +48,10 @@ const FaqItem = ({ question, answer, isOpen, onClick }) => {
 };
 
 
-// const ResourceCard = ({ label, format, icon }) => {
-//   return (
-//     <div
-//       className="
-//         bg-white rounded-2xl p-6 shadow
-//         flex items-start gap-4
-//         transition-all duration-300 cursor-pointer
-//         hover:shadow-lg hover:-translate-y-1
-//       "
-//     >
-//       {/* Icon */}
-//       <div
-//         className="
-//           w-14 h-14 flex items-center justify-center
-//           rounded-xl bg-blue-50
-//           text-blue-600 text-xl
-//         "
-//       >
-//         <i className={icon || "fa-solid fa-file"}></i>
-//       </div>
-
-//       {/* Text */}
-//       <div className="flex-1">
-//         <h3 className="font-semibold text-base mb-1">{label}</h3>
-//         <p className="text-sm text-gray-500">{format}</p>
-//       </div>
-
-//       {/* Download Icon */}
-//       <Download
-//         className="
-//           h-5 w-5 text-gray-400
-//           opacity-0 group-hover:opacity-100
-//           transition-opacity duration-300
-//         "
-//       />
-//     </div>
-//   );
-// };
-
 
 const ResourceCard = ({ label, format, icon }) => {
   // Convert string icon name → Lucide icon component
-  const IconComponent = LucideIcons[icon?.trim()] || LucideIcons.File;
+  const IconComponent = clientIcons[icon?.trim()] || clientIcons.File;
 
   return (
     <div
@@ -141,7 +76,7 @@ const ResourceCard = ({ label, format, icon }) => {
         <p className="text-xs font-normal text-gray-500">{format}</p>
       </div>
 
-      <LucideIcons.SquareArrowOutUpRight className="hidden group-hover:block 
+      <clientIcons.SquareArrowOutUpRight className="hidden group-hover:block 
       style={{ color: '#65758B', width: '16px', height: '20px', opacity: 0.5 }} 
       " />
     </div>

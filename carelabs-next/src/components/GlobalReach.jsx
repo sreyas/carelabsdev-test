@@ -2,8 +2,9 @@
 import React, { useEffect, useState } from 'react'
 import client from '@/lib/appollo-client';
 import { GET_WORLD_IMPACT } from '@/lib/api-Collection';
-import { Globe, Moon, Zap } from 'lucide-react';
-import * as LucideIcons from "lucide-react";
+import { Globe, Zap } from 'lucide-react';
+import { clientIcons } from "@/lib/clientIcons";
+
 
 
 const GlobalReach = () => {
@@ -53,8 +54,7 @@ const GlobalReach = () => {
     gap-5 p-4
     mt-30
   "
-
-    >
+>
       
       {/* Heading */}
         {/* Global Reach */}
@@ -96,71 +96,7 @@ const GlobalReach = () => {
 
               
 
-{/* {impactData.projectsStat?.map((item, index) => (
-  <div
-    data-aos="zoom-in"
-    data-aos-duration="800"
-    data-aos-delay={index * 100}
-    key={index} 
-    className="cards w-[90%] sm:w-[95%] flex flex-col items-center
-    justify-center gap-2 p-3 rounded-[16px]
-    shadow-[0_16px_40px_rgba(15,23,42,0.08)] border border-[#0F172A]/10
-    transform transition-all duration-300 ease-[cubic-bezier(0.25,0.1,0.25,1)]
-    hover:scale-[1.03] hover:-translate-y-[4px]
-    hover:shadow-[0_22px_55px_rgba(15,23,42,0.10)]
-    "
-  >
-    <p className='text-[36px] montserrat-font font-bold' dangerouslySetInnerHTML={{ __html: item.count }}></p>
-    <p className='poppins-font text-[14px]'>{item.title}</p>
-    <hr className='w-[90%]' />
-    <p className='text-[12px] poppins-font'>
-      <span dangerouslySetInnerHTML={{ __html: item.countryCount }} /> 
-    </p>
-    <p className='text-[12px] poppins-font'>{item.countryName}</p>
-  </div>
-))} */}
 
-{/* {impactData.projectsStat?.map((item, index) => (
-
-  <div
-    key={index}
-    data-aos="zoom-in"
-    data-aos-duration="800"
-    data-aos-delay={index * 100}
-
-    className="w-full flex justify-center"
-  >
-    <div
-      className="
-        cards
-        w-[90%] sm:w-[95%]  
-        flex flex-col items-center justify-center 
-        gap-2 p-3 rounded-[16px]
-
-        border border-[#0F172A]/10
-        shadow-[0_16px_40px_rgba(15,23,42,0.08)]
-
-        transition-all duration-300 transform-gpu will-change-transform
-        hover:scale-[1.03] hover:-translate-y-[4px]
-        hover:shadow-[0_22px_55px_rgba(15,23,42,0.10)]
-      "
-    >
-      <p className="text-[36px] montserrat-font font-bold"
-        dangerouslySetInnerHTML={{ __html: item.count }}
-      />
-
-      <p className="poppins-font text-[14px] text-[#6C7A89] ">{item.title}</p>
-
-      <hr className="w-[90%] border-[#6C7A89]/30 " />
-
-      <p className="text-[12px] poppins-font">
-        <span dangerouslySetInnerHTML={{ __html: item.countryCount }} />
-      </p>
-
-      <p className="text-[12px] poppins-font">{item.countryName}</p>
-    </div>
-  </div>
-))} */}
 
 {impactData.projectsStat?.map((item, index) => {
   
@@ -229,46 +165,15 @@ const GlobalReach = () => {
       </div>
     </div>
   );
-})}
-
-
-
-
-
-                </div>
-
-
-
+})}        
+  </div>
 
 
      <div className="card-text grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4  w-[95%] gap-5 sm:gap-4 justify-items-center p-5">
 
-       
-
-{/* {impactData.successStat?.map((item, index) => {
-  const IconComponent = LucideIcons[item.icon]; // ← dynamic icon
-
-  return (
-    <div 
-      key={index} 
-      className="cards w-[90%] sm:w-[95%] flex flex-col items-center justify-center gap-3 p-3"
-    >
-      <div className="w-[45px] h-[45px] primary-color flex items-center justify-center light-blue rounded-full">
-        {IconComponent ? <IconComponent /> : <LucideIcons.HelpCircle />} 
-      </div>
-
-      <p>{item.title}</p>
-
-      <p 
-        className="text-2xl font-bold poppins-font text-center" 
-        dangerouslySetInnerHTML={{ __html: item.value }}
-      ></p>
-    </div>
-  )
-})} */}
-
+      
 {impactData.successStat?.map((item, index) => {
-  const IconComponent = LucideIcons[item.icon];
+  const IconComponent = clientIcons[item.icon];
 
   const colors = [
     { hex: "#307FE2" },  // Mariner
@@ -301,7 +206,7 @@ const GlobalReach = () => {
         {IconComponent ? (
           <IconComponent size={26} />
         ) : (
-          <LucideIcons.HelpCircle size={26} />
+          <clientIcons.HelpCircle size={26} />
         )}
       </div>
 

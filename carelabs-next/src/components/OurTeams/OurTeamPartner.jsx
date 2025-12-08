@@ -1,5 +1,6 @@
 import React from 'react'
-import * as Icons from "lucide-react";
+import { clientIcons } from "@/lib/clientIcons";
+
 
 const OurTeamPartner = ({data}) => {
 
@@ -22,7 +23,7 @@ const OurTeamPartner = ({data}) => {
                     lg:flex-row 2xl:w-[70%]">
 
       {items.map((item, index) => {
-        const Icon = Icons[item.icon] || Icons.HelpCircle; // fallback icon
+        const Icon = clientIcons[item.icon] || Icons.HelpCircle; // fallback icon
 
         return (
           <div key={index} className="flex items-center justify-around py-5 flex-col">

@@ -8,7 +8,6 @@ import HomeServices from "@/components/HomeServices";
 import HomeTestimonials from "@/components/HomeTestimonials";
 import {GET_HOME_SECTION_1 } from "@/lib/api-Collection";
 import client from "@/lib/appollo-client";
-import { TextGenerateEffect } from "@/lib/ui/text-generate-effect";
 import Aos from "aos";
 import { ArrowRight, Play, Zap } from "lucide-react";
 import { useEffect, useState } from "react";
@@ -23,7 +22,7 @@ export default function Home() {
 
     useEffect(() => {
     Aos.init({ 
-      once: true,     // animate only once
+      once: true,     
     });
   }, []);
 
@@ -116,16 +115,12 @@ if (!homeData) {
 
   return (
     <>
-<div className="home-cover relative w-full top-[90px] flex flex-col items-center justify-center">
+<div className="home-cover relative w-full pt-[90px] flex flex-col items-center justify-center">
   {/* Section 1 */}
   <div 
   data-aos="fade-up"
   data-aos-duration="2000"
-  // className="homeBanner  w-11/12 flex flex-col items-center justify-center  boreder-[#0f172914] glass-panel1  p-4
-  // md:w-4/5 md:h-[85%] md:mt-2  md:p-6
-  // lg:w-[85%] lg:mt-5
-  // xl:w-[80%] xl:mt-16
-  // 2xl:mt-0 2xl:w-[65%]"
+
 
   className="
   homeBanner

@@ -3,7 +3,7 @@ import client from "@/lib/appollo-client";
 import { GET_CONTACT_PAGE } from "@/lib/api-Collection";
 import React, { useState, useEffect } from "react";
 import { CircleCheck, FileText, HelpCircle, Headphones, Users, ChevronDown, Mail, Clock , Shield, Phone, MessageCircle, Download } from "lucide-react";
-import * as LucideIcons from "lucide-react";
+import { clientIcons } from "@/lib/clientIcons";
 
 const Contactpage = () => {
      const [contactData, setContactData] = useState(null);
@@ -72,7 +72,7 @@ const Contactpage = () => {
           <div className="flex">
             <button className="px-3 py-0.25 flex items-center justify-center gap-1 bg-[#e7f1fc] text-[#157de5] border border-[#157de54d] rounded-full mb-5">
               <div className="text-[#157de5]">
-                  <LucideIcons.Zap size={13} />
+                  <clientIcons.Zap size={13} />
               </div>
               <div>
                 <p className=" text-[12px] font-medium">{contactData.badge}</p>
@@ -170,7 +170,7 @@ const Contactpage = () => {
         {/* Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {contactData?.Choose_how_to_connect?.connect_items?.map((item, i) => {
-            const IconComponent = LucideIcons[item.icon] || LucideIcons.HelpCircle;
+            const IconComponent = clientIcons[item.icon] || clientIcons.HelpCircle;
 
             return (
               <div
@@ -458,7 +458,7 @@ const Contactpage = () => {
               <ul className="space-y-3 text-[12.3px]">
                 {contactData?.Where_we_support?.presence_types?.presence_type_item?.map(
                   (item, idx) => {
-                    const IconComponent = LucideIcons[item.icon];
+                    const IconComponent = clientIcons[item.icon];
 
                     return (
                       <li key={idx} className="flex items-center gap-3">
@@ -517,7 +517,7 @@ const Contactpage = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
             {contactData?.Where_we_support?.locations?.map((loc, i) => {
-            const IconComponent = LucideIcons[loc.icon];
+            const IconComponent = clientIcons[loc.icon];
 
             return (
               <div
@@ -575,7 +575,7 @@ const Contactpage = () => {
     {/* GRID */}
     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-6 w-[90%] mx-auto">
       {contactData?.Not_sure?.Not_sure_Item?.map((item, idx) => {
-        const IconComponent = LucideIcons[item.icon];
+        const IconComponent = clientIcons[item.icon];
 
         return (
           <div
@@ -641,7 +641,7 @@ const Contactpage = () => {
       <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-10">
 
         {contactData?.Local_expertise?.Local_expertise_Item?.map((item, idx) => {
-          const IconComponent = LucideIcons[item.icon];
+          const IconComponent = clientIcons[item.icon];
           return (
             <div key={idx} className="flex flex-col items-center gap-3">
               <div className="w-14 h-14 bg-gradient-to-br from-[rgba(21,125,229,0.1)] to-[rgba(255,112,56,0.1)] border-1 border-[rgba(21,125,229,0.4)] rounded-2xl flex items-center justify-center">
@@ -733,7 +733,7 @@ const Contactpage = () => {
    <section className="w-full flex justify-center py-10 bg-[#F7F8FB]">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 w-[95%] md:w-[85%] xl:w-[75%] ">
         {contactData?.contact_cta?.map((cta, i) => {
-          const IconComponent = LucideIcons[cta.icon];
+          const IconComponent = clientIcons[cta.icon];
           return (
             <a
             key={i}

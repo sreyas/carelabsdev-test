@@ -3,7 +3,7 @@
 import client from "@/lib/appollo-client";
 import { GET_INSIGHTS_BY_SLUG } from "@/lib/api-Collection";
 import { Brain, Calendar, Clock, Globe, User, ArrowRight, Tag } from "lucide-react";
-import * as Icons from "lucide-react"; 
+import { clientIcons } from "@/lib/clientIcons";
 import Image from "next/image";
 import carlabz from "@/assets/carlabz.jpg";
 import React, { useEffect, useState } from "react";
@@ -49,10 +49,10 @@ export default function Page({ params }) {
    fetchBlogs();
   },[]);
 
-const BrainIcon =blog?.badgeicon && Icons[blog.badgeicon.trim()]? Icons[blog.badgeicon.trim()]: null;
-const AuthorIcon =blog?.authoricon && Icons[blog.authoricon.trim()]? Icons[blog.authoricon.trim()]: null;
-const PublishedIcon =blog?.publishedicon && Icons[blog.publishedicon.trim()]? Icons[blog.publishedicon.trim()]: null;
-const TimeIcon =blog?.timeicon && Icons[blog.timeicon.trim()]? Icons[blog.timeicon.trim()]: null;
+const BrainIcon =blog?.badgeicon && clientIcons[blog.badgeicon.trim()]? clientIcons[blog.badgeicon.trim()]: null;
+const AuthorIcon =blog?.authoricon && clientIcons[blog.authoricon.trim()]? clientIcons[blog.authoricon.trim()]: null;
+const PublishedIcon =blog?.publishedicon && clientIcons[blog.publishedicon.trim()]? clientIcons[blog.publishedicon.trim()]: null;
+const TimeIcon =blog?.timeicon && clientIcons[blog.timeicon.trim()]? clientIcons[blog.timeicon.trim()]: null;
 
 
 

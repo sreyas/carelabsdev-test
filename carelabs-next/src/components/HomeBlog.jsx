@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import client from "@/lib/appollo-client";
 import { GET_INSIGHTS, GET_INSIGHTS_BY_LOCALE } from "@/lib/api-Collection";
 import Link from 'next/link';
-import * as LucideIcons from 'lucide-react';
+import { clientIcons } from "@/lib/clientIcons";
 import { ArrowRight } from "lucide-react";
 import { useParams } from 'next/navigation';
 
@@ -79,11 +79,12 @@ if (!featured) {
             </p>
             </div>
 
-            <Link href="/services/power-system-analysis" legacyBehavior>
-              <a className="px-5 py-3 border border-[#1F8FEB] text-[#1F8FEB] rounded-[12px]
-              inline-block poppins-font text-center w-full sm:w-auto hover:bg-[#E9EDF5] transition-all duration-300 animate-pop-in ">
-                {insights.button}
-              </a>
+              <Link
+              href="/services/power-system-analysis"
+              className="px-5 py-3 border border-[#1F8FEB] text-[#1F8FEB] rounded-[12px]
+              inline-block poppins-font text-center w-full sm:w-auto hover:bg-[#E9EDF5] transition-all duration-300 animate-pop-in"
+            >
+              {insights.button}
             </Link>
 
         </div>
@@ -206,7 +207,7 @@ if (!featured) {
             <div className="px-6 py-4 flex flex-col gap-3 rounded-[16px] flex-grow">
               <div className="flex items-center gap-1">
                 {(() => {
-                  const IconComponent = LucideIcons[item.icon];
+                  const IconComponent = clientIcons[item.icon];
                   return IconComponent ? (
                     <IconComponent size={14} className="text-[#1f7fdb]" />
                   ) : null;

@@ -1,7 +1,8 @@
 "use client";
 import React from 'react'
 import carelabzImage from '@/assets/carlabz.jpg'
-import * as LucideIcons from 'lucide-react';
+import { clientIcons } from "@/lib/clientIcons";
+
 
 
 const OurTeamsSnapshot = ({data}) => {
@@ -39,7 +40,7 @@ const OurTeamsSnapshot = ({data}) => {
        <div className="w-full grid grid-cols-1 sm:grid-cols-2 gap-5 mt-5">
       {stats.map((item, index) => {
         // dynamically get icon from LucideIcons using string from API
-        const IconComponent = LucideIcons[item.icon] || LucideIcons['Award']; // fallback if not found
+        const IconComponent = clientIcons[item.icon] || clientIcons['Award']; // fallback if not found
 
         // optional: color can come from API
         const color = item.color || '#157de5';

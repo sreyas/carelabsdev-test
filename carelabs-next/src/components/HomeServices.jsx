@@ -2,8 +2,8 @@
 import React, { useEffect, useState } from 'react'
 import client from '@/lib/appollo-client';
 import { GET_HOME_SERVICES_BY_LOCALE } from '@/lib/api-Collection';
-import { CircleCheckBig, Zap, Check } from 'lucide-react';
-import * as LucideIcons from "lucide-react";
+import { Zap, Check } from 'lucide-react';
+import { clientIcons } from "@/lib/clientIcons";
 import { useParams } from 'next/navigation';
 
 const HomeServices = () => {
@@ -60,37 +60,30 @@ const HomeServices = () => {
         
         >
 
-        {/* Heading */}
-        {/* <h1 className="text-xs flex mb-4 items-center justify-center gap-2 sm:text-sm md:text-base px-3 py-1 rounded-full border border-[#157de5] poppins-font">
-          <div className="text-[#157de5]">
-            <Zap size={18} />
-          </div>
 
-          {globalReachData.badge}
-        </h1> */}
 
         <div className="flex justify-center items-center">
-  <div
-    className="
-      inline-flex items-center justify-center
-      w-auto h-[42px]
-      px-[21px] py-[11px]
-      gap-[8px]
-      border border-[#157de5]
-      rounded-[9999px]
-      bg-white
-      poppins-font text-[14px]
-    "
-  >
-    <span className="text-[#157de5]">
-      <Zap size={18} />
-    </span>
+          <div
+            className="
+              inline-flex items-center justify-center
+              w-auto h-[42px]
+              px-[21px] py-[11px]
+              gap-[8px]
+              border border-[#157de5]
+              rounded-[9999px]
+              bg-white
+              poppins-font text-[14px]
+            "
+          >
+            <span className="text-[#157de5]">
+              <Zap size={18} />
+            </span>
 
-    <span>
-      {globalReachData.badge}
-    </span>
-  </div>
-</div>
+            <span>
+              {globalReachData.badge}
+            </span>
+          </div>
+        </div>
 
 
         <p
@@ -109,38 +102,10 @@ const HomeServices = () => {
   <div className="w-[90%] md:w-[80%]
     2xl:w-[65%] 0 mt-10">
       <div className="w-full flex flex-col lg:flex-row items-stretch justify-center gap-5">
-        {/* <div className=" w-full lg:w-[50%]  2xl:w-[45%] flex flex-col items-center  gap-3">
-            {items.map((item, index) => {
-                // Get the icon component dynamically from lucide-react
-                const IconComponent = LucideIcons[item.icon]; // item.icon must match the Lucide icon name exactly
-
-                return (
-                  <div
-                    key={index}
-                    onClick={() => setActiveServiceIndex(index)}
-                    className={`w-full  lg:w-full  rounded-2xl p-2 2xl:p-4  flex justify-start gap-3 shadow-md hover:shadow-lg transition-shadow cursor-pointer
-                      ${activeServiceIndex === index ? "bg-[#dae9fd] border border-[#2575b6]" : "bg-[#f2f6fc]"}
-                    `}
-                  >
-
-                    <div className="text-[#2575b6] w-[20%] flex items-center justify-center">
-                      <div className="w-[50px] h-[50px] flex items-center justify-center bg-[#dae9fd] rounded-xl">
-                        {IconComponent ? <IconComponent size={30} /> : null}
-                      </div>
-                    </div>
-                    <div className="w-[80%]">
-                      <p className="text-[16px] font-bold">{item.name}</p>
-                      <p className="text-[12px] text-gray-600">Click to explore details</p>
-                    </div>
-                  </div>
-                );
-              })}
-
-        </div> */}
-
+        
     <div className="w-full lg:w-[50%] 2xl:w-[45%] flex flex-col items-center gap-3">
     {items.map((item, index) => {
-    const IconComponent = LucideIcons[item.icon];
+    const IconComponent = clientIcons[item.icon];
 
     return (
       <div
@@ -225,7 +190,7 @@ const HomeServices = () => {
                     <div className="flex items-center gap-2">
                       <div className="w-[56px] h-[56px] flex items-center justify-center bg-[#dae9fd] rounded-[12px]">
                         {(() => {
-                          const IconComponent = activeItem?.icon ? LucideIcons[activeItem.icon] : null;
+                          const IconComponent = activeItem?.icon ? clientIcons[activeItem.icon] : null;
                           return IconComponent ? <IconComponent size={30} className="text-[#2575b6]" /> : null;
                         })()}
                       </div>
@@ -293,8 +258,8 @@ const HomeServices = () => {
   <div className="flex flex-col sm:flex-row gap-3 sm:gap-5">
   
   {/* Primary Button */}
-  <a href={activeItem?.button1link}>
-    <button
+  <a href={activeItem?.button1link}
+
       className="
         w-[177px]
         h-[48px]
@@ -310,12 +275,12 @@ const HomeServices = () => {
       "
     >
       {activeItem?.button1text}
-    </button>
+  
   </a>
 
   {/* Secondary Button */}
-  <a href={activeItem?.button2link}>
-    <button
+  <a href={activeItem?.button2link}
+  
       className="
         w-[177px]
         h-[48px]
@@ -331,7 +296,7 @@ const HomeServices = () => {
       "
     >
       {activeItem?.button2text}
-    </button>
+  
   </a>
 
 </div>

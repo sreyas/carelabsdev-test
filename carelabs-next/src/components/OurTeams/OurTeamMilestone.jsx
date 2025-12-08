@@ -1,12 +1,13 @@
 import React from 'react'
-import * as LucideIcons from "lucide-react";
+import { clientIcons } from "@/lib/clientIcons";
+
 
 const OurTeamMilestone = ({ data }) => {
 
   if (!data) return null;
 
   const getIcon = (name) => {
-    const IconComponent = LucideIcons[name.trim()];
+    const IconComponent = clientIcons[name.trim()];
     return IconComponent ? <IconComponent size={16} color={"#f15c30"} /> : null;
   };
 

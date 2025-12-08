@@ -82,7 +82,7 @@ const Page = () => {
               <h2 className=" text-[14px] font-semibold montserrat-font">Weekly Insights</h2>
               <p className="py-2 poppins-font text-[14px]">Get the latest electrical safety news and technical insights delivered to your inbox.</p>
                <input placeholder="Your mail" className="w-full border border-black h-10 rounded-lg p-2"></input>
-                 <button className="bg-[#2575b6] w-full p-2 mt-3 rounded-lg text-white"><a>Subscribe</a></button>
+                 <button className="bg-[#2575b6] w-full p-2 mt-3 rounded-lg text-white">Subscribe</button>
             </div>
 
 
@@ -503,8 +503,8 @@ const Page = () => {
                   the best starting point, and build a roadmap tailored to your operations.
                  </p>
                  <div className="flex flex-col lg:flex-row items-center gap-4 justify-center poppins-font ">
-                  <button className="bg-[#2575b6] py-2 px-6 rounded-lg text-white"><a>Talk to our team</a></button>
-                   <button  className="border border-[#2575b6] py-2 px-6 bg-white text-black rounded-lg"><a>Explore Power System Analysis</a></button>
+                  <button className="bg-[#2575b6] py-2 px-6 rounded-lg text-white">Talk to our team</button>
+                   <button  className="border border-[#2575b6] py-2 px-6 bg-white text-black rounded-lg">Explore Power System Analysis</button>
                  </div>
                 </div>
 

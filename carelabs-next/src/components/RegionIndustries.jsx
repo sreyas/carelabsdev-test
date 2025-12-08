@@ -1,15 +1,17 @@
 import { GET_REGION_INDUSTRIES } from '@/lib/api-Collection';
 import { Heart, Zap } from 'lucide-react'
 import React from 'react'
-import * as Icons from "lucide-react";
+import { clientIcons } from "@/lib/clientIcons";
+
 
 
 
 const RegionIndustries = ({data}) => {
 
   if(!data)return null
-
-    const BadgeIcon =Icons[data.badgeicon.trim()];
+         console.log(data.badgeicon);
+         
+    const BadgeIcon =clientIcons[data.badgeicon.trim()];
     const industriesData=data.key_industries || [];
 
   return (
@@ -61,7 +63,7 @@ const RegionIndustries = ({data}) => {
           <div 
           className="w-11/12 sm:w-[80%] 2xl:w-[65%] 2xl:mt-20 grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-5">
             {industriesData.map((item, index) => {
-              const CardIcon = item.icon ? Icons[item.icon.trim()] : Heart; // fallback icon
+              const CardIcon = item.icon ? clientIcons[item.icon.trim()] : Heart; // fallback icon
               return (
                 <div key={index} className="glass-panel p-5 rounded-xl"
                   data-aos="fade-up"

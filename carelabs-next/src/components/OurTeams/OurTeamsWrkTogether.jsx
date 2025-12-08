@@ -1,7 +1,8 @@
 "use client";
 
 import React from 'react'
-import * as LucideIcons from "lucide-react";
+import { clientIcons } from "@/lib/clientIcons";
+
 
 
 const OurTeamsWrkTogether = ({data}) => {
@@ -23,7 +24,7 @@ const OurTeamsWrkTogether = ({data}) => {
             <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 ">
                 {data.Work_Together_Items?.map((item, index) => {
                             // Dynamically get icon from API using LucideIcons
-                            const IconComponent = item.icon ? LucideIcons[item.icon] : null;
+                            const IconComponent = item.icon ? clientIcons[item.icon] : null;
 
                             return (
                             <div

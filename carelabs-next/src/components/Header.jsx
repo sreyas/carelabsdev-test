@@ -1,11 +1,11 @@
 "use client";
 import { GET_NAVBAR } from '@/lib/api-Collection';
 import client from '@/lib/appollo-client';
-import { ChevronDown, ChevronUp, Globe, Mail, Moon, X, ArrowRight } from 'lucide-react';
+import { ChevronDown,Moon,ArrowRight, Menu, X, Globe} from 'lucide-react';
 import React, { useEffect, useState } from 'react'
 import RegionModal from '../components/Modal/RegionModal';
 import Link from 'next/link';
-import * as LucideIcons from 'lucide-react';
+import { clientIcons } from "@/lib/clientIcons";
 import { useParams, useRouter } from "next/navigation";
 import { useLocalizedNavigate } from '@/lib/navigation';
 import ContactPopupModal from './Modal/ContactPopupModal';
@@ -32,7 +32,7 @@ const Header = () => {
 
   const activeSubmenu =
     navbarData?.items?.[activeIndex]?.submenus?.[selectedSubmenuIndex];
-  const ActiveIcon = activeSubmenu ? LucideIcons[activeSubmenu.icon] : null;
+  const ActiveIcon = activeSubmenu ? clientIcons[activeSubmenu.icon] : null;
 
 
   const regions = [
@@ -208,18 +208,18 @@ const Header = () => {
 
             <div className="mob-global flex sm:hidden">
               <button onClick={() => setIsModalOpen(true)}>
-                <Globe />
+                <Globe/>
               </button>
             </div>
 
             {isModalOpen && <RegionModal setIsModalOpen={setIsModalOpen} />}
 
 
-            <div className="theme hidden">
+            {/* <div className="theme hidden">
               <button className='bg-[#2575B626] border border-[#2575b64d]  w-[50px] h-[50px] flex items-center justify-center sm:p-3 rounded-full '>
                 <a href="/services" style={{ color: "#2575b6" }}> <Moon /></a>
               </button>
-            </div>
+            </div> */}
 
 
             <div className="nav-bttn hidden lg:flex justify-center items-center rounded-md xl:w-[35%] 2xl:w-[45%] bg-[#157de5]">
@@ -238,17 +238,17 @@ const Header = () => {
 
 
 
-            <div
-              className="menu-bar w-[15%] h-full flex items-center justify-center p-2 z-[999] lg:hidden"
+           <div
+              className="menu-bar h-full flex items-center justify-center p-2 z-[999] lg:hidden"
               onClick={openMobilemenus}
             >
-              {openMobileMenu ? (
-                <i className="fa-solid fa-x fa-xl" style={{ color: "#000000" }}></i>
-              ) : (
-                <i className="fa-solid fa-bars fa-xl" style={{ color: "#000000" }}></i>
-              )}
-            </div>
+             {openMobileMenu ? (
+                  <X size={30}  strokeWidth={2.5}  color="#000000" />
+                ) : (
+                  <Menu size={30} color="#000000"  strokeWidth={2.5}  />
+                )}
 
+            </div>
 
           </div>
 
@@ -271,7 +271,7 @@ const Header = () => {
                 </h2>
 
                 {navbarData.items[activeIndex].submenus.map((submenu, index) => {
-                  const IconComponent = LucideIcons[submenu.icon];
+                  const IconComponent = clientIcons[submenu.icon];
                   return (
                     <div
                       key={submenu.id}
@@ -348,8 +348,8 @@ const Header = () => {
                         </span>
                       </Link> */}
 
-                  <Link href={targetSlug} className="group relative inline-flex items-center justify-center bg-[#157de5] text-white text-[14px] font-semibold py-2 px-4 rounded-full w-[45%] text-center transition-all duration-300 ease-in-out transform hover:scale-105 hover:bg-gradient-to-r hover:from-[#157de5] hover:to-[#ff7038] hover:shadow-[0_20px_30px_rgba(0,0,0,0.3)]">
-                    <span className="flex items-center gap-2">
+                  <Link href={targetSlug} className="group relative inline-flex items-center justify-center bg-[#157de5] text-white text-[14px] font-semibold py-2 px-4 rounded-full w-[45%] text-center  hover:bg-gradient-to-r hover:from-[#157de5] hover:to-[#ff7038] hover:shadow-[0_20px_30px_rgba(0,0,0,0.3)]">
+                    <span className="flex items-center gap-2 whitespace-nowrap">
                       {currentSubmenu?.Button}
                       <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
                     </span>
@@ -379,7 +379,10 @@ const Header = () => {
 
       {/* Mobile Bar  Menus */}
       {openMobileMenu && (
-        <div className="w-full h-max bg-white  fixed flex items-center top-[80px] z-[1000] justify-center p-3 lg:hidden">
+        // <div className="w-full h-max bg-white  fixed flex items-center top-[80px] z-[1000] justify-center p-3 lg:hidden">
+        <div className="fixed top-[80px] left-0 w-full  bg-white z-[1000] flex justify-center items-start p-4 lg:hidden transform-gpu shadow-xl"
+         style={{ backfaceVisibility: "hidden", WebkitBackfaceVisibility: "hidden" }}
+  >
           <div className=" w-[90%] h-[90%] rounded-2xl p-4 md:w-[80%] md:flex md:justify-center md:flex-col md:items-center">
             <ul className="w-full">
               {navbarData.items.map((item, index) => (
@@ -430,14 +433,21 @@ const Header = () => {
 
 
             <div className="w-full flex items-center justify-center py-4 mt-4">
-              <button className="bg-blue-500 w-full md:w-[80%] p-2 rounded-lg" onClick={() => setIsContactModalOpen(true)}>
+              {/* <button className="bg-blue-500 w-full md:w-[80%] p-2 rounded-lg" onClick={() => setIsContactModalOpen(true)}>
                 <a
                   href={navbarData?.buttonlink}
                   className="text-[14px] text-white p-3"
                 >
                   {navbarData?.buttontext}
                 </a>
-              </button>
+              </button> */}
+              <button
+              className="bg-blue-500 w-full md:w-[80%] p-3 rounded-lg text-[14px] text-white"
+              onClick={() => setIsContactModalOpen(true)}
+              >
+             {navbarData?.buttontext}
+             </button>
+
               <ContactPopupModal
                 isOpen={isContactModalOpen}
                 setIsOpen={setIsContactModalOpen}

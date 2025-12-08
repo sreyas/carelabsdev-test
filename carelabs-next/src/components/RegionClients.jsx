@@ -2,13 +2,12 @@
 
 import { MapPin, Shield, Zap } from 'lucide-react';
 import React from 'react'
-import * as Icons from "lucide-react";
-
+import { clientIcons } from "@/lib/clientIcons";
 
 const RegionClients = ({data}) => {
 
     if(!data)return null;
-      const BadgeIcon =Icons[data.badgeicon.trim()];
+      const BadgeIcon =clientIcons[data.badgeicon.trim()];
      
   return (
     <div className=' w-full flex flex-col items-center justify-center py-5 mt-40 lg:mt-60 '>
