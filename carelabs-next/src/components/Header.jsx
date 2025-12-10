@@ -144,7 +144,7 @@ const Header = () => {
                 width={400}
                 height={100}
                 priority   
-                loading="eager"           />
+                fetchPriority="high"     />
             </Link>
           </div>
 
