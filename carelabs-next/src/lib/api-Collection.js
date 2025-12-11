@@ -5,6 +5,7 @@ export const GET_NAVBAR = gql`
       navbar {
         Logo {
           url
+          alternativeText
         }
         buttonlink
         buttontext

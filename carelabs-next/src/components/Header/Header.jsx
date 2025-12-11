@@ -66,6 +66,7 @@ const Header = ({navbarData}) => {
       console.log("Error fetching navbar data:", err);
     }
   }
+   setLogoUrl(navbarData.Logo?.url || logoUrl);
 
 
   useEffect(() => {
@@ -134,7 +135,7 @@ const Header = ({navbarData}) => {
                 className="p-3  lg:w-[75%] object-contain"
                 // src={navbarData.Logo?.url}
                 src={logoUrl}
-                alt="Logo"
+                alt={navbarData.Logo?.alternativeText || "Carelabs Logo"}
                 width={400}
                 height={100}
                 priority   
