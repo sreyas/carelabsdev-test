@@ -4,10 +4,17 @@ import { ArrowRight, Play, Zap } from 'lucide-react';
 import React, { useEffect, useState } from 'react'
 import HomeCounter from '../Homecounter';
 import Aos from 'aos';
+import ContactPopupModal from '../Modal/ContactPopupModal';
 
 const HomeBanner = ({data}) => {
     
-   const[homeData,setHomeData]=useState(null);
+    const[homeData,setHomeData]=useState(null);
+    const [isOpen, setIsOpen] = useState(false);
+    const [showVideo, setShowVideo] = useState(false);
+    const [videoId, setVideoId] = useState(null);
+   
+
+   
     
    useEffect(() => {
     setHomeData(data);
@@ -61,7 +68,7 @@ const HomeBanner = ({data}) => {
 
   return (
     <div>
-        <div className="home-cover relative w-full pt-[90px] flex flex-col items-center justify-center">
+        <div className="home-cover relative  w-full pt-[90px] flex flex-col items-center p-5 justify-center">
             {/* Section 1 */}
             <div 
             data-aos="fade-up"
@@ -161,10 +168,8 @@ const HomeBanner = ({data}) => {
 
                 {/* PRIMARY BUTTON — ORANGE */}
                 <button
-                onClick={(e) => {
-                    e.preventDefault();
-                    window.openContactModal();
-                }}
+                      onClick={() => setIsOpen(true)}
+
                 className="
                     group 
                     w-[202px] h-[44px]
@@ -235,7 +240,7 @@ const HomeBanner = ({data}) => {
 
                 return (
                     <div
-                    key={item.id}
+                    key={idx}
                     className="
                         w-[324.66px] h-[126px]
                         bg-white
@@ -284,7 +289,48 @@ const HomeBanner = ({data}) => {
 
 
             </div>
+        </div>
+        {isOpen && (
+        <ContactPopupModal 
+            isOpen={isOpen}
+            setIsOpen={setIsOpen}
+        />
+        )}
+
+        {showVideo && (
+            <div
+                className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50 p-4"
+                onClick={(e) => {
+                if (e.target === e.currentTarget) {
+                    setShowVideo(false);
+                }
+                }}
+            >
+                <div className="bg-black rounded-2xl shadow-2xl relative w-full max-w-4xl">
+                
+                {/* Close button */}
+                <button
+                    onClick={() => setShowVideo(false)}
+                    className="absolute -top-10 right-0 text-white hover:text-red-500 transition-colors duration-200 text-2xl font-bold z-10"
+                    aria-label="Close video"
+                >
+                    ✖
+                </button>
+
+                {/* YouTube iframe - REMOVED autoplay=1 */}
+                <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+                    <iframe
+                    className="absolute top-0 left-0 w-full h-full rounded-2xl"
+                    src={`https://www.youtube.com/embed/${videoId}?rel=0`}
+                    allow="encrypted-media; fullscreen"
+                    allowFullScreen
+                    title="YouTube video player"
+                    ></iframe>
+                </div>
+                </div>
             </div>
+        )}
+
         </div>
   )
 }

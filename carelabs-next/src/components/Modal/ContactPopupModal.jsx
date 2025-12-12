@@ -81,10 +81,10 @@ console.log("KJHGFDSAASDFGGHHJKKLQWETTYUIOOPP");
      
     return (
         <div
-            className="absolute  w-full z-50 h-screen flex items-center justify-center bg-black/60 backdrop-blur-sm lg:p-4"
+            className="fixed top-0  left-0 w-full p-5 z-50 h-screen flex items-center justify-center bg-black/60 backdrop-blur-sm lg:p-4"
             onClick={(e) => e.target === e.currentTarget && setIsOpen(false)}
         >
-            <div className="relative w-full max-w-[650px] lg:max-w-[700px] rounded-2xl shadow-xl bg-white overflow-hidden">
+            <div className="relative w-full  max-w-[650px] lg:max-w-[700px] rounded-2xl shadow-xl bg-white overflow-hidden">
                 <div className="max-h-[85vh] overflow-y-auto scrollbar-hide px-6 py-8 md:px-12 md:py-10">
                     <button
                         onClick={() => setIsOpen(false)}
@@ -93,7 +93,7 @@ console.log("KJHGFDSAASDFGGHHJKKLQWETTYUIOOPP");
                         <X size={24} />
                     </button>
 
-                    <div className="flex justify-center mb-6">
+                    <div className="flex  justify-center mb-6">
                         <Image
                             src={fieldNames?.logo?.url}
                             alt="Carelabs Logo"

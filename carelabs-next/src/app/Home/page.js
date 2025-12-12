@@ -86,7 +86,7 @@ export default async function Page() {
 
   return (
     <div>
-      <section>
+      <section className=''>
         <HomeBanner data={homeData?.homebanner} />
       </section>
 

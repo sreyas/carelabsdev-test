@@ -1459,3 +1459,23 @@ export const GET_HOMEPAGE_DATA = gql`
   }
 }
 `
+
+export const GET_BLOG_LIST = gql`
+  query GetBlogList($filters: InsightblogFiltersInput) {
+    insightblogs(filters: $filters) {
+      documentId
+      slug
+      mainheading
+      description
+      badge
+      badgeicon
+      author
+      authoricon
+      publishedOn
+      time
+      category {
+        title
+      }
+    }
+  }
+`;
