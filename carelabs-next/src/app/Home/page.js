@@ -85,7 +85,7 @@ export default async function Page() {
   const homeData = await getHomePageData();
 
   return (
-    <div>
+   <main role="main">
       <section className=''>
         <HomeBanner data={homeData?.homebanner} />
       </section>
@@ -105,6 +105,6 @@ export default async function Page() {
       <section>
         <HomeBlog data={homeData?.home_insights} />
       </section>
-    </div>
+    </main>
   );
 }
