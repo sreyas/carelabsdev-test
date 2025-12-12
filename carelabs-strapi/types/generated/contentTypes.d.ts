@@ -1521,6 +1521,14 @@ export interface ApiInsightblogInsightblog extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
+    mainimage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     publishedAt: Schema.Attribute.DateTime;
     publishedicon: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
